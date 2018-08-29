@@ -1,0 +1,239 @@
+{
+    "config": {
+        "allow_multiple_models": true,
+        "allow_orphans": true,
+        "count_failed_submissions": true,
+        "evaluate": {
+            "command": "python evaluate.py predictions.json data.json out.json",
+            "dependencies": [
+                {
+                    "child_path": "evaluate.py",
+                    "parent_path": "",
+                    "parent_uuid": "0xd8d30a3cd83e46e38d531aa5f1a98a9c"
+                },
+                {
+                    "child_path": "data.json",
+                    "parent_path": "",
+                    "parent_uuid": "0xc6bdc1125b7a4caca4f4734fa188d235"
+                },
+                {
+                    "child_path": "predictions.json",
+                    "parent_path": "",
+                    "parent_uuid": "{predict}"
+                }
+            ],
+            "metadata": {
+                "request_docker_image": "codalab/ubuntu:1.9"
+            },
+            "tag": "competition-evaluate"
+        },
+        "host": "https://worksheets.codalab.org",
+        "log_worksheet_uuid": "0xa8f67766fbe245cf976fe707555d75a2",
+        "make_predictions_public": false,
+        "max_leaderboard_size": 10000,
+        "max_submissions_per_period": 5,
+        "max_submissions_total": 20,
+        "metadata": {
+            "name": "Hucvl-Recipe Challenge"
+        },
+        "predict": {
+            "depth": 10,
+            "metadata": {},
+            "mimic": [
+                {
+                    "new": "0xc6bdc1125b7a4caca4f4734fa188d235",
+                    "old": "0xa3f52fd101f543b5912d51057b6fc47a"
+                }
+            ],
+            "tag": "competition-predict"
+        },
+        "quota_period_seconds": 86400,
+        "refresh_period_seconds": 60,
+        "score_specs": [
+            {
+                "key": "/out.json:textual_cloze",
+                "name": "textual_cloze"
+            },
+            {
+                "key": "/out.json:visual_cloze",
+                "name": "visual_cloze"
+            },
+            {
+                "key": "/out.json:visual_coherence",
+                "name": "visual_coherence"
+            },
+            {
+                "key": "/out.json:visual_ordering",
+                "name": "visual_ordering"
+            }
+        ],
+        "submission_tag": "rectest"
+    },
+    "leaderboard": [
+        {
+            "bundle": {
+                "args": "run evaluate.py:0xd8d30a3cd83e46e38d531aa5f1a98a9c data.json:0xc6bdc1125b7a4caca4f4734fa188d235 predictions.json:0xb291a50357c946939ab853c2b72fd091 \"python evaluate.py predictions.json data.json out.json\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py predictions.json data.json out.json",
+                "data_hash": "0x1a469a6ec996b869848d9221f43c53ec2c3fe013",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x12802a8434804276aa21247ef848ab6d",
+                        "parent_name": "evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xd8d30a3cd83e46e38d531aa5f1a98a9c"
+                    },
+                    {
+                        "child_path": "data.json",
+                        "child_uuid": "0x12802a8434804276aa21247ef848ab6d",
+                        "parent_name": "recipeqa36k_test_hash.json",
+                        "parent_path": "",
+                        "parent_uuid": "0xc6bdc1125b7a4caca4f4734fa188d235"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x12802a8434804276aa21247ef848ab6d",
+                        "parent_name": "order66-pred.json-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb291a50357c946939ab853c2b72fd091"
+                    }
+                ],
+                "id": "0x12802a8434804276aa21247ef848ab6d",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1535546318,
+                    "data_size": 4274,
+                    "description": "{\"submit_id\": \"0x8cc565c5ed02404a966d4aa9b889a197\", \"predict_id\": \"0xb291a50357c946939ab853c2b72fd091\", \"submitter_id\": \"0xf2c582a12d9d4890b319738898518ef7\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1535546367,
+                    "name": "order66-pred.json-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Upload started",
+                    "started": 1535546351,
+                    "tags": [
+                        "competition-evaluate"
+                    ],
+                    "time": 11.8029510975
+                },
+                "owner": {
+                    "id": "0x47826d7982a4467da125bd36758f320c",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x12802a8434804276aa21247ef848ab6d"
+            },
+            "scores": {
+                "textual_cloze": 0.26895119418483904,
+                "visual_cloze": 0.27358490566037735,
+                "visual_coherence": 0.6580493537015276,
+                "visual_ordering": 0.25524861878453037
+            },
+            "submission": {
+                "created": 1535546283,
+                "description": "",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "order66"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0xd8d30a3cd83e46e38d531aa5f1a98a9c data.json:0xc6bdc1125b7a4caca4f4734fa188d235 predictions.json:0x6d6be61605dd43a4b3bd59b3039f9524 \"python evaluate.py predictions.json data.json out.json\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py predictions.json data.json out.json",
+                "data_hash": "0x1a469a6ec996b869848d9221f43c53ec2c3fe013",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xbba6cb9553154236ab31f940b8c1f27d",
+                        "parent_name": "evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xd8d30a3cd83e46e38d531aa5f1a98a9c"
+                    },
+                    {
+                        "child_path": "data.json",
+                        "child_uuid": "0xbba6cb9553154236ab31f940b8c1f27d",
+                        "parent_name": "recipeqa36k_test_hash.json",
+                        "parent_path": "",
+                        "parent_uuid": "0xc6bdc1125b7a4caca4f4734fa188d235"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xbba6cb9553154236ab31f940b8c1f27d",
+                        "parent_name": "tahasevim-pred-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x6d6be61605dd43a4b3bd59b3039f9524"
+                    }
+                ],
+                "id": "0xbba6cb9553154236ab31f940b8c1f27d",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1535544297,
+                    "data_size": 4274,
+                    "description": "{\"submit_id\": \"0xa9c5858eb9304caab58e65a120f9830b\", \"predict_id\": \"0x6d6be61605dd43a4b3bd59b3039f9524\", \"submitter_id\": \"0x47826d7982a4467da125bd36758f320c\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1535544340,
+                    "name": "tahasevim-pred-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Uploading results: 271 done (archived size)",
+                    "started": 1535544330,
+                    "tags": [
+                        "competition-evaluate"
+                    ],
+                    "time": 6.65990614891
+                },
+                "owner": {
+                    "id": "0x47826d7982a4467da125bd36758f320c",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xbba6cb9553154236ab31f940b8c1f27d"
+            },
+            "scores": {
+                "textual_cloze": 0.26895119418483904,
+                "visual_cloze": 0.27358490566037735,
+                "visual_coherence": 0.6580493537015276,
+                "visual_ordering": 0.25524861878453037
+            },
+            "submission": {
+                "created": 1535543616,
+                "description": "",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "tahasevim"
+            }
+        }
+    ],
+    "updated": 1535548356.694239
+}
