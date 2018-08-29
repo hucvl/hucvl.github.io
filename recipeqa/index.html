@@ -1,1 +1,209 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head> <title>RecipeQA</title> <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/styles/index.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+ <link rel="icon" href="static/images/favicon.png">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+ 
+</head>
+<body>
+
+<div class="header">
+		<h1><i class="fas fa-utensils"></i>  RecipeQA</h1>
+		<h3>A Dataset for Multimodal Comprehension of Cooking Recipes</h3>
+</div>
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="explorer/dataset.html">Explore</a>
+  <!--<a href="#" class="right">Link</a> -->
+</div>
+<div class="col-lg-4 col-sm-4">
+  <div class="side">
+      <h2> RecipeQA Challenge</h2>
+      <h5>Description:</h5>
+      <p>text</p>
+      <h3>Evaluation and Submission</h3>
+	  <br>
+	  <p>Training dataset and a dev-set of RecipeQA Challenge are below.</p>
+	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Training Dataset</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_dev.json"><button class="button"><i class="fa fa-download"></i> Dev Set</button></a>
+	  <br><br>
+      <p>To evaluate your models, we provide an evaluation script that will be
+	  used for the official evaluation, along with a sample prediction file. Evaluation script can be run as:<br>
+	  <span style="background-color:#C0C0C0"> <b>python evaluate.py
+					  {path-to-prediction-file} {path-to-dev-set path-to-output-file}</b></span></p>
+	  <a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1GqEEWe33VoYICtrBRTqJtiMUKvDL1DiI" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (Dev Set)</button></a>
+	  <br><br>
+	  <p>We used CodaLab platform to retrieve submisions of models of
+	  competitors. CodaLab also provides a good competition creation and
+	  handling mechanism so that we can test your models with private dataset
+	  easily.</p>
+	  <a href="https://worksheets.codalab.org/worksheets/0x44226bd1e87546f1bdaea162090c4a7d/" target="_blank"><button class="button"> Submission via CodaLab</button></a>
+  </div>
+  </div>
+  <div class="col-lg-8 col-sm-8">
+  <div class="main">
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" integrity="sha256-iaqfO5ue0VbSGcEiQn+OeXxnxAMK2+QgHXIDA5bWtGI=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous"></script>
+<style>
+body {
+	font-family: 'HankenGroteskRegular';
+	background-color:#E0E0E0;
+}
+</style>
+  </head>
+  <body>
+<div id="container" class="container"></div>
+    <script id="template" type="x-tmpl-mustache">
+  <h2>Leaderboard <img src="static/images/cup.png" width=6%  alt="trophycup"></h2>
+  <br>
+<h3>Textual Cloze</h3>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Submitter</th>
+        <th>Latest Submission</th>
+        <th>Score</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#leaderboard}}
+        <th>{{{rank}}}</th>
+        <td>{{submission.user_name}}</td>
+        <td>{{created}}</td>
+        <td>{{scores.textual_cloze}}</td>
+        <td>{{submission.description}}</td>
+      </tr>
+      {{/leaderboard}}
+    </tbody>
+  </table>
+
+
+<h3>Visual Cloze</h3>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Submitter</th>
+        <th>Latest Submission</th>
+        <th>Score</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+ <tbody>
+    {{#leaderboard}}
+        <th>{{{rank}}}</th>
+        <td>{{submission.user_name}}</td>
+        <td>{{created}}</td>
+        <td>{{scores.visual_cloze}}</td>
+        <td>{{submission.description}}</td>
+      </tr>
+      {{/leaderboard}}
+    </tbody>
+  </table>
+  <br>
+
+
+<h3>Visual Ordering</h3>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Submitter</th>
+        <th>Latest Submission</th>
+        <th>Score</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#leaderboard}}
+        <th>{{{rank}}}</th>
+        <td>{{submission.user_name}}</td>
+        <td>{{created}}</td>
+        <td>{{scores.visual_ordering}}</td>
+        <td>{{submission.description}}</td>
+      </tr>
+      {{/leaderboard}}
+    </tbody>
+  </table>
+  <br>
+
+
+<h3>Visual Coherence</h3>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Submitter</th>
+        <th>Latest Submission</th>
+        <th>Score</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#leaderboard}}
+        <th>{{{rank}}}</th>
+        <td>{{submission.user_name}}</td>
+        <td>{{created}}</td>
+        <td>{{scores.visual_coherence}}</td>
+        <td>{{submission.description}}</td>
+      </tr>
+      {{/leaderboard}}
+    </tbody>
+  </table>
+  </script>
+<script type="text/javascript">
+(function($) {
+  var LEADERBOARD_JSON = 'https://hucvl.github.io/recipeqa/leaderboard.json';
+  var template = $('#template').html();
+  Mustache.parse(template);
+  $.getJSON(LEADERBOARD_JSON).done(function (data) {
+    for (var i = 0; i < data.leaderboard.length; i++) {
+      var item = data.leaderboard[i];
+      console.log(item)
+      item.rank = i + 1;
+      var created = item['submission']['created']
+      var submissionInfo = item['submission']['description'];
+      item.created = moment.unix(created).format('YYYY-MM-DD, h:mm:ss A');
+      item.config = data.config;
+    }
+    var rendered = Mustache.render(template, data);
+    $('#container').html(rendered);
+  }).fail(function () {
+    $('#container').html('This leaderboard is not ready yet.');
+  });
+})(jQuery);
+    </script>
+	</div>
+	</div>
+  <div class="col-lg-12 col-sm-12">
+             	<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
+						<br>
+				<img src="static/images/hucvl_logo.png" width=40%>
+             	</div>
+	            <div class="col-lg-4 col-md-4 col-sm-4">
+						<br>
+	            <p style="text-align:center">Department of Computer Engineering<br>
+				Beytepe Campus, Beytepe, Cankaya, Ankara<br>
+				TURKEY TR-06800 </p>
+	            </div>   
+	            <div class="col-lg-3 col-md-3 col-sm-4">
+						<p style="text-align:right"><br>Taha Sevim<br> Kanan Hagverdiyev</p>
+	            </div>
+		</div>
+</body>
+</html>

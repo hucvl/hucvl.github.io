@@ -1,0 +1,101 @@
+@import url("https://use.fontawesome.com/releases/v5.1.1/css/all.css"); 
+
+.accordion {
+    background-color: white;
+	color:black;
+	font-weight:bold;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion:active, .accordion:hover {
+    background-color: #black;
+}
+
+.accordion:after {
+    content: "\f070";
+    font-family: "Font Awesome 5 Free"; 
+	padding-left:10px;
+
+    color: black;
+    font-weight: bold;
+}
+
+.accordion.active:after {
+    content: '\f06e';
+	padding-left:10px;
+}
+
+.panel {
+    padding: 0 8px 0px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.accloze {
+    background-color: white;
+	color:black;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accloze:active, .accloze:hover {
+    background-color: #black;
+}
+
+.accloze:after {
+    content: '\f06e' ;
+	padding-left:10px;
+    color: black;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: bold;
+}
+
+.accloze.active:after {
+    content: "\f070";
+	padding-left:10px;
+    font-family: "Font Awesome 5 Free"; 
+}
+
+.apanel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.head {
+	background-color: white ;
+	color: black;
+	display:block;
+	float:left;
+	text-align:center;
+	font-weight:"bold";
+	font-size:14px;
+}
+
+.rec{
+    height: 100px;
+    width:  100px;
+}
+.im{
+	display:inline;
+	width: 100px;
+	height: 100px;
+}
+.rec:hover{
+}
+td{
+	text-align :center;
+}

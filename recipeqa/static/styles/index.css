@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+body{
+	background-color:#E0E0E0;
+
+}
+h1.big,p,h2,h3{
+	 font-family: 'HankenGroteskRegular'; 
+   font-weight: normal; 
+   font-style: normal; 
+}
+
+.button {
+    background-color: #323; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+	width: 80%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* Darker background on mouse-over */
+.button:hover {
+  background-color: #ddd;
+  color:black;
+}
+/* Header/logo Title */
+.header {
+    padding: 50px;
+    text-align: center;
+    background: #313;
+    color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #323;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    background-color: white;
+    padding: 30px;
+}
+
+/* Main column */
+.main {   
+    background-color: white;
+    padding: 10px;
+	min-height:900px;
+	margin-bottom:100px;
+}
+/* Footer */
+.col-lg-12,.col-sm-12 {
+	font-size:15px;
+    background: #323;
+	color:white;
+
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
