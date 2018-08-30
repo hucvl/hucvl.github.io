@@ -1,5 +1,8 @@
 *{
     box-sizing: border-box;
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
 }
 body{
 	background-color:#E0E0E0;
