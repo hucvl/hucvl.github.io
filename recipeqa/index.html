@@ -176,6 +176,10 @@ body {
       var item = data.leaderboard[i];
       console.log(item)
       item.rank = i + 1;
+      item.scores['textual_cloze']=parseFloat(item.scores['textual_cloze']).toFixed(3)
+      item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
+      item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
+      item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
       var created = item['submission']['created']
       var submissionInfo = item['submission']['description'];
       item.created = moment.unix(created).format('YYYY-MM-DD, h:mm:ss A');
