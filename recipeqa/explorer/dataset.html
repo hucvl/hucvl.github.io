@@ -7685,7 +7685,7 @@ p {
 <h3>Source</h3>
 <p> source text</p>
 <h3>Questions</h3>
-<p>Questions consist of 5 different types. Each type of questions tests the
+<p>Questions consist of 4 different types. Each type of questions tests the
 different aspect of comprehension ability of the models. Question types are: </p>
 <ul>
 		<li><b>Visual Coherence</b></li>
@@ -7694,8 +7694,6 @@ different aspect of comprehension ability of the models. Question types are: </p
 		<ul><li>text</li></ul>
 		<li><b>Visual Ordering</b></li>
 		<ul><li>text</li></ul>
-		<li><b>Guess The Recipe</b></li>
-		<ul><li>txt</li></ul>
 		<li><b>Textual Cloze</b></li>
 		<ul><li>text</li></ul>
 </ul>
@@ -7925,68 +7923,6 @@ investigate the structure of each question type below</p>
                 "Choose the correct order of images to make a story"
             ], 
             "task": "visual_ordering"
-        } 
-</code></pre>
-<h4>Guess The Recipe:</h4>
-<pre><code>
-        {
-            "recipe_id": "coconut-brownies", 
-            "context_modality": [
-                "body", 
-                "title", 
-                "videos"
-            ], 
-            "split": "val", 
-            "context": [
-                {
-                    "body": "100g Cocoa100g Butter - The quantity of butter depends on how fudgy you want your brownie to be. The minimum amount you should use to get a normal brownie texture is 100g. In case you wanted a very fudgy brownie, I'd set the maximum at 250g200g Sugar4 Eggs100g Self-Raising Flour100g Dried Coconut", 
-                    "id": 1, 
-                    "videos": [], 
-                    "title": "Ingredients"
-                }, 
-                {
-                    "body": "In a saucepan:- At low temperature, melt the butter- Add the sugar and stir till you get a homogeneous mix- Add the cocoa and continue stirring so the mixture doesn't catchWhen the cocoa mixture is melted and combined cool sightly.", 
-                    "id": 2, 
-                    "videos": [], 
-                    "title": "Hot Mixture"
-                }, 
-                {
-                    "body": "To avoid curdling in hot preparations with eggs, we have to cool the mixture before we add the eggs. So once it's cooled:- Stir in the eggs till you get a homogeneous mixture- Add the flour- Add the coconut", 
-                    "id": 3, 
-                    "videos": [], 
-                    "title": "Cold Mixture"
-                }, 
-                {
-                    "body": "- Bake the brownie for 45 min at 180\u00baC (356F) on a middle shelf (check after 30 min and cover with another piece of baking parchment if the crust is browning too much)- Cool in and cut into squares", 
-                    "id": 4, 
-                    "videos": [], 
-                    "title": "Baking"
-                }, 
-                {
-                    "body": "For the presentation I suggest to peel 3 mandarine sections and dust some caster sugar on the brownie. I also put a dried cranberrie on top of the brownie to add a touch of colour/contrast to the composition.", 
-                    "id": 5, 
-                    "videos": [], 
-                    "title": "Presentation"
-                }
-            ], 
-            "choice_list": [
-                "Easy Peel Hard Boiled Eggs", 
-                "Homemade Gourmet Ice Cream With  Exquisite Toppings", 
-                "Coconut Brownies", 
-                "Pizza Rolls With Cheddar Cheese and Chorizo Recipe"
-            ], 
-            "answer": 2, 
-            "qid": "5000-4534-1-2-3-4", 
-            "question_modality": [
-                "images"
-            ], 
-            "question": [
-                "coconut-brownies_2_1.jpg", 
-                "coconut-brownies_3_1.jpg", 
-                "coconut-brownies_4_1.jpg", 
-                "coconut-brownies_5_1.jpg"
-            ], 
-            "task": "captioning"
         } 
 </code></pre>
 <h4>Textual Cloze:</h4>

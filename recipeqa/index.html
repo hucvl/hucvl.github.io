@@ -15,32 +15,50 @@
 </div>
 <div class="navbar">
   <a href="#">Home</a>
-  <a href="explorer/dataset.html">Explore</a>
+  <!-- <a href="explorer/dataset.html">Explore</a>-->
   <!--<a href="#" class="right">Link</a> -->
 </div>
 <div class="col-lg-4 col-sm-4">
   <div class="side">
-      <h2> RecipeQA Challenge</h2>
-      <h5>Description:</h5>
-      <p>text</p>
-      <h3>Evaluation and Submission</h3>
+      <h3>What is RecipeQA? </h3>
+	  <hr>
+      <p>RecipeQA is a dataset for multimodal comprehension of cooking recipes. It consists of over 36K question-answer pairs automatically generated from approximately 20K unique recipes with step-by-step instructions and images. Each question in RecipeQA involves multiple modalities such as titles, descriptions or images, and working towards an answer requires (i) joint understanding of images and text, (ii) capturing the temporal flow of events, and (iii) making sense of procedural knowledge.
+</p>
+	  <a href="#" target="_blank"><button class="button">RecipeQA Paper</button></a>
+	  <br><br>
+	  <p>To better know about RecipeQA, please read our comprehensive datasheet documenting and describing the details about its creation, strengths and limitations.</p>
+	  <a href="#"download="recipeqa-datasheet.pdf"><button class="button"><i class="fa  fa-download"></i>RecipeQA Datasheet</button></a>
+	  <br><br>
+	  <h3>What makes RecipeQA different?</h3>
+	  <hr>
+	  <p>RecipeQA is meant to facilitate research on comprehending procedural knowledge in a multimodal setting where cooking recipes are used as the test case. It differs from existing reading comprehension datasets in the following ways: (1) it leverages data from real natural language found online, (2) the multimodal aspects of the questions makes the benchmark less gameable, preventing questions from easily answerable through shallow signals, and (3) it involves a large number of images which are taken by ordinary people in unconstrained environments.
+</p>
+	<h3>Getting Started</h3>
+	<hr>
+	<p>Browse the examples in RecipeQA:</p>
+	  <a href="https://hucvl.github.io/recipeqa/explorer/dataset.html"><button class="button">Explore RecipeQA</button></a>
+	  <p>Download a copy of the RecipeQA dataset in json format:</p>
+	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (45.5 MB)</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (9 MB)</button></a>
 	  <br>
-	  <p>Training dataset and a dev-set of RecipeQA Challenge are below.</p>
-	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Training Dataset</button></a>
-	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_val.json"><button class="button"><i class="fa fa-download"></i> Dev Set</button></a>
-	  <br><br>
-      <p>To evaluate your models, we provide an evaluation script that will be
-	  used for the official evaluation, along with a sample prediction file. Evaluation script can be run as:<br>
-	  <span style="background-color:#C0C0C0"> <b>python evaluate.py
-					  {path-to-prediction-file} {path-to-dev-set path-to-output-file}</b></span></p>
+	 <h3>Evaluation</h3>
+	<hr>
+	 <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
+	 <code>python evaluate.py {path-to-prediction-file} {path-to-dev-set path-to-output-file}</code>
+	 <br><br>
 	  <a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
-	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (Dev Set)</button></a>
-	  <br><br>
-	  <p>We used CodaLab platform to retrieve submisions of models of
-	  competitors. CodaLab also provides a good competition creation and
-	  handling mechanism so that we can test your models with private dataset
-	  easily.</p>
+	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (on Validation Set)</button></a>
+	  <h3>Submission</h3>
+	  <hr>
+	  <p>Once you are satisfied with your model performance on the validation set, you can submit it to get the official score on the test set. To preserve the integrity of the test results, we do not release the test set to the public. Follow this tutorial on how to submit your model for an official evaluation:
+</p>
 	  <a href="https://worksheets.codalab.org/worksheets/0x44226bd1e87546f1bdaea162090c4a7d/" target="_blank"><button class="button"> Submission via CodaLab</button></a>
+	  <h3>Licence</h3>
+	  <hr>
+	 <p>RecipeQA contains question answer pairs generated from copyright free recipes found online under a variety of licences. The corresponding licence for each recipe is also provided in the dataset, see recipes.json.</p> 
+	 <h3>Have Questions?</h3>
+	 <hr>
+	 <p>Ask us questions at our google group <a href="https://groups.google.com/forum/#!forum/recipeqa">google group</a> or at<a href="mailto:semih.yagcioglu@hacettepe.edu.tr"> semih.yagcioglu@hacettepe.edu.tr</a></p>
   </div>
   </div>
   <div class="col-lg-8 col-sm-8">
@@ -67,7 +85,7 @@ body {
   <body>
 <div id="container" style="width: 100%"></div>
     <script id="template" type="x-tmpl-mustache">
-  <h2>Leaderboard <img src="static/images/cup.png" width=6%  alt="trophycup"></h2>
+  <h2>Top Chefs <img src="static/images/chefHat.png" width=6%  alt="hat"></h2>
   <br>
 <h3>Textual Cloze</h3>
   <table class="table table-condensed">
