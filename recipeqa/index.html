@@ -44,7 +44,7 @@
 	 <h3>Evaluation</h3>
 	<hr>
 	 <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
-	 <code>python evaluate.py {path-to-prediction-file} {path-to-dev-set path-to-output-file}</code>
+	 <code>python evaluate.py {path-to-prediction-file} {path-to-dev-set} {path-to-output-file}</code>
 	 <br><br>
 	  <a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
 	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (on Validation Set)</button></a>
@@ -92,19 +92,17 @@ body {
     <thead>
       <tr>
         <th>Rank</th>
-        <th>Submitter</th>
+        <th>Model</th>
         <th>Latest Submission</th>
         <th>Score</th>
-        <th>Description</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
         <th>{{{rank}}}</th>
-        <td>{{submission.user_name}}</td>
+        <td>{{submission.description}}</td>
         <td>{{created}}</td>
         <td>{{scores.textual_cloze}}</td>
-        <td>{{submission.description}}</td>
       </tr>
       {{/leaderboard}}
     </tbody>
@@ -116,19 +114,17 @@ body {
     <thead>
       <tr>
         <th>Rank</th>
-        <th>Submitter</th>
+        <th>Model</th>
         <th>Latest Submission</th>
         <th>Score</th>
-        <th>Description</th>
       </tr>
     </thead>
  <tbody>
     {{#leaderboard}}
         <th>{{{rank}}}</th>
-        <td>{{submission.user_name}}</td>
+        <td>{{submission.description}}</td>
         <td>{{created}}</td>
         <td>{{scores.visual_cloze}}</td>
-        <td>{{submission.description}}</td>
       </tr>
       {{/leaderboard}}
     </tbody>
@@ -141,19 +137,17 @@ body {
     <thead>
       <tr>
         <th>Rank</th>
-        <th>Submitter</th>
+        <th>Model</th>
         <th>Latest Submission</th>
         <th>Score</th>
-        <th>Description</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
         <th>{{{rank}}}</th>
-        <td>{{submission.user_name}}</td>
+        <td>{{submission.description}}</td>
         <td>{{created}}</td>
         <td>{{scores.visual_ordering}}</td>
-        <td>{{submission.description}}</td>
       </tr>
       {{/leaderboard}}
     </tbody>
@@ -166,19 +160,17 @@ body {
     <thead>
       <tr>
         <th>Rank</th>
-        <th>Submitter</th>
+        <th>Model</th>
         <th>Latest Submission</th>
         <th>Score</th>
-        <th>Description</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
         <th>{{{rank}}}</th>
-        <td>{{submission.user_name}}</td>
+        <td>{{submission.description}}</td>
         <td>{{created}}</td>
         <td>{{scores.visual_coherence}}</td>
-        <td>{{submission.description}}</td>
       </tr>
       {{/leaderboard}}
     </tbody>
