@@ -7682,36 +7682,30 @@ p {
 </style>
 </head>
 <h1>RecipeQA Challenge Dataset</h1>
-<h3>Source</h3>
-<p> source text</p>
-<h3>Questions</h3>
+<h3><b>Questions<b></h3>
 <p>Questions consist of 4 different types. Each type of questions tests the
 different aspect of comprehension ability of the models. Question types are: </p>
 <ul>
 		<li><b>Visual Coherence</b></li>
-		<ul><li>text</li></ul>
 		<li><b>Visual Cloze</b></li>
-		<ul><li>text</li></ul>
 		<li><b>Visual Ordering</b></li>
-		<ul><li>text</li></ul>
 		<li><b>Textual Cloze</b></li>
-		<ul><li>text</li></ul>
 </ul>
-<h3>Structure</h3>
+<h3><b>Structure</b></h3>
 <p>Dataset of the RecipeQA Challenge is held in JSON format so that
 parsing all context of a question of for a recipe can be done easily. Keys
 of the dataset are below:</p>
 
 <ul>
-		<li><b>recipe_id:</b> Name of the recipe.</li>
-		<li><b>context_modality:</b> Contents of the context.</li>
-		<li><b>context:</b>Context of steps of the recipe.</li>
-		<li><b>choice_list:</b>Choice list of the question.</li>
-		<li><b>answer:</b>Answer of the question.</li>
-		<li><b>qid:</b>ID of the question.</li>
-		<li><b>question_modality:</b>Question model that can be either image or title.</li>
-		<li><b>question:</b>Question clause or question images.</li>
-		<li><b>task:</b>Type of the question.</li>
+		<li><b><code>recipe_id:</code></b> Name of the recipe.</li>
+		<li><b><code>context_modality:</code></b> Contents of the context.</li>
+		<li><b><code>context:</code></b>Context of steps of the recipe.</li>
+		<li><b><code>choice_list:</code></b>Choice list of the question.</li>
+		<li><b><code>answer:</code></b>Answer of the question.</li>
+		<li><b><code>qid:</code></b>ID of the question.</li>
+		<li><b><code>question_modality:</code></b>Question model that can be either image or title.</li>
+		<li><b><code>question:</code></b>Question clause or question images.</li>
+		<li><b><code>task:</code></b>Type of the question.</li>
 </ul>
 <p>Structure of the dataset vary according to question type. Therefore, you can
 investigate the structure of each question type below</p>
