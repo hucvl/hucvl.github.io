@@ -6,6 +6,11 @@
  <link rel="icon" href="static/images/favicon.png">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
  
+<style>
+p.rank{
+	padding-left:30px;
+}
+</style>
 </head>
 <body>
 
@@ -38,13 +43,15 @@
 	<p>Browse the examples in RecipeQA:</p>
 	  <a href="https://hucvl.github.io/recipeqa/explorer/dataset.html"><button class="button">Explore RecipeQA</button></a>
 	  <p>Download a copy of the RecipeQA dataset in json format:</p>
-	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (45.5 MB)</button></a>
-	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (9 MB)</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (150 MB)</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (18 MB)</button></a>
+	  <p>Download copies of the images:</p>
+	  <a href="https://drive.google.com/uc?export=view&id=18Ri_ASUARtwMUDC4ZIj1ZUN8d_eCXkbo" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (5.2 GB)</button></a>
 	  <br>
 	 <h3>Evaluation</h3>
 	<hr>
 	 <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
-	 <code>python evaluate.py {path-to-prediction-file} {path-to-dev-set} {path-to-output-file}</code>
+	 <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set} {path-to-output-file}</code>
 	 <br><br>
 	  <a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
 	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (on Validation Set)</button></a>
@@ -93,15 +100,13 @@ body {
       <tr>
         <th>Rank</th>
         <th>Model</th>
-        <th>Latest Submission</th>
         <th>Score</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
-        <th>{{{rank}}}</th>
+		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
         <td>{{submission.description}}</td>
-        <td>{{created}}</td>
         <td>{{scores.textual_cloze}}</td>
       </tr>
       {{/leaderboard}}
@@ -115,15 +120,13 @@ body {
       <tr>
         <th>Rank</th>
         <th>Model</th>
-        <th>Latest Submission</th>
         <th>Score</th>
       </tr>
     </thead>
  <tbody>
     {{#leaderboard}}
-        <th>{{{rank}}}</th>
+		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
         <td>{{submission.description}}</td>
-        <td>{{created}}</td>
         <td>{{scores.visual_cloze}}</td>
       </tr>
       {{/leaderboard}}
@@ -138,15 +141,13 @@ body {
       <tr>
         <th>Rank</th>
         <th>Model</th>
-        <th>Latest Submission</th>
         <th>Score</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
-        <th>{{{rank}}}</th>
+		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
         <td>{{submission.description}}</td>
-        <td>{{created}}</td>
         <td>{{scores.visual_ordering}}</td>
       </tr>
       {{/leaderboard}}
@@ -161,15 +162,13 @@ body {
       <tr>
         <th>Rank</th>
         <th>Model</th>
-        <th>Latest Submission</th>
         <th>Score</th>
       </tr>
     </thead>
     <tbody>
     {{#leaderboard}}
-        <th>{{{rank}}}</th>
+		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
         <td>{{submission.description}}</td>
-        <td>{{created}}</td>
         <td>{{scores.visual_coherence}}</td>
       </tr>
       {{/leaderboard}}
@@ -190,9 +189,10 @@ body {
       item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
       item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
       item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
+	  var submission = item["submission"]
       var created = item['submission']['created']
       var submissionInfo = item['submission']['description'];
-      item.created = moment.unix(created).format('YYYY-MM-DD, h:mm:ss A');
+      item.created = moment.unix(created).format('MMM DD, YYYY');
       item.config = data.config;
     }
     var rendered = Mustache.render(template, data);
