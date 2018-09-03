@@ -5,13 +5,17 @@ a.fo:visited{
 	color:#FF9933;
 }
 h1.big,p,h2,h3{
-	 font-family: 'HankenGroteskRegular'; 
+   font-family: 'HankenGroteskRegular'; 
    font-weight: normal; 
    font-style: normal; 
 }
+li {
+	font-weight: normal;
+}
+
 .sidenav {
     height: 100%;
-    width: 17%;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;

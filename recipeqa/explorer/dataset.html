@@ -27,11 +27,11 @@ body {
 }
 .main-sidebar,
 .left-side {
-  width: 150px;
+  width: 200px;
 }
 </style>
  </head>
- <body >
+ <body>
 
 <div class="sidenav">
 		<div class="header"><h1><i class="fas fa-utensils"></i>  RecipeQA</h1></div>
@@ -7668,17 +7668,19 @@ body {
 			</div>
 </div>
 
-<div style="margin-left:20%">
+<div style="margin-left:200px">
 <div class="container">
 	
 <head>
 <style>
+
 pre code {
   background-color: #eee;
-  border: 5px solid #999;
+  border: 2px solid #999;
   display: block;
-	width: 95%;
-	overflow:auto;
+  width: 95%;
+  overflow:auto;
+  font-weight: normal;
 }
 p {
 	font-size: 18px;
@@ -7687,29 +7689,30 @@ p {
 </head>
 <h1>RecipeQA Challenge Dataset</h1>
 <h3><b>Questions<b></h3>
-<p>Questions consist of 4 different types. Each type of questions tests the
-different aspect of comprehension ability of the models. Question types are: </p>
+<p>There are 4 different types of questions in RecipeQA. Each of these question types tests a specific comprehension skill. These question types are: </p>
 <ul>
-		<li><b>Visual Coherence</b></li>
-		<li><b>Visual Cloze</b></li>
-		<li><b>Visual Ordering</b></li>
-		<li><b>Textual Cloze</b></li>
+		<li>Visual Coherence</li>
+		<li>Visual Cloze</li>
+		<li>Visual Ordering</li>
+		<li>Textual Cloze</li>
 </ul>
+<br>
+
 <h3><b>Structure</b></h3>
 <p>Dataset of the RecipeQA Challenge is held in JSON format so that
 parsing all context of a question of for a recipe can be done easily. Keys
 of the dataset are below:</p>
 
 <ul>
-		<li><b><code>recipe_id:</code></b> Name of the recipe.</li>
-		<li><b><code>context_modality:</code></b> Contents of the context.</li>
-		<li><b><code>context:</code></b>Context of steps of the recipe.</li>
-		<li><b><code>choice_list:</code></b>Choice list of the question.</li>
-		<li><b><code>answer:</code></b>Answer of the question.</li>
-		<li><b><code>qid:</code></b>ID of the question.</li>
-		<li><b><code>question_modality:</code></b>Question model that can be either image or title.</li>
-		<li><b><code>question:</code></b>Question clause or question images.</li>
-		<li><b><code>task:</code></b>Type of the question.</li>
+		<li><code>recipe_id:</code> Name of the recipe.</li>
+		<li><code>context_modality:</code> Contents of the context.</li>
+		<li><code>context:</code> Context of steps of the recipe.</li>
+		<li><code>choice_list:</code> Choice list of the question.</li>
+		<li><code>answer:</code> Answer of the question.</li>
+		<li><code>qid:</code> ID of the question.</li>
+		<li><code>question_modality:</code> Question model that can be either image or title.</li>
+		<li><code>question:</code> Question clause or question images.</li>
+		<li><code>task:</code> Type of the question.</li>
 </ul>
 <p>Structure of the dataset vary according to question type. Therefore, you can
 investigate the structure of each question type below</p>
