@@ -43,14 +43,14 @@ li {
 }
 
 .active {
-    background-color: #323;
+    background-color: #313;
     color: white;
 }
 
 
 .dropdown-container {
     display: none;
-    background-color: #323;
+    background-color: #313;
     padding-left: 8px;
 }
 
