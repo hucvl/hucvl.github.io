@@ -14,14 +14,7 @@ li {
 }
 
 .sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     background-color: #313;
-    overflow-x: hidden;
     padding-top: 20px;
 }
 
@@ -33,7 +26,6 @@ li {
     display: block;
     border: none;
     background: none;
-    width: 100%;
     text-align: left;
     cursor: pointer;
     outline: none;
@@ -69,4 +61,8 @@ li {
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+.col-md-3 {
+	background-color: #323;
 }
