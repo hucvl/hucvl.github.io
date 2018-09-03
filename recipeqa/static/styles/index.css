@@ -92,21 +92,27 @@ h1.big,p,h2,h3{
 	font-size:15px;
     background: #323;
 	color:white;
-
+	width: 100%;
 }
 
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-    .row {   
-        flex-direction: column;
-    }
+.col-md-5 {
+	font-size:15px;
+    background: white;
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-    .navbar a {
-        float: none;
-        width: 100%;
-    }
+.col-md-7 {
+	font-size:15px;
+    background: white;
+}
+
+.box{
+  box-model: border-box;
+  border: 24px solid transparent;
+  background-clip:padding-box;
+}
+
+.box12{
+  box-model: border-box;
+  border: 10px solid transparent;
+  background-clip:padding-box;
 }
