@@ -41,11 +41,15 @@ p.rank{
   <h3>What is RecipeQA? </h3>
       <p>RecipeQA is a dataset for multimodal comprehension of cooking recipes. It consists of over 36K question-answer pairs automatically generated from approximately 20K unique recipes with step-by-step instructions and images. Each question in RecipeQA involves multiple modalities such as titles, descriptions or images, and working towards an answer requires (i) joint understanding of images and text, (ii) capturing the temporal flow of events, and (iii) making sense of procedural knowledge.
 </p>
+	  <hr>
+	  <center>
 	  <a href="#" target="_blank"><button class="button">RecipeQA Paper</button></a>
-	  <br><br>
+	  </center>
+	  <hr>
 	  <p>To better know about RecipeQA, please read our comprehensive datasheet documenting and describing the details about its creation, strengths and limitations.</p>
+	  <center>
 	  <a href="recipeqa-datasheet.pdf"download="recipeqa-datasheet.pdf"><button class="button">RecipeQA Datasheet</button></a>
-	  <br><br>
+	  </center>
 	  <hr>
 	  <h3>What makes RecipeQA different?</h3>
 	  <p>RecipeQA is meant to facilitate research on comprehending procedural knowledge in a multimodal setting where cooking recipes are used as testbed. It differs from existing reading comprehension datasets in the following ways: (1) it leverages data from real natural language found online, (2) the multimodal aspects of the questions makes the benchmark less gameable, preventing questions from easily answerable through shallow signals, and (3) it involves a large number of images which are taken by ordinary people in unconstrained environments.
@@ -53,25 +57,36 @@ p.rank{
 	<hr>
 	<h3>Getting Started</h3>
 	<p>Browse the examples in RecipeQA:</p>
+	  <center>
 	  <a href="https://hucvl.github.io/recipeqa/explorer/dataset.html"><button class="button">Explore RecipeQA</button></a>
+	  </center>
+	  <hr>
 	  <p>Download a copy of the RecipeQA dataset in json format:</p>
+	  <center>
 	  <a href="https://drive.google.com/uc?export=view&id=1DiI8x11_ZdRFyyPnEZvy_jJviHtCa-_O"download="recipeqa36k_train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (150 MB)</button></a>
 	  <a href="https://drive.google.com/uc?export=view&id=1Cfzr8DJs3lIz6Dhp22Q9l17nKdFYolv8" download="recipeqa36k_val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (18 MB)</button></a>
+	  </center>
+	  <br>
 	  <p>Download copies of the images:</p>
+	  <center>
 	  <a href="https://drive.google.com/uc?export=view&id=18Ri_ASUARtwMUDC4ZIj1ZUN8d_eCXkbo" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (5.2 GB)</button></a>
+	  </center>
 	  <br>
 	<hr>
 	<h3>Evaluation</h3>
 	 <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
 	 <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set} {path-to-output-file}</code>
 	 <br><br>
-	  <a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
-	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (on Validation Set)</button></a>
+	  <center><a href="https://drive.google.com/uc?export=view&id=1U90a-nJ22ePx4-TaLEH6a-cYhzWR63BH" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
+	  <a href="https://drive.google.com/uc?export=view&id=1zOuyNnSNq8vDM5JkWqshACStxMqSBeq3" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File<br>(on Validation Set)</button></a>
+	  </center>
 	  <hr>
 	  <h3>Submission</h3>
 	  <p>Once you are satisfied with your model performance on the validation set, you can submit it to get the official score on the test set. To preserve the integrity of the test results, we do not release the test set to the public. Follow this tutorial on how to submit your model for an official evaluation:
 </p>
+	  <center>
 	  <a href="#" target="_blank"><button class="button"> Submission Tutorial (TBA)</button></a>
+	  </center>
 	  <hr>
 	  <h3>Licence</h3>
 	 <p>RecipeQA contains question answer pairs generated from copyright free recipes found online under a variety of licences. The corresponding licence for each recipe is also provided in the dataset, see recipes.json.</p> 

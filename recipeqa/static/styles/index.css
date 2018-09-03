@@ -16,9 +16,8 @@ h1.big,p,h2,h3{
 
 .button {
     background-color: #323; /* Green */
-    border: none;
     color: white;
-    padding: 20px;
+    padding: 8px;
 	width: 80%;
     text-align: center;
     text-decoration: none;
@@ -26,6 +25,8 @@ h1.big,p,h2,h3{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border: 2px solid #323;
+    border-radius: 32px!important;
 }
 /* Darker background on mouse-over */
 .button:hover {
