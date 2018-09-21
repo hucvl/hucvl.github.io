@@ -7714,6 +7714,7 @@ of the dataset are below:</p>
 		<li><code>answer:</code> Answer of the question.</li>
 		<li><code>qid:</code> ID of the question.</li>
 		<li><code>question_modality:</code> Question model that can be either image or title.</li>
+		<li><code>question_text:</code> Question text specific to the task.</li>
 		<li><code>question:</code> Question clause or question images.</li>
 		<li><code>task:</code> Type of the question.</li>
 </ul>
@@ -7785,6 +7786,7 @@ investigate the structure of each question type below</p>
                 "home-brew-heater-controller_1_1.jpg"
             ], 
             "task": "visual_coherence"
+	    "question_text": "Select the incoherent image in the following sequence of images."
         } 
 </code>
 </pre>
@@ -7842,6 +7844,7 @@ investigate the structure of each question type below</p>
                 "@placeholder"
             ], 
             "task": "visual_cloze"
+	    "question_text": "Choose the best image for the missing blank to correctly complete the recipe."
         } 
 </code></pre>
 <h4>Visual Ordering:</h4>
@@ -7927,6 +7930,7 @@ investigate the structure of each question type below</p>
                 "Choose the correct order of images to make a story"
             ], 
             "task": "visual_ordering"
+	    "question_text": "What is the correct order of the images?"
         } 
 </code></pre>
 <h4>Textual Cloze:</h4>
@@ -8013,6 +8017,7 @@ investigate the structure of each question type below</p>
                 "Finished Project"
             ], 
             "task": "textual_cloze"
+	    "question_text": "Choose the best text for the missing blank to correctly complete the recipe."
         } 
 </code></pre>
 
