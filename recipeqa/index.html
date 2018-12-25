@@ -228,23 +228,22 @@ body {
   Mustache.parse(template);
   $.getJSON(LEADERBOARD_JSON).done(function (data) {
     for (var i = 0; i < data.leaderboard.length; i++) {
-      if(data.leaderboard[i].scores.textual_cloze == 'null' || data.leaderboard[i].scores.textual_cloze == 'null' || 
-      data.leaderboard[i].scores.textual_cloze == 'null' || data.leaderboard[i].scores.textual_cloze == 'null'){
-        continue;
-      }else{
+      console.log(i)
+      console.log(data.leaderboard[i])
+      if(data.leaderboard[i].scores.textual_cloze != null || data.leaderboard[i].scores.visual_cloze != null || 
+      data.leaderboard[i].scores.visual_coherence != null || data.leaderboard[i].scores.visual_ordering != null){
         var item = data.leaderboard[i];
-      item.rank = i + 1;
-      item.scores['textual_cloze']=parseFloat(item.scores['textual_cloze']).toFixed(3)
-      item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
-      item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
-      item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
+        item.rank = i + 1;
+        item.scores['textual_cloze']=parseFloat(item.scores['textual_cloze']).toFixed(3)
+        item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
+        item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
+        item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
+        var submission = item["submission"]
+        var created = item['submission']['created']
+        var submissionInfo = item['submission']['description'];
+        item.created = moment.unix(created).format('MMM DD, YYYY');
+        item.config = data.config;
       }
-      
-	  var submission = item["submission"]
-      var created = item['submission']['created']
-      var submissionInfo = item['submission']['description'];
-      item.created = moment.unix(created).format('MMM DD, YYYY');
-      item.config = data.config;
     }
     var rendered = Mustache.render(template, data);
     $('#container').html(rendered);
@@ -272,3 +271,4 @@ body {
 		</div>
 </body>
 </html>
+
