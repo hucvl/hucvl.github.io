@@ -1,311 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> <title>RecipeQA</title> <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/styles/index.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
-<link rel="icon" href="static/images/favicon.png">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> 
-<html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" integrity="sha256-iaqfO5ue0VbSGcEiQn+OeXxnxAMK2+QgHXIDA5bWtGI=" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous"></script>
-<style>
-p.rank{
-	padding-left:30px;
-}
-body {
-	font-family: 'HankenGroteskRegular';
-	background-color:#E0E0E0;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-		<h1><i class="em-svg em-shallow_pan_of_food"></i>  RecipeQA</h1>
-		<h3>A Dataset for Multimodal Comprehension of Cooking Recipes</h3>
-</div>
-<div class="container">
-    <div class="row">
-      <div class="col-md-5 box ">
-      <h3>What is RecipeQA? </h3>
-      <p>RecipeQA is a dataset for multimodal comprehension of cooking recipes. It consists of over 36K question-answer pairs automatically generated from approximately 20K unique recipes with step-by-step instructions and images. Each question in RecipeQA involves multiple modalities such as titles, descriptions or images, and working towards an answer requires (i) joint understanding of images and text, (ii) capturing the temporal flow of events, and (iii) making sense of procedural knowledge.
-</p>
-<hr>
-<center>
-<a href="https://arxiv.org/abs/1809.00812" target="_blank"><button class="button">RecipeQA Paper</button></a>
-</center>
-<center>
-<a href="https://docs.google.com/presentation/d/1mvuu4QTfOP6CHUfbLdXMisleiH7kIlxpsU1bgyT0oTw/edit?usp=sharing" target="_blank"><button class="button">EMNLP 2018 Talk Slides</button></a>
-</center>
-<hr>
-	  <p>To better know about RecipeQA, please read our comprehensive datasheet documenting and describing the details about its creation, strengths and limitations.</p>
-	  <center>
-        <a href="recipeqa-datasheet.pdf" target="_blank"><button class="button">RecipeQA Datasheet</button></a>
-    </center>
-	  <hr>
-	  <h3>What makes RecipeQA different?</h3>
-    <p>RecipeQA is meant to facilitate research on comprehending procedural knowledge in a multimodal setting where cooking recipes are used as testbed. It differs from existing reading comprehension datasets in the following ways: (1) it leverages data from real natural language found online, (2) the multimodal aspects of the questions makes the benchmark less gameable, preventing questions from easily answerable through shallow signals, and (3) it involves a large number of images which are taken by ordinary people in unconstrained environments.</p>
-    <center>
-        <a href="https://medium.com/hucvl-stories/introducing-recipeqa-a-challenge-dataset-for-multimodal-comprehension-of-cooking-recipes-478c46e6a80c" target="_blank"><button class="button">Blog post</button></a>
-    </center>
-    <hr>
-	<h3>Getting Started</h3>
-  <p>Browse the examples in RecipeQA:</p>
-  <center>
-      <a href="https://hucvl.github.io/recipeqa/explorer/dataset.html"><button class="button">Explore RecipeQA</button></a>
-  </center>
-  <hr>
-    <p>Download a copy of the RecipeQA dataset in json format:</p>
-    <center>
-        <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/train.json" download="train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (150 MB)</button></a>
-        <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/val.json" download="val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (18 MB)</button></a>
-        <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/images.zip" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (1.9 GB)</button></a>
-        </center>
-        <hr>
-        <p>Download the recipes used in the questions:</p>
-        <center>
-        <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/recipes.zip" download="recipes.zip"><button class="button"><i class="fa fa-download"></i> Download Validation Set Recipes (400 MB)</button></a>
-        </center>
-	  <br>
-	<hr>
-	<h3>Evaluation</h3>
-	 <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
-	 <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set} {path-to-output-file}</code>
-	 <br><br>
-   <center><a href="evaluate.py" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
-	  <a href="sample_predictions.json" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File<br>(on Validation Set)</button></a>
-	  </center>
-	  <hr>
-	  <h3>Submission</h3>
-	  <p>Once you are satisfied with your model performance on the validation set, you can submit it to get the official score on the test set. To preserve the integrity of the test results, we do not release the test set to the public. Follow this tutorial on how to submit your model for an official evaluation:
-</p>
-	  <center>
-	  <a href="https://worksheets.codalab.org/worksheets/0x44226bd1e87546f1bdaea162090c4a7d/" target="_blank"><button class="button"> Submission Tutorial</button></a>
-	  </center>
-	  <hr>
-	  <h3>Licence</h3>
-	 <p>RecipeQA contains question answer pairs generated from copyright free recipes found online under a variety of licences. The corresponding licence for each recipe is also provided in the dataset, see recipes.json.</p> 
-	 <hr>	 
-	 <h3>Have Questions?</h3>
-	 <p>Ask us questions at our <a href="https://groups.google.com/forum/#!forum/recipeqa">google group</a> or at <a href="mailto:semih.yagcioglu@hacettepe.edu.tr"> semih.yagcioglu@hacettepe.edu.tr</a></p>
-  </div>
-  <div class="col-md-7 box">
-      <div id="container" style="width: 100%"></div>
-      <script id="template" type="x-tmpl-mustache">
-  <h2>Top Chefs <img src="static/images/chefhat.png" width=6%  alt="hat"></h2>
-  <br>
-<h3>Textual Cloze</h3>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Model</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th></p><span class="date label label-default">AUG 29, 2018</span></th>
-                <td>HUMAN</td>
-                <td></style>73.60</b></td>
-              </tr>
-      <tr>
-		<th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
-        <td>Impatient Reader (Multimodal) (baseline)</td>
-        <td></style>29.07</b></td>
-      </tr>
-      <tr>
-      	<th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
-        <td>Impatient Reader (Unimodal) (baseline)</td>
-        <td>28.03</td>
-      </tr>
-      <tr>
-      	<th><p class="rank">3</p><span class="date label label-default">AUG 29, 2018</span></th>
-        <td>Hasty Student (baseline)</td>
-        <td>26.89</td>
-      </tr>
-      {{#submissions}}
-      <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
-          <td>{{submission.description}}</td>
-          <td>{{scores.textual_cloze}}</td>
-        </tr>
-      {{/submissions}}
-    </tbody>
-  </table>
-  <br>
-
-<h3>Visual Cloze</h3>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Model</th>
-        <th>Score</th>
-      </tr>
-    </thead>
- <tbody>
-    <tr>
-        <th></p><span class="date label label-default">AUG 29, 2018</span></th>
-            <td>HUMAN</td>
-            <td></style>77.60</b></td>
-          </tr>
-    <tr>
-    	<th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Impatient Reader (Multimodal) (baseline)</td>
-      <td><b>27.36</b></td>
-    </tr>
-    <tr>
-    	<th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Hasty Student (baseline)</td>
-      <td>27.35</td>
-    </tr>
-    {{#submissions}}
-		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
-        <td>{{submission.description}}</td>
-        <td>{{scores.visual_cloze}}</td>
-      </tr>
-      {{/submissions}}
-    </tbody>
-  </table>
-  <br>
-
-
-<h3>Visual Ordering</h3>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Model</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th></p><span class="date label label-default">AUG 29, 2018</span></th>
-                <td>HUMAN</td>
-                <td></style>81.60</b></td>
-              </tr>
-    <tr>
-    	<th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Hasty Student (baseline)</td>
-      <td><b>40.88</b></td>
-    </tr>
-    <tr>
-    	<th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Impatient Reader (Multimodal) (baseline)</td>
-      <td>26.74</td>
-    </tr>
-    {{#submissions}}
-		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
-        <td>{{submission.description}}</td>
-        <td>{{scores.visual_ordering}}</td>
-      </tr>
-    {{/submissions}}
-    </tbody>
-  </table>
-  <br>
-
-
-<h3>Visual Coherence</h3>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Model</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th></p><span class="date label label-default">AUG 29, 2018</span></th>
-                <td>HUMAN</td>
-                <td></style>64.00</b></td>
-              </tr>
-    <tr>
-    	<th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Hasty Student (baseline)</td>
-      <td><b>65.80</b></td>
-    </tr>
-    <tr>
-    	<th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
-      <td>Impatient Reader (Multimodal) (baseline)</td>
-      <td>28.08</td>
-    </tr>
-    {{#submissions}}
-		<th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
-        <td>{{submission.description}}</td>
-        <td>{{scores.visual_coherence}}</td>
-      </tr>
-      {{/submissions}}
-    </tbody>
-  </table>
-  </script>
+  <html lang="en">
+    <head>
+      <title>RecipeQA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--   CSS IMPORTS   -->
+        <link rel="stylesheet" href="static/styles/index.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+        <link rel="icon" href="static/images/favicon.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+         <!--   JS IMPORTS   -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" integrity="sha256-iaqfO5ue0VbSGcEiQn+OeXxnxAMK2+QgHXIDA5bWtGI=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous"></script>
+    </head>
+      <style>
+        p.rank{
+          padding-left:30px;
+        }
+        body {
+          font-family: 'HankenGroteskRegular';
+          background-color:#E0E0E0;
+        }
+      </style>
+      <body>
+      <div class="header">
+          <h1><i class="em-svg em-shallow_pan_of_food"></i>  RecipeQA</h1>
+          <h3>A Dataset for Multimodal Comprehension of Cooking Recipes</h3>
+      </div>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-5 box ">
+              <h3>What is RecipeQA? </h3>
+              <p>RecipeQA is a dataset for multimodal comprehension of cooking recipes. It consists of over 36K question-answer pairs automatically generated from approximately 20K unique recipes with step-by-step instructions and images. Each question in RecipeQA involves multiple modalities such as titles, descriptions or images, and working towards an answer requires (i) joint understanding of images and text, (ii) capturing the temporal flow of events, and (iii) making sense of procedural knowledge.</p>
+              <hr>
+                <center>
+                <a href="https://arxiv.org/abs/1809.00812" target="_blank"><button class="button">RecipeQA Paper</button></a>
+                <a href="https://docs.google.com/presentation/d/1mvuu4QTfOP6CHUfbLdXMisleiH7kIlxpsU1bgyT0oTw/edit?usp=sharing" target="_blank"><button class="button">EMNLP 2018 Talk Slides</button></a>
+              <hr>
+                <p>To better know about RecipeQA, please read our comprehensive datasheet documenting and describing the details about its creation, strengths and limitations.</p>
+                <a href="recipeqa-datasheet.pdf" target="_blank"><button class="button">RecipeQA Datasheet</button></a>
+              <hr>
+                <h3>What makes RecipeQA different?</h3>
+                <p>RecipeQA is meant to facilitate research on comprehending procedural knowledge in a multimodal setting where cooking recipes are used as testbed. It differs from existing reading comprehension datasets in the following ways: (1) it leverages data from real natural language found online, (2) the multimodal aspects of the questions makes the benchmark less gameable, preventing questions from easily answerable through shallow signals, and (3) it involves a large number of images which are taken by ordinary people in unconstrained environments.</p>
+                <a href="https://medium.com/hucvl-stories/introducing-recipeqa-a-challenge-dataset-for-multimodal-comprehension-of-cooking-recipes-478c46e6a80c" target="_blank"><button class="button">Blog post</button></a>
+              <hr>
+                <h3>Getting Started</h3>
+                <p>Browse the examples in RecipeQA:</p>
+                <a href="https://hucvl.github.io/recipeqa/explorer/dataset.html"><button class="button">Explore RecipeQA</button></a>
+              <hr>
+                <p>Download a copy of the RecipeQA dataset in json format:</p>
+                <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/train.json" download="train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (150 MB)</button></a>
+                <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/val.json" download="val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (18 MB)</button></a>
+                <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/images.zip" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (1.9 GB)</button></a>
+              <hr>
+                <p>Download the recipes used in the questions:</p>
+                <a href="https://vision.cs.hacettepe.edu.tr/files/recipeqa/recipes.zip" download="recipes.zip"><button class="button"><i class="fa fa-download"></i> Download Validation Set Recipes (400 MB)</button></a>
+                <br>
+              <hr>
+                <h3>Evaluation</h3>
+                <p>To evaluate your models, we provide an evaluation script that will be used for the official evaluation, along with a sample prediction file. To run the evaluation, use:</p>
+                <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set} {path-to-output-file}</code>
+                <br><br>
+                <a href="evaluate.py" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
+                <a href="sample_predictions.json" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File<br>(on Validation Set)</button></a>
+              <hr>
+                <h3>Submission</h3>
+                <p>Once you are satisfied with your model performance on the validation set, you can submit it to get the official score on the test set. To preserve the integrity of the test results, we do not release the test set to the public. Follow this tutorial on how to submit your model for an official evaluation:</p>
+                <a href="https://worksheets.codalab.org/worksheets/0x44226bd1e87546f1bdaea162090c4a7d/" target="_blank"><button class="button"> Submission Tutorial</button></a>
+                </center>
+              <hr>
+                <h3>Licence</h3>
+                <p>RecipeQA contains question answer pairs generated from copyright free recipes found online under a variety of licences. The corresponding licence for each recipe is also provided in the dataset, see recipes.json.</p> 
+              <hr>	 
+                <h3>Have Questions?</h3>
+                <p>Ask us questions at our <a href="https://groups.google.com/forum/#!forum/recipeqa">google group</a> or at <a href="mailto:semih.yagcioglu@hacettepe.edu.tr"> semih.yagcioglu@hacettepe.edu.tr</a></p>
+              </div>
+              <div class="col-md-7 box">
+                <div id="container" style="width: 100%"></div>
+                  <script id="template" type="x-tmpl-mustache">
+                    <h2>Top Chefs <img src="static/images/chefhat.png" width=6%  alt="hat"></h2>
+                    <br>
+                    <h3>Textual Cloze</h3>
+                    <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Rank</th>
+                          <th>Model</th>
+                          <th>Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
+                          <td>Impatient Reader (Multimodal) (baseline)</td>
+                          <td></style>29.07</b></td>
+                        </tr>
+                        <tr>
+                          <th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
+                          <td>Impatient Reader (Unimodal) (baseline)</td>
+                          <td>28.03</td>
+                        </tr>
+                        <tr>
+                          <th><p class="rank">3</p><span class="date label label-default">AUG 29, 2018</span></th>
+                          <td>Hasty Student (baseline)</td>
+                          <td>26.89</td>
+                        </tr>
+                        {{#submissions}}
+                          <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
+                          <td>{{submission.description}}</td>
+                          <td>{{scores.textual_cloze}}</td>
+                        </tr>
+                        {{/submissions}}
+                       </tbody>
+                      </table>
+                      <br>
+                      <h3>Visual Cloze</h3>
+                      <table class="table table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Rank</th>
+                            <th>Model</th>
+                            <th>Score</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Impatient Reader (Multimodal) (baseline)</td>
+                                <td><b>27.36</b></td>
+                              </tr>
+                              <tr>
+                                <th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Hasty Student (baseline)</td>
+                                <td>27.35</td>
+                              </tr>
+                              {{#submissions}}
+                                <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
+                                <td>{{submission.description}}</td>
+                                <td>{{scores.visual_cloze}}</td>
+                              </tr>
+                              {{/submissions}}
+                            </tbody>
+                        </table>
+                        <br>
+                        <h3>Visual Ordering</h3>
+                          <table class="table table-condensed">
+                            <thead>
+                              <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>Score</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Hasty Student (baseline)</td>
+                                <td><b>40.88</b></td>
+                              </tr>
+                              <tr>
+                                <th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Impatient Reader (Multimodal) (baseline)</td>
+                                <td>26.74</td>
+                              </tr>
+                              {{#submissions}}
+                              <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
+                                  <td>{{submission.description}}</td>
+                                  <td>{{scores.visual_ordering}}</td>
+                                </tr>
+                              {{/submissions}}
+                            </tbody>
+                          </table>
+                          <br>
+                          <h3>Visual Coherence</h3>
+                            <table class="table table-condensed">
+                              <thead>
+                                <tr>
+                                  <th>Rank</th>
+                                  <th>Model</th>
+                                  <th>Score</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <th><p class="rank">1</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Hasty Student (baseline)</td>
+                                <td><b>65.80</b></td>
+                              </tr>
+                              <tr>
+                                <th><p class="rank">2</p><span class="date label label-default">AUG 29, 2018</span></th>
+                                <td>Impatient Reader (Multimodal) (baseline)</td>
+                                <td>28.08</td>
+                              </tr>
+                              {{#submissions}}
+                              <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
+                                  <td>{{submission.description}}</td>
+                                  <td>{{scores.visual_coherence}}</td>
+                                </tr>
+                                {{/submissions}}
+                              </tbody>
+                            </table>
+                      </script>
+                  </div>
+                </div>
+              <div class="col-lg-12 col-sm-12">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1"><br>
+                  <img src="static/images/hucvl_logo.png" width=40%>
+                </div>
+              <div class="col-lg-4 col-md-4 col-sm-4"><br>
+                <p style="text-align:center">Department of Computer Engineering<br>
+                  Beytepe Campus, Beytepe, Cankaya, Ankara<br>
+                      TURKEY TR-06800 </p>
+              </div>   
+              <div class="col-lg-3 col-md-3 col-sm-4">
+                <p style="text-align:left"><br>Project webpage designed by Taha Sevim and Kanan Hagverdiyev</p>
+              </div>
+            </div>
+          </body>
+      </html>
 <script type="text/javascript">
-(function($) {
-  var LEADERBOARD_JSON = 'https://hucvl.github.io/recipeqa/leaderboard.json';
-  var template = $('#template').html();
-  Mustache.parse(template);
-  var test = [];
-  var submissions = [];
-  var ms_data = {
-    submissions:[],
-  };
-  $.getJSON(LEADERBOARD_JSON).done(function (data) {
-    for (var i = 0; i < data.leaderboard.length; i++) {
-      if(data.leaderboard[i].scores.textual_cloze != null || data.leaderboard[i].scores.visual_cloze != null || 
-      data.leaderboard[i].scores.visual_coherence != null || data.leaderboard[i].scores.visual_ordering != null){
-        test.push(data.leaderboard[i])
-      }
-    }
-    for (var i = 0; i < test.length; i++){
-      ms_data['submissions'].push(test[i])
-      var item = test[i];
-      item.rank = i + 1;
-      item.scores['textual_cloze']=parseFloat(item.scores['textual_cloze']).toFixed(3)
-      item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
-      item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
-      item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
-      var submission = item["submission"]
-      var created = item['submission']['created']
-      var submissionInfo = item['submission']['description'];
-      item.created = moment.unix(created).format('MMM DD, YYYY');
-      item.config = data.config;
-    }
-    console.log(ms_data)
-    var rendered = Mustache.render(template, ms_data);
-    $('#container').html(rendered);
-  }).fail(function () {
-    $('#container').html('This leaderboard is not ready yet.');
-  });
-})(jQuery);
-    </script>
-	</div>
-	</div>
-  <div class="col-lg-12 col-sm-12">
-             	<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
-						<br>
-				<img src="static/images/hucvl_logo.png" width=40%>
-             	</div>
-	            <div class="col-lg-4 col-md-4 col-sm-4">
-						<br>
-	            <p style="text-align:center">Department of Computer Engineering<br>
-				Beytepe Campus, Beytepe, Cankaya, Ankara<br>
-				TURKEY TR-06800 </p>
-	            </div>   
-	            <div class="col-lg-3 col-md-3 col-sm-4">
-						<p style="text-align:left"><br>Project webpage designed by Taha Sevim and Kanan Hagverdiyev</p>
-	            </div>
-		</div>
-</body>
-</html>
-
+  (function($) {
+    var LEADERBOARD_JSON = 'https://hucvl.github.io/recipeqa/leaderboard.json';
+    var template = $('#template').html();
+    Mustache.parse(template);
+    var test = [];
+    var submissions = [];
+    var ms_data = {
+        submissions:[],
+      };
+    $.getJSON(LEADERBOARD_JSON).done(function (data) {
+      for (var i = 0; i < data.leaderboard.length; i++) {
+            if(data.leaderboard[i].scores.textual_cloze != null || data.leaderboard[i].scores.visual_cloze != null || 
+              data.leaderboard[i].scores.visual_coherence != null || data.leaderboard[i].scores.visual_ordering != null){
+                test.push(data.leaderboard[i])
+            }
+          }
+      for (var i = 0; i < test.length; i++){
+            ms_data['submissions'].push(test[i])
+            var item = test[i];
+            item.rank = i + 1;
+            item.scores['textual_cloze']=parseFloat(item.scores['textual_cloze']).toFixed(3)
+            item.scores['visual_coherence']=parseFloat(item.scores['visual_coherence']).toFixed(3)
+            item.scores['visual_cloze']=parseFloat(item.scores['visual_cloze']).toFixed(3)
+            item.scores['visual_ordering']=parseFloat(item.scores['visual_ordering']).toFixed(3)
+            var submission = item["submission"]
+            var created = item['submission']['created']
+            var submissionInfo = item['submission']['description'];
+            item.created = moment.unix(created).format('MMM DD, YYYY');
+            item.config = data.config;
+        }
+        var rendered = Mustache.render(template, ms_data);
+        $('#container').html(rendered);
+          }).fail(function () {
+            $('#container').html('This leaderboard is not ready yet.');
+          });
+        })(jQuery);
+ </script>
