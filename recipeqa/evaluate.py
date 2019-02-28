@@ -8,11 +8,11 @@ def set_ans(dataset):
     f.close()
     answers = dict()
     for d in data:
-        ans = d["3c40b884c937d591e136102c94c4a80f"]
+        ans = d["answer"]
         task = d["task"]
         if task not in answers.keys():
             answers[task] = []
-        answers[task].append(int(d["3c40b884c937d591e136102c94c4a80f"]))
+        answers[task].append(int(d["answer"]))
     return answers
 
 def evaluate(pred_file, truth_file, out):
