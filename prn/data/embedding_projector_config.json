@@ -6,16 +6,9 @@
         1000,
         50
       ],
-      "tensorPath": "https://raw.githubusercontent.com/.../tensors.tsv",
-      "metadataPath": "https://raw.githubusercontent.com/.../optional.metadata.tsv",
-      "bookmarksPath": "https://raw.githubusercontent.com/.../bookmarks.txt",
-      "sprite": {
-        "imagePath": "https://github.com/.../optional.sprite.png",
-        "singleImageDim": [
-          32,
-          32
-        ]
-      }
+      "tensorPath": "https://raw.githubusercontent.com/hucvl/hucvl.github.io/master/prn/data/entity_embeddings_final10k.tsv",
+      "metadataPath": "https://raw.githubusercontent.com/hucvl/hucvl.github.io/master/prn/data/optional.metadata.tsv",
+      "bookmarksPath": "https://raw.githubusercontent.com/hucvl/hucvl.github.io/master/prn/data/bookmarks.txt"
     }
   ]
 }
