@@ -1,1 +1,2792 @@
-Soon
+<!DOCTYPE html>
+<!-- saved from url=(0022) -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="distill-prerendered-styles" type="text/css">/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+html {
+  font-size: 14px;
+	line-height: 1.6em;
+  /* font-family: "Libre Franklin", "Helvetica Neue", sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  /*, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media(min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #004276;
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table th {
+	text-align: left;
+}
+
+table thead {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+table thead th {
+  padding-bottom: 0.5em;
+}
+
+table tbody :first-child td {
+  padding-top: 0.5em;
+}
+
+pre {
+  overflow: auto;
+  max-width: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  line-height: 1em;
+}
+
+sub {
+  top: 0.4em;
+}
+
+.kicker,
+.marker {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Headline */
+
+@media(min-width: 1024px) {
+  d-title h1 span {
+    display: block;
+  }
+}
+
+/* Figure */
+
+figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+figcaption+figure {
+
+}
+
+figure img {
+  width: 100%;
+}
+
+figure svg text,
+figure svg tspan {
+}
+
+figcaption,
+.figcaption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+@media(min-width: 1024px) {
+figcaption,
+.figcaption {
+    font-size: 13px;
+  }
+}
+
+figure.external img {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+figcaption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+figcaption b,
+figcaption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@supports not (display: grid) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    display: block;
+    padding: 8px;
+  }
+}
+
+.base-grid,
+distill-header,
+d-title,
+d-abstract,
+d-article,
+d-appendix,
+distill-appendix,
+d-byline,
+d-footnote-list,
+d-citation-list,
+distill-footer {
+  display: grid;
+  justify-items: stretch;
+  grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+  grid-column-gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 8px;
+}
+
+@media(min-width: 768px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+}
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+
+
+.base-grid {
+  grid-column: screen;
+}
+
+/* .l-body,
+d-article > *  {
+  grid-column: text;
+}
+
+.l-page,
+d-title > *,
+d-figure {
+  grid-column: page;
+} */
+
+.l-gutter {
+  grid-column: gutter;
+}
+
+.l-text,
+.l-body {
+  grid-column: text;
+}
+
+.l-page {
+  grid-column: page;
+}
+
+.l-body-outset {
+  grid-column: middle;
+}
+
+.l-page-outset {
+  grid-column: page;
+}
+
+.l-screen {
+  grid-column: screen;
+}
+
+.l-screen-inset {
+  grid-column: screen;
+  padding-left: 16px;
+  padding-left: 16px;
+}
+
+
+/* Aside */
+
+d-article aside {
+  grid-column: gutter;
+  font-size: 12px;
+  line-height: 1.6em;
+  color: rgba(0, 0, 0, 0.6)
+}
+
+@media(min-width: 768px) {
+  aside {
+    grid-column: gutter;
+  }
+
+  .side {
+    grid-column: gutter;
+  }
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+d-title {
+  padding: 2rem 0 1.5rem;
+  contain: layout style;
+  overflow-x: hidden;
+}
+
+@media(min-width: 768px) {
+  d-title {
+    padding: 4rem 0 1.5rem;
+  }
+}
+
+d-title h1 {
+  grid-column: text;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+@media(min-width: 768px) {
+  d-title h1 {
+    font-size: 50px;
+  }
+}
+
+d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  grid-column: text;
+}
+
+d-title .status {
+  margin-top: 0px;
+  font-size: 12px;
+  color: #009688;
+  opacity: 0.8;
+  grid-column: kicker;
+}
+
+d-title .status span {
+  line-height: 1;
+  display: inline-block;
+  padding: 6px 0;
+  border-bottom: 1px solid #80cbc4;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+d-byline {
+  contain: style;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  line-height: 1.8em;
+  padding: 1.5rem 0;
+  min-height: 1.8em;
+}
+
+
+d-byline .byline {
+  grid-template-columns: 1fr 1fr;
+  grid-column: text;
+}
+
+@media(min-width: 768px) {
+  d-byline .byline {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+d-byline .authors-affiliations {
+  grid-column-end: span 2;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1em;
+}
+
+@media(min-width: 768px) {
+  d-byline .authors-affiliations {
+    margin-bottom: 0;
+  }
+}
+
+d-byline h3 {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+d-byline p {
+  margin: 0;
+}
+
+d-byline a,
+d-article d-byline a {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+d-article d-byline a:hover {
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+d-byline p.author {
+  font-weight: 500;
+}
+
+d-byline .affiliations {
+
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+d-article {
+  contain: layout style;
+  overflow-x: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+d-article > * {
+  grid-column: text;
+}
+
+@media(min-width: 768px) {
+  d-article {
+    font-size: 16px;
+  }
+}
+
+@media(min-width: 1024px) {
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+}
+
+
+/* H2 */
+
+
+d-article .marker {
+  text-decoration: none;
+  border: none;
+  counter-reset: section;
+  grid-column: kicker;
+  line-height: 1.7em;
+}
+
+d-article .marker:hover {
+  border: none;
+}
+
+d-article .marker span {
+  padding: 0 3px 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 4px;
+}
+
+d-article .marker:hover span {
+  color: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+d-article h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25em;
+  margin: 2rem 0 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+
+@media(min-width: 1024px) {
+  d-article h2 {
+    font-size: 36px;
+  }
+}
+
+/* H3 */
+
+d-article h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+@media(min-width: 1024px) {
+  d-article h3 {
+    font-size: 20px;
+  }
+}
+
+/* H4 */
+
+d-article h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+d-article a {
+  color: inherit;
+}
+
+d-article p,
+d-article ul,
+d-article ol,
+d-article blockquote {
+  margin-top: 0;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+d-article blockquote {
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  padding-left: 2em;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-article a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+d-article a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+d-article .link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+d-article ul,
+d-article ol {
+  padding-left: 24px;
+}
+
+d-article li {
+  margin-bottom: 1em;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+d-article li:last-child {
+  margin-bottom: 0;
+}
+
+d-article pre {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+d-article hr {
+  grid-column: screen;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+d-article section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+d-article span.equation-mimic {
+  font-family: georgia;
+  font-size: 115%;
+  font-style: italic;
+}
+
+d-article > d-code,
+d-article section > d-code  {
+  display: block;
+}
+
+d-article > d-math[block],
+d-article section > d-math[block]  {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  d-article > d-code,
+  d-article section > d-code,
+  d-article > d-math[block],
+  d-article section > d-math[block] {
+      overflow-x: scroll;
+      -ms-overflow-style: none;  // IE 10+
+      overflow: -moz-scrollbars-none;  // Firefox
+  }
+
+  d-article > d-code::-webkit-scrollbar,
+  d-article section > d-code::-webkit-scrollbar,
+  d-article > d-math[block]::-webkit-scrollbar,
+  d-article section > d-math[block]::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
+  }
+}
+
+d-article .citation {
+  color: #668;
+  cursor: pointer;
+}
+
+d-include {
+  width: auto;
+  display: block;
+}
+
+d-figure {
+  contain: layout style;
+}
+
+/* KaTeX */
+
+.katex, .katex-prerendered {
+  contain: style;
+  display: inline-block;
+}
+
+/* Tables */
+
+d-article table {
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+d-article table th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+d-article table td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+d-article table tr:last-of-type td {
+  border-bottom: none;
+}
+
+d-article table th,
+d-article table td {
+  font-size: 15px;
+  padding: 2px 8px;
+}
+
+d-article table tbody :first-child td {
+  padding-top: 2px;
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+span.katex-display {
+  text-align: left;
+  padding: 8px 0 8px 0;
+  margin: 0.5em 0 0.5em 1em;
+}
+
+span.katex {
+  -webkit-font-smoothing: antialiased;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.18em;
+}
+/*
+ * Copyright 2018 The Distill Template Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@media print {
+
+  @page {
+    size: 8in 11in;
+    @bottom-right {
+      content: counter(page) " of " counter(pages);
+    }
+  }
+
+  html {
+    /* no general margins -- CSS Grid takes care of those */
+  }
+
+  p, code {
+    page-break-inside: avoid;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  d-header {
+    visibility: hidden;
+  }
+
+  d-footer {
+    display: none!important;
+  }
+
+}
+</style><script src="./index_files/jquery-3.3.1.min.js"></script>
+
+  <script src="./index_files/template.v2.js"></script>
+
+    <style>.subgrid {
+    grid-column: screen;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    grid-column-gap: inherit;
+    grid-row-gap: inherit;
+}
+
+d-figure.base-grid {
+    grid-column: screen;
+    background: hsl(0, 0%, 97%);
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+d-figure {
+    margin-bottom: 1em;
+    position: relative;
+}
+
+d-figure>figure {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.shaded-figure {
+    background-color: hsl(0, 0%, 97%);
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    padding: 30px 0;
+}
+
+.pointer {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 26px;
+    left: -48px;
+}
+
+.todo {
+    color: red;
+}
+
+span.nowrap {
+    white-space: nowrap;
+}
+
+d-appendix h3 {
+    grid-column: text !important;
+}
+
+d-appendix ol.debate {
+    margin-left: initial;
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+d-appendix ol.instructions {
+    margin-left: initial;
+}
+
+d-appendix ol.debate li {
+    margin-bottom: initial;
+}
+
+@media (min-width: 1000px) {
+    #figure-debate-tree figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 1em;
+        max-width: 25em;
+    }
+}
+
+#figure-debate-experiments figcaption {
+    margin-top: 1em;
+}
+
+@media (min-width: 1180px) {
+    #figure-debate-experiments {
+        position: relative;
+        display: grid;
+        grid-template-columns: 33% 1fr;
+        grid-gap: inherit;
+    }
+
+    #figure-debate-experiments svg {
+        order: 2;
+    }
+
+    #figure-debate-experiments figcaption {
+        order: 1;
+    }
+}
+
+#dog-debate figcaption {
+    margin-bottom: 1em;
+}
+
+
+/* ## Debate Styling ## */
+
+/* List */
+
+ol.debate {
+    color: black;
+    position: relative;
+    list-style-type: none;
+    padding-left: 4em;
+}
+
+ol.debate li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+ol.debate li:last-of-type>span {
+    margin-bottom: 0;
+}
+
+/* Speech bubbles */
+
+ol.debate li>span {
+    display: inline-block;
+    border-radius: 1em;
+    border-top-left-radius: 0;
+    border: 1px solid hsl(0, 0%, 33%);
+    padding: .5em 1.25em .5em 1.25em;
+}
+
+ol.debate li.question>span {
+    font-weight: 600;
+}
+
+ol.debate li.judge>span {
+    border-color: hsl(0, 0%, 92%);
+    background-color: hsl(0, 0%, 96%);
+}
+
+ol.debate li.wikipedia {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+ol.debate li.wikipedia>span {
+    border-color: hsl(0, 0%, 67%);
+    border-radius: .25em;
+}
+
+ol.debate li.note>span {
+    border: none;
+    font-style: italic;
+}
+
+ol.debate li.red>span {
+    background-color: hsl(18, 95%, 92%);
+    border-color: hsl(18, 100%, 92%);
+}
+
+ol.debate li.blue>span {
+    background-color: hsl(205, 95%, 92%);
+    border-color: hsl(205, 100%, 92%);
+}
+
+/* RED/BLUE identifiers */
+
+ol.debate li>span::before {
+    position: absolute;
+    display: inline-block;
+    width: 4.5em;
+    /* out of 5em left padding on ol */
+    left: 0;
+    background-color: unset;
+    text-align: right;
+    font-size: 75%;
+    text-transform: uppercase;
+}
+
+ol.debate li.red>span::before {
+    content: "Red";
+    color: hsl(18, 100%, 50%);
+}
+
+ol.debate li.blue>span::before {
+    content: "Blue";
+    color: hsl(205, 100%, 50%);
+}
+
+ol.debate li.judge>span::before {
+    content: "Judge";
+}
+
+ol.debate li.wikipedia>span::before {
+    position: relative;
+    display: inline;
+    content: "Wikipedia: ";
+}
+
+/* Debate Transcripts */
+
+#debate-transcripts section.debate {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 .25em .25em .25em;
+    padding: 1em;
+    display: none;
+}
+
+#debate-transcripts section.debate#debate-unpruned {
+    border-top-left-radius: .25em;
+}
+
+#debate-transcripts input.tab {
+    display: none;
+}
+
+#debate-transcripts label {
+    display: inline-block;
+    font-weight: 500;
+    margin: 0 0 -1px;
+    padding: .5em 2em;
+    border: 1px solid transparent;
+}
+
+#debate-transcripts label:hover {
+    cursor: pointer;
+}
+
+#debate-transcripts input.tab:checked+label {
+    color: rgba(0, 0, 0, 0.65);
+    border-radius: .25em .25em 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom-color: white;
+}
+
+#debate-transcripts #tab-debate-pruned:checked~#debate-pruned, #debate-transcripts #tab-debate-unpruned:checked~#debate-unpruned {
+    display: block;
+}
+
+/* TOC */
+
+#contents nav a {
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: none;
+    text-decoration: none;
+}
+
+#contents nav ul li {
+    margin-bottom: .25em;
+}
+
+#contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6);
+}
+
+#contents nav details ul {
+    margin-top: 0;
+}
+
+#contents nav details > a {
+    margin-left: 1.06em;
+}
+
+#contents nav summary,
+#contents nav > div,
+#contents nav details > a {
+    display: block;
+    outline: none;
+    margin-bottom: 0.5em;
+}
+
+#contents nav > div {
+    margin-left: 1.06em;
+}
+
+#contents nav summary {
+    cursor: context-menu;
+}
+
+#contents nav summary,
+#contents nav > div > a {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+a.figure-number,
+a.section-number {
+    border-bottom-color: hsla(206, 90%, 20%, 0.3);
+    text-transform: uppercase;
+    font-size: .85em;
+    color: hsla(206, 90%, 20%, 0.7);
+}
+a.figure-number::before {
+    content: "Figure ";
+}
+a.figure-number:hover,
+a.section-number:hover {
+    border-bottom-color: hsla(206, 90%, 20%, 0.6);
+}
+</style>
+
+
+<link href="./index_files/css" rel="stylesheet">
+<link rel="stylesheet" href="./index_files/mod_mstepper.min.css">
+<link rel="stylesheet" href="./index_files/materialize.min.css">
+<script src="./index_files/mod_mstepper.min.js">
+<style>
+
+.btn,
+.btn-large,
+.btn-small,
+.btn-flat {
+   border-radius: 4px;
+   font-weight: 500;
+}
+
+.card:hover {
+   box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.18);
+}
+
+.card {
+   border-radius: 15px;
+   box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+</style>
+
+
+<style>
+
+.im {
+    height: 100px;
+    width: 100px;
+    display:inline;
+}
+
+.rec  {
+    height: 100px;
+    width: 100px;
+}
+
+select {
+ width:225px;   
+}
+
+.demo2 table td, th{
+font-size: 12px;
+line-height:1.5em;
+}
+
+</style>
+
+<link rel="stylesheet" href="./index_files/katex.min.css" crossorigin="anonymous"><script src="./index_files/katex.min.js" async=""></script></head>
+<body>
+
+<d-front-matter>
+  <script type="text/json">{
+  "title": "Procedural Reasoning Networks",
+  "description": "Procedural Reasoning Networks",
+  "authors": [
+    {
+      "author": "Mustafa Sercan Amac",
+      "authorURL": "#",
+      "affiliation": "Hacettepe University",
+      "affiliationURL": "https://hacettepe.edu.tr"
+    }, {
+      "author": "Semih Yagcioglu",
+      "authorURL": "http://semihyagcioglu.com",
+      "affiliation": "Hacettepe University",
+      "affiliationURL": "https://hacettepe.edu.tr"
+    }, {
+      "author": "Aykut Erdem",
+      "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+      "affiliation": "Hacettepe University",
+      "affiliationURL": "https://hacettepe.edu.tr"
+    }, {
+      "author": "Erkut Erdem",
+      "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+      "affiliation": "Hacettepe University",
+      "affiliationURL": "https://hacettepe.edu.tr"
+    }
+  ],
+"publishedDate": "Sep. 16, 2019",
+  "katex": {
+    "delimiters": [
+      {"left": "$", "right": "$", "display": false},
+      {"left": "$$", "right": "$$", "display": true}
+    ]
+  }
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <h1>Procedural Reasoning Networks</h1>
+  <p>
+    Understanding and reasoning about procedural texts (e.g. cooking recipes, how-to guides, scientific processes) are very hard for machines as it demands modeling the intrinsic dynamics of the procedures. Can we model these intrinsic dynamics and better comprehend procedures? With this goal, here we propose Procedural Reasoning Networks (PRN) to address the problem of comprehending procedural commonsense knowledge.
+  </p>
+</d-title>
+
+<d-byline>
+  <div class="byline grid">
+    <div class="authors-affiliations grid">
+      <h3>Authors</h3>
+      <h3>Affiliations</h3>
+      
+        <p class="author">
+          
+            <a class="name" href="#">Mustafa Sercan Amac</a>
+        </p>
+        <p class="affiliation">
+        <a class="affiliation" href="https://hacettepe.edu.tr/">Hacettepe University</a>
+        </p>
+      
+        <p class="author">
+          
+            <a class="name" href="http://semihyagcioglu.com/">Semih Yagcioglu</a>
+        </p>
+        <p class="affiliation">
+        <a class="affiliation" href="https://hacettepe.edu.tr/">Hacettepe University</a>
+        </p>
+      
+        <p class="author">
+          
+            <a class="name" href="https://web.cs.hacettepe.edu.tr/~aykut/">Aykut Erdem</a>
+        </p>
+        <p class="affiliation">
+        <a class="affiliation" href="https://hacettepe.edu.tr/">Hacettepe University</a>
+        </p>
+      
+        <p class="author">
+          
+            <a class="name" href="https://web.cs.hacettepe.edu.tr/~aykut/">Erkut Erdem</a>
+        </p>
+        <p class="affiliation">
+        <a class="affiliation" href="https://hacettepe.edu.tr/">Hacettepe University</a>
+        </p>
+      
+    </div>
+    <div>
+      <h3>Published</h3>
+      
+        <p><em>Sep. 16, 2019</em></p>
+    </div>
+    <div>
+      <h3>DOI</h3>
+      
+        <p><em>No DOI yet.</em></p>
+    </div>
+  </div>
+</d-byline>
+
+
+<d-article>
+
+<figure id="fig1">
+<a data-fancybox="gallery" href="./index_files/figure1_v2.png"><img src="./index_files/figure1_v2.png"></a>
+
+    <figcaption><a href="#fig1" class="figure-number">1</a> A recipe for preparing a cheeseburger (Adapted from the cooking instructions available at https://www.instructables.com/id/In-N-Out-Double-Double-Cheeseburger-Copycat). Each basic ingredient (entity) is highlighted by a different color in the text and with bounding boxes on the accompanying images. Over the course of the recipe instructions, ingredients interact with each other, change their states by each cooking action (underlined in the text), which in turn alter the visual and physical properties of entities. For instance, the tomato changes it form by being sliced up and then stacked on a hamburger bun.</figcaption>
+</figure>
+
+<div>
+  <a href="#"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="./index_files/paper.png" width="190"></a>
+  <br>
+
+  <b>Paper</b>
+  <p><a href="#">arXiv #</a>,  2019. </p>
+
+
+  <b>Citation</b>
+  <p>Mustafa Sercan Amac, Semih Yagcioglu, Aykut Erdem, and Erkut Erdem. "Procedural Reasoning Networks for Understanding Multimodal Procedures", accepted to CoNLL 2019.
+    <br>
+    <a href="./index_files/bibtex.txt">Bibtex</a>
+  </p>
+
+
+  <b>Code:</b> <a href="https://github.com/hucvl/prn">PyTorch Implementation</a>
+  <br>
+  </div>
+  <hr>
+  <h2 id="abstract">Abstract</h2>
+
+
+  <p>
+    With this work address the problem of comprehending procedural commonsense knowledge. This is a challenging task as it requires identifying key entities, keeping track of their state changes, and understanding temporal and causal relations. Contrary to most of the previous work, in this study, we do not rely on strong inductive bias and explore the question of how multimodality can be exploited to provide a complementary semantic signal. Towards this end, we introduce a new entity-aware neural comprehension model augmented with external relational memory units. Our model learns to dynamically update entity states in relation to each other while reading the text instructions. Our experimental analysis on the visual reasoning tasks in the recently proposed RecipeQA dataset reveals that our approach improves the accuracy of the previously reported models by a large margin. Moreover, we find that our model learns effective dynamic representations of entities even though we do not use any supervision at the level of entity states.
+  </p>
+
+
+  <h2 id="introduction">Introduction</h2>
+
+<p>
+A great deal of commonsense knowledge about the world we live is procedural in nature and involves steps that show ways to achieve specific goals. Understanding and reasoning about procedural texts (e.g. cooking recipes, how-to guides, scientific processes) are very hard for machines as it demands modeling the intrinsic dynamics of the procedures. That is, one must be aware of the entities present in the text, infer relations among them and even anticipate changes in the states of the entities after each action.
+</p>
+<p>
+In recent years, tracking entities and their state changes have been explored in the literature from a variety of perspectives. In an early work, Henaff et al. (2017) [1]
+ proposed a dynamic memory based network which updates entity states using a gating mechanism while reading the text. Bansal et al. (2017) 
+[2]
+ presented a more structured memory augmented model which employs memory slots for representing both entities and their relations. Pavez et al. (2017) 
+[3]
+ suggested a conceptually similar model in which the pairwise relations between attended memories are utilized to encode the world state.
+</p>
+<p>
+Perez and Liu (2017) 
+[4]
+ showed that similar ideas can be used to compile supporting memories in tracking dialogue state. Wang et al. (2017) 
+[5]
+ has shown the importance of coreference signals for reading comprehension task. More recently, Dhingra et al. (2018) 
+[6]
+ introduced a specialized recurrent layer which uses coreference annotations for improving reading comprehension tasks. On language modeling task, Ji et al. (2017) 
+[7]
+ proposed a language model which can explicitly incorporate entities while dynamically updating their representations for a variety of tasks such as language modeling, coreference resolution, and entity prediction.
+</p>
+
+<p>
+Our work builds upon and contributes to the growing literature on tracking states changes in procedural text. Bosselut et al. (2018) 
+[8]
+ presented a neural model that can learn to explicitly predict state changes of ingredients at different points in a cooking recipe. Dalvi et al. (2018) 
+[9]
+ proposed another entity-aware model to track entity states in scientific processes. Tandon et al. (2018) 
+[10]
+ demonstrated that the prediction quality can be boosted by including hard and soft constraints to eliminate unlikely or favor probable state changes. In a follow-up work, Du et al. (2019) 
+[11]
+ exploited the notion of label consistency in training to enforce similar predictions in similar procedural contexts. Das et al. (2019) 
+[12]
+ proposed a model that dynamically constructs a knowledge graph while reading the procedural text to track the ever-changing entities states.
+</p>
+
+<p>
+To mitigate the aforementioned challenges, the existing works rely mostly on heavy supervision and focus on predicting the individual state changes of entities at each step. Although these models can accurately learn to make local predictions, they may lack global consistency 
+[10, 11]
+, not to mention that building such annotated corpora is very labor-intensive. As discussed earlier these previous methods use a strong inductive bias and assume that state labels are present during training. In our study, we deliberately focus on unlabeled procedural data and ask the question: Can multimodality help to identify and provide insights to understanding state changes. Hence, take a different direction by exploring the problem from a multimodal standpoint.
+</p>
+
+
+<h2 id="model">Procedural Reasoning Networks (PRN)</h2>
+
+
+<figure id="fig2">
+<a data-fancybox="gallery" href="./index_files/overview_v5.png"><img src="./index_files/overview_v5.png"></a>
+    <figcaption><a href="#fig2" class="figure-number">2</a> An illustration of our Procedural Reasoning Networks (PRN). For a sample question from visual coherence task in RecipeQA, while reading the cooking recipe, the model constantly performs updates on the representations of the entities (ingredients) after each step and makes use of their representations along with the whole recipe when it scores a candidate answer. Please refer to the main text for more details.</figcaption>
+</figure>
+
+	<p>
+We follow a simple framework and employ PRN model for comprehending procedural text. In that regard we use 3 visual tasks from RecipeQA dataset, namely visual cloze, visual coherence and ordering tasks. The goal of these task is to provide correct answers for each question. For instance as described in the <a href="#fig2" class="figure-number">2</a>, our model reads a recipe in a step-by-step manner and while reading the recipe, internally update the entity states based on the new information. Finally, the model decides which answer should be the correct one based on the question asked to the model.
+  	</p>
+
+<p>
+    Our model consists of five main modules: An <b>input module</b>, an <b>attention module</b>, a <b>reasoning module</b>, a <b>modeling module</b>, and an <b>output module</b>. Note that the question answering tasks we consider here are multimodal in that while the context is a procedural text, the question and the multiple choice answers are composed of images.
+  </p>
+
+
+  <p>
+    We have five modules in the proposed PRN model as described below.
+  </p>
+
+<ul>
+    <li><b>Input Module</b> extracts vector representations of inputs at different levels of granularity by using several different encoders.</li>
+    <li><b>Reasoning Module</b> scans the procedural text and tracks the states of the entities and their relations through a recurrent relational memory core unit [13].</li>
+    <li><b>Attention Module</b> computes context-aware query vectors and query-aware context vectors as well as query-aware memory vectors.</li>
+    <li><b>Modeling Module</b> employs two multi-layered RNNs to encode previous layers outputs.</li>
+    <li><b>Output Module</b> scores a candidate answer from the given multiple-choice list.</li>
+</ul>
+
+
+
+<h2 id="results">Results</h2>
+
+
+<table style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<caption>
+		Table 1: Quantitative comparison of the proposed PRN model against the baselines.
+	</caption>
+	<tbody><tr>
+		<td style="border-top-width: 2px; border-top-style: solid; border-top-color: black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td colspan="4" style="border-top-width: 2px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Single-task Training
+		</td>
+		<td colspan="4" style="border-top-width: 2px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Multi-task Training
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; padding-right: 3pt; padding-left: 3pt;">
+			Model
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Cloze
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Coherence
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Ordering
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Average
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Cloze
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Coherence
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Ordering
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			All
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; padding-right: 3pt; padding-left: 3pt;">
+			Human*
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			77.60
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			81.60
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			64.00
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			74.40
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			Hasty Student
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			27.35
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>65.80</b>
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			40.88
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			44.68
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			Impatient Reader
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			27.36
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			28.08
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			26.74
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			27.39
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			–
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			BIDAF
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			53.95
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			48.82
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			62.42
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			55.06
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			44.62
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			36.00
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>63.93</b>
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			48.67
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			BIDAF w/ static memory
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			51.82
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			45.88
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			60.90
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			52.87
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>47.81</b>
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			40.23
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			62.94
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>50.59</b>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; padding-right: 3pt; padding-left: 3pt;">
+			PRN
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>56.31</b>
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			53.64
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>62.77</b>
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>57.57</b>
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			46.45
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			<b>40.58</b>
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			62.67
+		</td>
+		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			50.17
+		</td>
+	</tr>
+	<tr>
+		<td colspan="9" style="padding-right: 3pt; padding-left: 3pt;">
+			*Taken from the <a href="https://hucvl.github.io/recipeqa/" target="_self">RecipeQA project website</a>, based on 100 questions sampled randomly from the validation set.
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td colspan="2" style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+	</tr>
+</tbody></table><span>
+
+Table 1 presents the quantitative results for the visual reasoning tasks in RecipeQA. In single-task training setting, PRN gives state-of-the-art results visual cloze and visual coherence tasks, outperforming other neural models. Moreover, it achieves the best performance on average. These results demonstrate the importance of having a dynamic memory and keeping track of entities extracted from the recipe. In multi-task training setting where a single model is trained to solve all the tasks at once, PRN and BIDAF w/ static memory perform comparably and give significantly better results than BIDAF. Note that the model performances in the multi-task training setting are worse than single-task performances.
+
+
+</span><figure id="fig3">
+<a data-fancybox="gallery" href="./index_files/t-SNE-plotv7.png"><img src="./index_files/t-SNE-plotv7.png"></a>
+    <figcaption><a href="#fig3" class="figure-number">3</a> t-SNE visualizations of learned embeddings from each memory snapshot mapping to each entity and their corresponding states from each step for visual cloze task.</figcaption>
+</figure>
+
+<figure id="fig4">
+<a data-fancybox="gallery" href="./index_files/analogy.png"><img src="./index_files/analogy.png"></a>
+    <figcaption><a href="#fig4" class="figure-number">4</a> Step-aware entity representations can be used to discover the changes occurred in the states of the ingredients between two different recipe steps. The difference vector between two entities can then be added to other entities to find their next states. For instance, in the first example, the difference vector encodes the chopping action done on onions. In the second example, it encodes the pouring action done on the water. When these vectors are added to the representations of raw tomatoes and milk, the three most likely next states capture the semantics of state changes in an accurate manner.</figcaption>
+</figure>
+
+  <p>
+    
+  </p>
+
+
+<h2 id="demo">Interactive Demo</h2>
+
+
+<h4>Visual Reasoning Tasks in RecipeQA</h4>
+
+<select name="tasks" id="tasks">
+            <option id="0" value="">Select one task for interactive demo</option>
+            <option id="1" value="1">Visual Cloze Task</option>
+            <option id="2" value="2">Visual Coherence Task</option>
+            <option id="3" value="3">Visual Ordering Task</option>
+
+</select>
+
+
+<span id="visual_cloze_demo" style="display:none">
+
+<!-- 
+Materializecss Stepper v3.0.0-beta.1 - Igor Marcossi
+https://github.com/Kinark/Materialize-stepper 
+-->
+<div class="section">
+   <div class="demo2">
+      <div class="row">
+         <div class="col">
+            <h3 class="light center-align blue-text">Recipe: Minnesota Cookies</h3>
+            <div class="card">
+               <div class="card-content">
+
+                  <form method="GET" action="?"><ul class="stepper horizontal" id="recipe_demo">
+                     <span class="step active">
+			<div data-step-label="" class="step-title waves-effect waves-dark">Step 1</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 1: Make Dough</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">
+
+Ingredients:
+1 cup of butter (2 sticks)
+2 eggs
+1 tsp vanilla
+1 1/2 cups of sugar
+3 cups of flour
+jelly or jam (flavor of choice)non-food materials: cookie press - use star attachment. <u>Mix</u> butter, eggs, sugar, and vanilla together. Once smooth <u>add</u> in flour 1/2 a cup at a time. When all the ingredients are mixed let the dough sit out for 15 minutes. In my experience this makes the dough firmer and the cookies chewier.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/0e.png" width="240px">
+
+
+
+</td>
+
+<td width="10%">
+<img src="./index_files/0s.png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+                              <button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                           </div>
+                        </div>
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 2</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 2: Using Cookie Press</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">                              
+You can buy a cookie press at most kitchen supply stores and online.  Many of the newer models operate and look like a caulk gun - this is what I use currently.  My mom has one of the really old school cookie presses. To fill the cookie press take a handful of dough and <u>roll</u> it in the palm of your hands so it looks like a snake.  This will help it easily slide into the cookie press tube. Once the dough is in (and not hanging out the end) <u>put</u> the star attachment on the top and secure it with the front ring.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/1e.png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/1s.png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                           </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+			</span>
+
+			<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 3</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 3: Using Cookie Press 2</h4>
+<table>
+  <tbody><tr>
+    <td width="60%"> 
+
+<u>Put</u> cookies on a non-stick pan (don't grease). Position the cookie press as seen in the image and <u>press</u> down handle of cookie press and dough will come out. You want to fill the gap between the cookie sheet and the cookie press with dough. Don't <u>press</u> too hard, you don't want dough squeezing out the sides. Once you have pressed out enough dough lift the cookie press up and you will see your cookie! You will get the hang of this over time. I get very particular about the size of my cookies.
+
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/2e.png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/2s.png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+
+                           </div>
+                        </div>
+
+                     </span>
+
+
+<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 4</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 4: Adding Jam</h4>
+<table>
+  <tbody><tr>
+    <td width="60%" fontsize="12pt"> 
+
+To make room for the jam use your knuckle to <u>press</u> a small indentation in the center of each cookie.
+<u>Put</u> a little jam on the tip of a knife and use the knife to <u>put</u> the jam in indents of the cookies.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/3e.png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/3s.png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Question</div>
+                        <div class="step-content">
+<div class="row">
+                             <div class="input-field col s12">
+                          Question: Choose the best image for the missing blank to correctly complete the recipe.
+
+<br>
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im"><img class="rec" src="./index_files/minnesota-cookies_2_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/blank.png" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/minnesota-cookies_4_3.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/minnesota-cookies_5_0.jpg" alt="???"></div></th>
+
+
+</tr>
+</tbody>
+</table>
+
+Choices:
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im"><img class="rec" src="./index_files/minnesota-cookies_3_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/homemade-butter-2-3_0_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/halloween-hot-chocolate-with-crossbones_0_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/how-to-make-banana-golden-pillow_3_0.jpg" alt="???"></div></th>
+</tr>
+<tr>
+<td><img src="./index_files/tick.png" width="20px" alt="???"> (A)</td>
+<td>(B)</td>
+<td>(C)</td>
+<td>(D)</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<br>
+Correct Answer : A
+
+
+                              </div>
+                           </div>
+<p></p>
+
+                           <div class="step-actions">
+			      <input type="button" class="waves-effect waves-dark btn blue" id="controlled_reset" value="START OVER">
+                           </div>
+                        </div>
+                     </span>
+                  </ul></form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+</span> <!-- End of visual cloze demo -->
+
+
+<span id="visual_coherence_demo" style="display:none">
+
+<div class="section">
+   <div class="demo2">
+      <div class="row">
+         <div class="col">
+            <h3 class="light center-align blue-text">Recipe: Healthier-For-You Peanut Butter Cups</h3>
+            <div class="card">
+               <div class="card-content">
+
+                  <form method="GET" action="?"><ul class="stepper horizontal" id="recipe_demo_coherence">
+                     <span class="step active">
+			<div data-step-label="" class="step-title waves-effect waves-dark">Step 1</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 1: Mix Up the Filling</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">
+
+X tbsps. of peanut butter (X being the number of peanut butter cups that you want)
+icing sugar
+chocolate chips (or molding chocolate wafers. I just used what I had at home at the time of the craving, which was chocolate chips!)
+Mix peanut butter and icing sugar to taste. Seriously, I cannot give you an exact amount, because everyone likes a different amount of sweetness. I used chunky peanut butter, but you can use all-natural or already sweetened or hey, why not almond butter! Add enough icing sugar to the peanut butter that it becomes a sort of dough. It has to be able to be rolled into little balls of about a tbsp. each. If you put in too much icing sugar, it will crack, but too little icing sugar and the peanut butter will stick to your hands.
+
+
+Roll the peanut butter mixture into little balls, the size of the molds. I happen to have a candy mold that I bought on sale in a craft store, but frankly, you could use the molded plastic that chocolates often come in, when they're in layers in boxes. Or even a mini muffin tin in a pinch.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/0e(1).png" width="240px">
+
+
+
+</td>
+
+<td width="10%">
+<img src="./index_files/0s(1).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+                              <button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                           </div>
+                        </div>
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 2</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 2: The Molds and the All-Important Chocolate!</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">                              
+
+Melt chocolate chips or chocolate wafers in a mug in the microwave, stirring every 30 seconds until fully melted. Paint the inside of the molds, and set the mold in the freezer until the chocolate is set.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/1e(1).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/1s(1).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                           </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+			</span>
+
+			<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 3</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 3: Fill 'er Up!</h4>
+<table>
+  <tbody><tr>
+    <td width="60%"> 
+
+Push a ball of the peanut butter mixture into every mold. Press down with your thumb to make sure that it fills up the space.
+
+I also made up some wine jelly bonbons. These are great for a more adult end to a nice dinner, to serve with coffee! I used some wine jelly that I had lying around the kitchen, possibly from this recipe. You follow the same instructions as above in terms of the chocolate coating, but just use the wine jelly as an alternative to the peanut butter filling. Easy-peasy homemade fancy chocolates! Can we say holiday entertaining? *grin*
+
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/2e(1).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/2s(1).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+
+                           </div>
+                        </div>
+
+                     </span>
+
+
+<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 4</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 4: Topping 'em Up!</h4>
+<table>
+  <tbody><tr>
+    <td width="60%" fontsize="12pt"> 
+
+Brush the top with the melted chocolate and return to freezer (technically, a fridge is better, but my cravings have no patience). When set, pop out the peanut butter cups from the molds, and voila! Healthier-for-you peanut butter cups!Want to fancy them up? Why not sprinkle a little something on top the chocolates before they set up? Maybe some fleur de sel? Some chopped peanuts? A candied violet for the wine bonbons? It's up to you!
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/3e(1).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/3s(1).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Question</div>
+                        <div class="step-content">
+<div class="row">
+                              
+
+                              <div class="input-field col s12">
+                          Question: Select the incoherent image in the following sequence of images.
+
+<br>
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im"><img class="rec" src="./index_files/jello-shots-without-the-trash_4_5.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_2_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_3_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_4_0.jpg" alt="???"></div></th>
+
+
+</tr>
+</tbody>
+</table>
+
+Choices:
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im"><img class="rec" src="./index_files/jello-shots-without-the-trash_4_5.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_2_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_3_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/healthier-for-you-peanut-butter-cups-wine-bonbons_4_0.jpg" alt="???"></div></th>
+
+
+
+</tr>
+<tr>
+<td><img src="./index_files/tick.png" width="20px" alt="???"> (A)</td>
+<td>(B)</td>
+<td>(C)</td>
+<td>(D)</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<br>
+Correct Answer : A
+
+                              </div>
+                           </div>
+<p></p>
+
+                           <div class="step-actions">
+			      <input type="button" class="waves-effect waves-dark btn blue" id="controlled_reset_coherence" value="START OVER">
+                           </div>
+                        </div>
+                     </span>
+                  </ul></form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</span> <!-- End of visual coherence demo -->
+
+<span id="visual_ordering_demo" style="display:none">
+
+<div class="section">
+   <div class="demo2">
+      <div class="row">
+         <div class="col">
+            <h3 class="light center-align blue-text">Recipe: Key Lime Buttered Green Beans</h3>
+            <div class="card">
+               <div class="card-content">
+
+                  <form method="GET" action="?"><ul class="stepper horizontal" id="recipe_demo_ordering">
+                     <span class="step active">
+			<div data-step-label="" class="step-title waves-effect waves-dark">Step 1</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 1: Ingredients and Tools</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">
+
+Here is everything you will need to make these delicious tart green beans.
+
+Ingredients
+
+one key lime
+1 tablespoon(14g) of butter either salted or unsalted is fine
+1lbs(450g) of green beans this is about 1/4 lbs per serving.
+salt if you are not using salted butter
+Tools
+
+Strainer
+Skillet
+Spatula
+Micro plainer
+Fire
+Citrus juice extractor(this could just be your hands)
+Knife
+Cutting board
+Once you have everything gathered it is time to make some tasty green beans.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/0e(2).png" width="240px">
+
+
+
+</td>
+
+<td width="10%">
+<img src="./index_files/0s(2).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+                              <button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                           </div>
+                        </div>
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 2</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+
+<h4>Step 2: Washing, Zesting, and Melting Oh My</h4>
+<table>
+  <tbody><tr>
+    <td width="60%">                              
+
+So here is where I let you in a secret. I know I skipped the cutting the beans step and that is because I purchased my green beans precut. If you did not you can do that and I will hang out here while you <u>cut</u> the ends off your green beans....
+
+Cool you're back. Lets <u>wash</u> those green beans.(I <u>put</u> my green beans in a strainer and rinse them with cold water.) Then <u>turn</u> your burner on to medium high heat <u>toss</u> your 1 tbsp(14g) of butter into your skillet. While your butter is <u>melting</u> quickly <u>zest</u> your tiny tiny key lime lime. The trick to zesting is you just want to <u>shave off</u> the colored part of the fruit leaving behind the white bitter part of the rind. Once your lime is zested <u>cut</u> it in half, <u>grab it</u>, your zest, and green beans and join me over at the skillet.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/1e(2).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/1s(2).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+                           </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+			</span>
+
+			<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 3</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 3: Some Like It Hot or the Cookening</h4>
+<table>
+  <tbody><tr>
+    <td width="60%"> 
+
+So now that your butter is almost all <u>melted</u> go ahead and <u>dump</u> your zest right into that <u>melted</u> buttery goodness and <u>stir</u> it around. Once the aroma of the zest hits you (or about 30 seconds whichever comes first) you can <u>add</u> your green beans. Make sure once your green beans are in the skillet to give them a good stir so they get evenly covered in zesty butter goodness. Now I like my beans to have a bit of a crunch to them still so it only takes about 3 minutes of stirring occasionally before I get to the next step. If you like them firm stick with me otherwise cook them until they are almost as soft as you like them. Once they are almost done <u>squeeze</u> the juice from your lime into the skillet and stir the green beans for about a minute more. Now all that is left is to plate them and enjoy.
+
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/2e(2).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/2s(2).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+
+                           </div>
+                        </div>
+
+                     </span>
+
+
+<span class="step">
+                        <div class="step-title waves-effect waves-dark">Step 4</div>
+                        <div class="step-content">
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 
+<h4>Step 4: Enjoy</h4>
+<table>
+  <tbody><tr>
+    <td width="60%" fontsize="12pt"> 
+
+As you can see I paired my key lime buttered green beans with two meat muffins and artfully <u>arranged</u> them as a smiley face. This is because I am still five at heart and happy food is fun to eat.
+
+Thanks for taking the time to read over this instructable. I hope you have enjoyed it. If you make these tart tasty green beans I hope they turn out as delicious as mine did.
+
+</td>
+    <td width="15%">
+
+<img src="./index_files/3e(2).png" width="240px">
+
+</td>
+
+<td width="10%">
+<img src="./index_files/3s(2).png" width="38px">
+</td>
+
+  </tr>
+</tbody></table>
+
+
+
+                              </div>
+                           </div>
+
+<p></p>
+
+                           <div class="step-actions">
+<button class="waves-effect waves-dark btn blue next-step">NEXT</button>
+
+                              <button class="waves-effect waves-dark btn-flat previous-step">PREVIOUS</button>
+			      
+                           </div>
+                        </div>
+
+                     </span>
+
+
+                     <span class="step">
+                        <div class="step-title waves-effect waves-dark">Question</div>
+                        <div class="step-content">
+<div class="row">
+                              
+
+                              <div class="input-field col s12">
+                          Question: Choose the correct order of images to make a story
+
+<br>
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im"><img class="rec" src="./index_files/key-lime-buttered-green-beans_1_0.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/key-lime-buttered-green-beans_2_1.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/key-lime-buttered-green-beans_3_3.jpg" alt="???"></div></th>
+
+<th><div class="im"><img class="rec" src="./index_files/key-lime-buttered-green-beans_4_1.jpg" alt="???"></div></th>
+
+</tr>
+</tbody>
+</table>
+
+Choices:
+
+<table>
+<tbody>
+<tr>
+
+<th><div class="im">1,2,3,4</div></th>
+
+<th><div class="im">1,4,3,2</div></th>
+
+<th><div class="im">1,3,2,4</div></th>
+
+<th><div class="im">1,2,4,3</div></th>
+
+</tr>
+<tr>
+<td><img src="./index_files/tick.png" width="20px" alt="???"> (A)</td>
+<td>(B)</td>
+<td>(C)</td>
+<td>(D)</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<br>
+Correct Answer : A
+
+
+                              </div>
+                           </div>
+<p></p>
+
+                           <div class="step-actions">
+			      <input type="button" class="waves-effect waves-dark btn blue" id="controlled_reset_ordering" value="START OVER">
+                           </div>
+                        </div>
+                     </span>
+                  </ul></form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</span> <!-- End of visual ordering demo -->
+
+<script>
+
+$(document).on('change',"#tasks", function() { 
+     var tasks_val = $(this).val()
+
+if(tasks_val == 1)
+{
+ 	$('#visual_cloze_demo').show();
+	$('#visual_coherence_demo').hide();
+	$('#visual_ordering_demo').hide();
+}
+else if(tasks_val == 2)
+{
+	$('#visual_coherence_demo').show();
+	$('#visual_cloze_demo').hide();
+	$('#visual_ordering_demo').hide();
+
+
+}
+else if (tasks_val == 3)
+{	
+	$('#visual_ordering_demo').show();
+	$('#visual_cloze_demo').hide();
+	$('#visual_coherence_demo').hide();
+
+}
+
+});
+
+
+
+function anyThing(destroyFeedback) {
+  setTimeout(function(){ destroyFeedback(true); }, 1500);
+}
+
+function noThing(destroyFeedback) {
+  setTimeout(function(){ destroyFeedback(true); }, 10000);
+}
+
+var stepperDiv = document.querySelector('.stepper');
+console.log(stepperDiv);
+var stepper = new MStepper(stepperDiv);
+
+
+
+
+var apiResetDemo = new MStepper(document.getElementById('recipe_demo'));
+      //var cntrldReset = document.getElementById('controlled_reset')
+      //cntrldReset.addEventListener('click', function () { apiResetDemo.resetStepper() })
+
+var cntrldGoto = document.getElementById('controlled_reset')
+      cntrldGoto.addEventListener('click', function () { apiResetDemo.openStep(0) })
+
+
+var apiResetDemoCoherence = new MStepper(document.getElementById('recipe_demo_coherence'));
+
+var cntrldGotoCoherence = document.getElementById('controlled_reset_coherence')
+      cntrldGotoCoherence.addEventListener('click', function () { apiResetDemoCoherence.openStep(0) })
+
+var apiResetDemoOrdering = new MStepper(document.getElementById('recipe_demo_ordering'));
+
+var cntrldGotoOrdering = document.getElementById('controlled_reset_ordering')
+      cntrldGotoOrdering.addEventListener('click', function () { apiResetDemoOrdering.openStep(0) })
+
+
+
+</script>
+
+
+
+<h4>Entity Embedding Arithmetics</h4>
+
+
+<div class="demo2">
+      <div class="row">
+         <div class="col s12">
+            <h3 class="light center-align blue-text">Nearest Neighbor Retrieval</h3>
+            <div class="card">
+               <div class="card-content">
+
+
+<div class="dropdown">
+
+<table border="0">
+
+<tbody><tr>
+    <th>
+    </th><th>Entity Embeddings</th>
+    <th>Step Descriptions</th>
+  </tr>
+
+  <tr>
+    <td><b>&nbsp;</b></td>
+    <td>
+<select name="arithmetics" id="base">
+            <option id="0" value="">Select one entity vector as base</option>
+            <option id="1" value="1">Onions - Step 1 (Flowerpot Chicken)</option>
+            <option id="2" value="2">Water - Step 1 (Caribbean Curried Goat)</option>
+        </select>
+</td>
+    <td><span id="base_body"></span></td>
+  </tr>
+  <tr>
+    <td><b>+</b></td>
+    <td>
+<select id="plus">
+            <option id="0" value="">Select one entity vector to add</option>
+            
+	    
+	    
+        </select>
+</td>
+    <td><span id="plus_body"></span></td>
+  </tr>
+  <tr>
+    <td>
+<b>-</b>
+</td>
+    <td><select id="minus">
+            <option value="">Select one entity vector to subtract</option>
+        </select>
+</td>
+    <td><span id="minus_body"></span></td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td><input type="button" class="waves-effect waves-dark btn blue" id="get_neighbours" value="=" onclick="showNeighbours()">
+</td>
+  </tr>
+
+
+<tr>
+    <td></td>
+    <td><b>Nearest Neighbours</b></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td colspan="2"><span id="neighbours">&nbsp;</span></td>
+    <td></td>
+  </tr>
+
+
+</tbody></table>
+
+
+</div>
+
+
+                  <form method="GET" action="?"></form>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+<br>
+<br>
+
+
+
+
+<script>
+
+
+$(document).on('change',"#base", function() { 
+     var base_val = $(this).val()
+     // alert( $(this).val())
+
+if(base_val == 0)
+{
+ 	$("#neighbours").html("");
+ 	$("#base_body").html("");
+	$("#plus_body").html("");
+	$("#minus_body").html("");
+}
+else if(base_val == 1)
+{
+	$("#base_body").html("<h4>Step 1 (Flowerpot Chicken)</h4> This is a cheap and easy method of an ancient cooking technique known as clay pot cooking using a common terra cotta flowerpot and saucer. You can spend over $100 on a clay cooker at a gourmet kitchen gadget store, or about $20 at a garden supply. You choose. Some of you may already have the pot lying in your yard, garage or shed. Once you try this you will probably be cooking all kinds of things in it! First find (or buy) a large 12-14 inch diameter UNGLAZED pot and saucer. Clean any loose dirt off by scrubbing with hot water, but NEVER use soap on unglazed terra cotta. The taste will never leave.");
+	
+	$('#plus').empty();
+	$('#plus').append('<option id="0" value="" selected="selected">Select one entity vector to add...</option>');
+	$('#plus').append('<option id="1" value="11">Onions - Step 3 (Flowerpot Chicken)</option>');
+	
+	$("#plus_body").html("");
+	$("#minus_body").html("");
+
+	$('#minus').empty();
+	$('#minus').append('<option id="0" value="" selected="selected">Select one entity vector to subtract</option>');
+
+
+}
+else if (base_val == 2)
+{	
+	$("#base_body").html("<h4>Step 1 (Caribbean Curried Goat)</h4>This is absolutely mind-blowingly good. Goat basically tastes like lamb, but is far leaner. (Lamb is the fattiest of the red meats.) It's very popular in a variety of different countries' cuisines, but for some reason has yet to gain a real following in the US. This recipe is inspired by the curried goat roti from Penny's Caribbean Cafe. While Penny doesn't share her secrets, this tastes awfully similar. Go get yourself some goat (or lamb if you must) and try it out!")
+	$('#plus').empty();
+	$('#plus').append('<option id="0" value="" selected="selected">Select one entity vector to add...</option>');
+	$('#plus').append('<option id="2" value="12">Water - Step 4 (Caribbean Curried Goat)</option>');
+	
+	$("#plus_body").html("");
+	$("#minus_body").html("");
+
+	$('#minus').empty();
+	$('#minus').append('<option id="0" value="" selected="selected">Select one entity vector to subtract</option>');
+
+}
+
+});
+
+$(document).on('change',"#plus", function() { 
+     var plus_val = $(this).val()
+    if(plus_val == 11)
+{
+	$("#plus_body").html("<h4>Step 3 - Prepare Vegatables (Flowerpot Chicken)</h4> <u>Chop</u> your vegetables while the pot is soaking. You can use whatever you like for this, root vegetables mixed with onions are always a nice base. This time I used leeks, bell peppers, garlic and red onions.");
+	$('#minus').empty();
+	$('#minus').append('<option id="0" value="" selected="selected">Select one entity vector to subtract</option>');
+	$('#minus').append('<option id="1" value="21">Tomatoes - Step 1 (Flowerpot Chicken)</option>');
+	
+	$("#minus_body").html("");
+
+}
+else if (plus_val == 12)
+{	
+	$("#plus_body").html("<h4>Step 4 - Add Everything Else (Caribbean Curried Goat)</h4>If you're going to use the split peas, now's the time to add them. I don't usually bother, since the gelatin from the bones makes for a nice thick consistency even without adding beans, and they really doesn't seem to change the flavor very much. Your mileage may vary; try it and see what you like. <u>Add</u> the rest of the curry powder and stir things about. When it starts to <u>stick</u> again <u>add</u> the water and deglaze again. <u>Pour</u> in just enough water to cover the meat, and leave a cup full of water near the pot to refill as it boils off. You want the meat to stay wet during the entire cooking process. In the picture below I've dropped in another boullion cube because they didn't all make it in with the onions. The details really don't matter too much in this dish - it <u>cooks</u> long enough that you've got LOTS of leeway to taste and modify.");
+	$('#minus').empty();
+	$('#minus').append('<option id="0" value="" selected="selected">Select one entity vector to subtract</option>');
+	$('#minus').append('<option id="1" value="22">Milk - Step 1 (Birdcage-BQ)</option>');
+
+	$("#minus_body").html("");
+}
+});
+     
+
+$(document).on('change',"#minus", function() { 
+     var minus_val = $(this).val()
+    if(minus_val == 21)
+{
+	$("#minus_body").html("<h4>Step 1 (Flowerpot Chicken)</h4>This is a cheap and easy method of an ancient cooking technique known as clay pot cooking using a common terra cotta flowerpot and saucer. You can spend over $100 on a clay cooker at a gourmet kitchen gadget store, or about $20 at a garden supply. You choose. Some of you may already have the pot lying in your yard, garage or shed. Once you try this you will probably be cooking all kinds of things in it! First find (or buy) a large 12-14 inch diameter UNGLAZED pot and saucer. Clean any loose dirt off by scrubbing with hot water, but NEVER use soap on unglazed terra cotta. The taste will never leave.");
+}
+else if (minus_val == 22)
+{	
+	$("#minus_body").html("<h4>Step 1 (Birdcage-BQ)</h4>All that sounded logic to me, and instead of looking on the net how others did it I started thinking how Bricobart would build such a device - I mean a bbq, not an anti-troll gun. And since I didn't want to spend any money I decided to build it from scratch. The project failed in the first trial, but ran like a small dog chased by a beeswarm in the second. Enjoy my poor men's vertical birdcage-based bbq!");
+}
+
+});
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showNeighbours() {
+
+  var base_val = $("#base").val()
+ //alert(base_val)
+
+if(base_val == 1)
+{
+	$("#neighbours").html("Tomatoes (Chillie Corn Carnea), Tomatoes (Seven Layer Seven Grain Bread), Tomatoes (How to Make Chicken Cacciatore)");
+}
+else if (base_val == 2)
+{
+	$("#neighbours").html("Milk (Patoto Sour for One), Milk (Family Size Lasagne), Milk (Patoto Soup)");
+}
+  
+}
+
+</script>
+
+  <p>
+  </p>
+
+
+<h3>Embedding Projector</h3><span>
+
+Click the below image to interact with live entity embeddings!
+
+</span><a href="https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/hucvl/hucvl.github.io/master/prn/data/embedding_projector_config.json" target="_blank" style="border:0px;"><img src="./index_files/embeddings.png"></a>
+
+  <h2 id="conclusion">Conclusion</h2>
+  <p>
+    We have presented a new neural architecture called Procedural Reasoning Networks (PRN) for multimodal understanding of step-by-step instructions. Our proposed model is based on the successful BiDAF framework but also equipped with an explicit memory unit that provides an implicit mechanism to keep track of the changes in the states of the entities over the course of the procedure. Our experimental analysis on visual reasoning tasks in the RecipeQA dataset shows that the model significantly improves the results of the previous models, indicating that it better understands the procedural text and the accompanying images. Additionally, we carefully analyze our results and find that our approach learns meaningful dynamic representations of entities without any entity-level supervision. Although we achieve state-of-the-art results on RecipeQA, clearly there is still room for improvement compared to human performance.
+  </p>
+
+  <h3 id="acknowledgements">Acknowledgments</h3>
+  <p>
+    This work was supported by TUBA GEBIP fellowship awarded to E. Erdem; and by the MMVC project via an Institutional Links grant (Project No. 217E054) under the Newton-Katip Çelebi Fund partnership funded by the Scientific and Technological Research Council of Turkey (TUBITAK) and the British Council. We also thank NVIDIA Corporation for the donation of GPUs used in this research. 
+  </p>
+
+
+<h3 id="references">References</h3>
+<ol id="references-list" class="references"><li id="henaff2016tracking"><span class="title">Tracking The World State with Recurrent Entity Networks</span> <br>Henaff, M., Weston, J., Szlam, A., Bordes, A. and LeCun, Y., 2017. Proceedings of the International Conference on Learning Representations (ICLR). </li><li id="bansal2017relnet"><span class="title">RelNet: End-to-End Modeling of Entities &amp; Relations</span> <br>Bansal, T., Neelakantan, A. and McCallum, A., 2017. NeurIPS Workshop on Automated Knowledge Base Construction (AKBC). </li><li id="pavez-etal-2018-working"><span class="title">Working Memory Networks: Augmenting Memory Networks with a Relational Reasoning Module</span> <br>Pavez, J., Allende, H. and Allende-Cid, H., 2018. Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pp. 1000--1009. </li><li id="perez-liu-2017-dialog"><span class="title">Dialog state tracking, a machine reading approach using Memory Network</span> <br>Perez, J. and Liu, F., 2017. Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, Long Papers, pp. 305--314. </li><li id="wang-etal-2017-emergent"><span class="title">Emergent Predication Structure in Hidden State Vectors of Neural Readers</span> <br>Wang, H., Onishi, T., Gimpel, K. and McAllester, D., 2017. Proceedings of the 2nd Workshop on Representation Learning for NLP, pp. 26--36. Association for Computational Linguistics.</li><li id="dhingra2018neural"><span class="title">Neural Models for Reasoning over Multiple Mentions using Coreference</span> <br>Dhingra, B., Jin, Q., Yang, Z., Cohen, W.W. and Salakhutdinov, R., 2018. Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT). </li><li id="ji2017dynamic"><span class="title">Dynamic Entity Representations in Neural Language Models</span> <br>Ji, Y., Tan, C., Martschat, S., Choi, Y. and Smith, N.A., 2017. Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP). </li><li id="bosselut2018simulating"><span class="title">Simulating Action Dynamics with Neural Process Networks</span> <br>Bosselut, A., Ennis, C., Levy, O., Holtzman, A., Fox, D. and Choi, Y., 2018. Proceedings of the International Conference on Learning Representations (ICLR). </li><li id="mishra2018tracking"><span class="title">Tracking State Changes in Procedural Text: a Challenge Dataset and Models for Process Paragraph Comprehension</span> <br>Dalvi, B., Huang, L., Tandon, N., Yih, W. and Clark, P., 2018. Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. </li><li id="tandon2018reasoning"><span class="title">Reasoning about Actions and State Changes by Injecting Commonsense Knowledge</span> <br>Tandon, N., Dalvi, B., Grus, J., Yih, W., Bosselut, A. and Clark, P., 2018. Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP). </li><li id="du2019consistent"><span class="title">Be Consistent! Improving Procedural Text Comprehension using Label Consistency</span> <br>Du, X., Mishra, B.D., Tandon, N., Bosselut, A., Yih, W., Clark, P. and Cardie, C., 2019. Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT). </li><li id="das2018building"><span class="title">Building Dynamic Knowledge Graphs from Text using Machine Reading Comprehension</span> <br>Das, R., Munkhdalai, T., Yuan, X., Trischler, A. and McCallum, A., 2019. Proceedings of the International Conference on Learning Representations (ICLR). </li><li id="santoro2018relational"><span class="title">Relational Recurrent Neural Networks</span> <br>Santoro, A., Faulkner, R., Raposo, D., Rae, J., Chrzanowski, M., Weber, T., Wierstra, D., Vinyals, O., Pascanu, R. and Lillicrap, T., 2018. Proceedings of the Advances in Neural Information Processing Systems (NeurIPS), pp. 7299--7310. 
+</li></ol>
+
+</d-article>
+
+
+
+</body>
+</html>
