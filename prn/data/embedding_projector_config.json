@@ -1,7 +1,7 @@
 {
   "embeddings": [
     {
-      "tensorName": "Entity Embeddings",
+      "tensorName": "PRN - Entity Embeddings",
       "tensorShape": [
         1000,
         50
