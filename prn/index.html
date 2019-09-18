@@ -1136,6 +1136,8 @@ a.section-number:hover {
 <link rel="stylesheet" href="./index_files/mod_mstepper.min.css">
 <link rel="stylesheet" href="./index_files/materialize.min.css">
 <script src="./index_files/mod_mstepper.min.js">
+<link rel="stylesheet" href="./index_files/katex.min.css" crossorigin="anonymous"><script src="./index_files/katex.min.js" async=""></script></head>
+
 <style>
 
 .btn,
@@ -1176,6 +1178,12 @@ select {
  width:225px;   
 }
 
+.demo2{
+    width: 840px;
+    margin-left: -60px;
+
+}
+
 .demo2 table td, th{
 font-size: 12px;
 line-height:1.5em;
@@ -1183,7 +1191,6 @@ line-height:1.5em;
 
 </style>
 
-<link rel="stylesheet" href="./index_files/katex.min.css" crossorigin="anonymous"><script src="./index_files/katex.min.js" async=""></script></head>
 <body>
 
 <d-front-matter>
@@ -1400,12 +1407,12 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 
 <table style="border-collapse: collapse; border: none; border-spacing: 0px;">
 	<caption>
-		Table 1: Quantitative comparison of the proposed PRN model against the baselines.
+		Quantitative comparison of the proposed PRN model against the baselines.
 	</caption>
-	<tbody><tr>
+	<tr>
 		<td style="border-top-width: 2px; border-top-style: solid; border-top-color: black; padding-right: 3pt; padding-left: 3pt;">
 		</td>
-		<td colspan="4" style="border-top-width: 2px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+		<td colspan="5" style="border-top-width: 2px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			Single-task Training
 		</td>
 		<td colspan="4" style="border-top-width: 2px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
@@ -1427,6 +1434,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		</td>
 		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			Average
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
 		</td>
 		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			Cloze
@@ -1457,6 +1466,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			74.40
 		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
 		<td style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			–
 		</td>
@@ -1485,6 +1496,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			44.68
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			–
@@ -1515,6 +1528,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			27.39
 		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			–
 		</td>
@@ -1543,6 +1558,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			55.06
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			44.62
@@ -1573,6 +1590,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			52.87
 		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			<b>47.81</b>
 		</td>
@@ -1602,6 +1621,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			<b>57.57</b>
 		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
 		<td style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
 			46.45
 		</td>
@@ -1616,7 +1637,7 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		</td>
 	</tr>
 	<tr>
-		<td colspan="9" style="padding-right: 3pt; padding-left: 3pt;">
+		<td colspan="18" style="padding-right: 3pt; padding-left: 3pt;">
 			*Taken from the <a href="https://hucvl.github.io/recipeqa/" target="_self">RecipeQA project website</a>, based on 100 questions sampled randomly from the validation set.
 		</td>
 	</tr>
@@ -1631,6 +1652,8 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 		</td>
 		<td style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
@@ -1638,7 +1661,9 @@ We follow a simple framework and employ PRN model for comprehending procedural t
 		<td colspan="2" style="text-align: center; padding-right: 3pt; padding-left: 3pt;">
 		</td>
 	</tr>
-</tbody></table><span>
+</table>
+
+<span>
 
 Table 1 presents the quantitative results for the visual reasoning tasks in RecipeQA. In single-task training setting, PRN gives state-of-the-art results visual cloze and visual coherence tasks, outperforming other neural models. Moreover, it achieves the best performance on average. These results demonstrate the importance of having a dynamic memory and keeping track of entities extracted from the recipe. In multi-task training setting where a single model is trained to solve all the tasks at once, PRN and BIDAF w/ static memory perform comparably and give significantly better results than BIDAF. Note that the model performances in the multi-task training setting are worse than single-task performances.
 
@@ -1665,7 +1690,7 @@ Table 1 presents the quantitative results for the visual reasoning tasks in Reci
 
 <select name="tasks" id="tasks">
             <option id="0" value="">Select one task for interactive demo</option>
-            <option id="1" value="1">Visual Cloze Task</option>
+            <option id="1" value="1" selected="selected">Visual Cloze Task</option>
             <option id="2" value="2">Visual Coherence Task</option>
             <option id="3" value="3">Visual Ordering Task</option>
 
@@ -1681,7 +1706,7 @@ https://github.com/Kinark/Materialize-stepper
 <div class="section">
    <div class="demo2">
       <div class="row">
-         <div class="col">
+         <div class="col s12">
             <h3 class="light center-align blue-text">Recipe: Minnesota Cookies</h3>
             <div class="card">
                <div class="card-content">
@@ -1945,7 +1970,7 @@ Correct Answer : A
 <div class="section">
    <div class="demo2">
       <div class="row">
-         <div class="col">
+         <div class="col s12">
             <h3 class="light center-align blue-text">Recipe: Healthier-For-You Peanut Butter Cups</h3>
             <div class="card">
                <div class="card-content">
@@ -2213,7 +2238,7 @@ Correct Answer : A
 <div class="section">
    <div class="demo2">
       <div class="row">
-         <div class="col">
+         <div class="col s12">
             <h3 class="light center-align blue-text">Recipe: Key Lime Buttered Green Beans</h3>
             <div class="card">
                <div class="card-content">
@@ -2490,6 +2515,12 @@ Correct Answer : A
 
 <script>
 
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "ready!" );
+$('#visual_cloze_demo').show();
+});
+
 $(document).on('change',"#tasks", function() { 
      var tasks_val = $(this).val()
 
@@ -2512,6 +2543,13 @@ else if (tasks_val == 3)
 	$('#visual_ordering_demo').show();
 	$('#visual_cloze_demo').hide();
 	$('#visual_coherence_demo').hide();
+
+}
+else
+{
+	$('#visual_cloze_demo').hide();
+	$('#visual_coherence_demo').hide();
+	$('#visual_ordering_demo').hide();
 
 }
 
@@ -2616,7 +2654,7 @@ var cntrldGotoOrdering = document.getElementById('controlled_reset_ordering')
   <tr>
     <td></td>
     <td></td>
-    <td><input type="button" class="waves-effect waves-dark btn blue" id="get_neighbours" value="=" onclick="showNeighbours()">
+    <td><input type="button" class="waves-effect waves-dark btn blue" id="get_neighbours" value="Show the nearest neighbors" onclick="showNeighbours()">
 </td>
   </tr>
 
