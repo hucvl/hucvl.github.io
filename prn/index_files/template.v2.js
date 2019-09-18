@@ -26,6 +26,11 @@
       ${e.publishedDate?`
         <p>${e.publishedMonth} ${e.publishedDay}, ${e.publishedYear}</p> `:`
         <p><em>Not published yet.</em></p>`}
+      <h3>DOI</h3>
+	      ${e.doi?`
+	        <p><a href="https://doi.org/${e.doi}">${e.doi}</a></p>`:`
+	        <p><em>No DOI yet.</em></p>`}
+	    </div>
     </div>
     <div>
           </div>
