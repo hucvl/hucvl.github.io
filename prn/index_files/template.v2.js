@@ -26,13 +26,14 @@
       ${e.publishedDate?`
         <p>${e.publishedMonth} ${e.publishedDay}, ${e.publishedYear}</p> `:`
         <p><em>Not published yet.</em></p>`}
-      <h3>DOI</h3>
-	      ${e.doi?`
-	        <p><a href="https://doi.org/${e.doi}">${e.doi}</a></p>`:`
-	        <p><em>No DOI yet.</em></p>`}
+     
 	    </div>
     </div>
     <div>
+ <h3>DOI</h3>
+	      ${e.doi?`
+	        <p><a href="https://doi.org/${e.doi}">${e.doi}</a></p>`:`
+	        <p><em>No DOI yet.</em></p>`}
           </div>
   </div>
 `}function x(e,t,n=document){if(0<t.size){e.style.display='';let i=e.querySelector('.references');if(i)i.innerHTML='';else{const t=n.createElement('style');t.innerHTML=Mi,e.appendChild(t);const a=n.createElement('h3');a.id='references',a.textContent='References',e.appendChild(a),i=n.createElement('ol'),i.id='references-list',i.className='references',e.appendChild(i)}for(const[e,a]of t){const t=n.createElement('li');t.id=e,t.innerHTML=o(a),i.appendChild(t)}}else e.style.display='none'}function k(e,t){let n=`
