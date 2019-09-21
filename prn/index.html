@@ -2661,7 +2661,7 @@ var cntrldGotoOrdering = document.getElementById('controlled_reset_ordering')
 
 <tr>
     <td></td>
-    <td><b>Nearest Neighbours</b></td>
+    <td><span id="neighbours_text">&nbsp;</span></td>
     <td></td>
   </tr>
 
@@ -2676,7 +2676,6 @@ var cntrldGotoOrdering = document.getElementById('controlled_reset_ordering')
 
 
 </div>
-
 
                   <form method="GET" action="?"></form>
 
@@ -2700,9 +2699,14 @@ $(document).on('change',"#base", function() {
      var base_val = $(this).val()
      // alert( $(this).val())
 
+$("#neighbours").html("");
+$("#neighbours_text").html("");
+$('#get_neighbours').hide();
+
 if(base_val == 0)
 {
  	$("#neighbours").html("");
+$("#neighbours_text").html("");
  	$("#base_body").html("");
 	$("#plus_body").html("");
 	$("#minus_body").html("");
@@ -2720,8 +2724,6 @@ else if(base_val == 1)
 
 	$('#minus').empty();
 	$('#minus').append('<option id="0" value="" selected="selected">Select one entity vector to subtract</option>');
-
-
 }
 else if (base_val == 2)
 {	
@@ -2768,11 +2770,21 @@ $(document).on('change',"#minus", function() {
      var minus_val = $(this).val()
     if(minus_val == 21)
 {
+
+$('#get_neighbours').show();
+
 	$("#minus_body").html("<h4>Step 1 (Flowerpot Chicken)</h4>This is a cheap and easy method of an ancient cooking technique known as clay pot cooking using a common terra cotta flowerpot and saucer. You can spend over $100 on a clay cooker at a gourmet kitchen gadget store, or about $20 at a garden supply. You choose. Some of you may already have the pot lying in your yard, garage or shed. Once you try this you will probably be cooking all kinds of things in it! First find (or buy) a large 12-14 inch diameter UNGLAZED pot and saucer. Clean any loose dirt off by scrubbing with hot water, but NEVER use soap on unglazed terra cotta. The taste will never leave.");
 }
 else if (minus_val == 22)
 {	
+
+$('#get_neighbours').show();
+
 	$("#minus_body").html("<h4>Step 1 (Birdcage-BQ)</h4>All that sounded logic to me, and instead of looking on the net how others did it I started thinking how Bricobart would build such a device - I mean a bbq, not an anti-troll gun. And since I didn't want to spend any money I decided to build it from scratch. The project failed in the first trial, but ran like a small dog chased by a beeswarm in the second. Enjoy my poor men's vertical birdcage-based bbq!");
+}
+else
+{
+$('#get_neighbours').hide();
 }
 
 });
@@ -2786,11 +2798,16 @@ function showNeighbours() {
 
 if(base_val == 1)
 {
-	$("#neighbours").html("Tomatoes (Chillie Corn Carnea), Tomatoes (Seven Layer Seven Grain Bread), Tomatoes (How to Make Chicken Cacciatore)");
+	$("#neighbours").html("<table border=1px><tr><th>Tomatoes (Chillie Con Carnea)</th><th>Tomatoes (Seven Layer Seven Grain Bread)</th><th>Tomatoes (How to Make Chicken Cacciatore)</th></tr><tr><td><b>Step 1: Prepping the Vegetables.</b>\n\nThe first step is to have all the Vegetables prepped and ready to go in the pan, so finely <u>dice</u> the Garlic, onions and Peppers. Don't worry about <u>mixing</u> them up in the bowl, all of these items are going to be <u>sauteed</u> in a small amount of oil at the next stage. Picture 1. Finely <u>dice up</u> the Garlic, you want it to be almost puree consistency. Picture 2. Finely dice up the Onions, this doesn't need to be as fine as the garlic but you should ensure that they are all roughly the same size. Picture 3. Lastly <u>dice up</u> the bell pepper, I show you how i <u>cut</u> this in the video, but i will go over it quickly. Firstly i take off the four walls of the pepper, <u>flatten</u> them then <u>cut</u> them in to strips, then simply cut the other way so i have them diced.</td><td><b>Step 1: Ingredients</b>\n\n... pepperoni (I used what was left in a package which was enough for one layer) 1/2 onion 2 roma tomatoes <u>dried</u> rosemary <u>shredded</u> mozarella and parmesan fresh savory, basil, tarragon, and thyme 2 or 3 cloves of garlic salt (sea or kosher salt are best) and pepper <u>Slice</u> the tomatoes and onion as thin as is reasonable, <u>slice</u> the garlic as thin as possible. Thoroughly <u>wash</u> the fresh herbs and <u>pull</u> the leaves from the stems. Discard the stems.</td><td><b>Step 1: Gather Your Ingredients...</b>\n1 teaspoon <u>dried</u> oregano 1/8 teaspoon red pepper flakes (see step five for a bit of humor on this note) 3/4 to 1 cup wine - Honestly, folks, don't be too particular about the wine. Red or white is fine. (you may substitute chicken broth, or even <u>add</u> broth in addition to the wine. Be creative!) 1 - 28 ounce can <u>diced</u> tomatoes (save the juice!) 1/2 teaspoon <u>dried</u> Porcino mushrooms (Optional, see step #2)</td></tr></table>");
+
+$("#neighbours_text").html("<b>Nearest Neighbours</b>");
 }
 else if (base_val == 2)
 {
-	$("#neighbours").html("Milk (Patoto Sour for One), Milk (Family Size Lasagne), Milk (Patoto Soup)");
+
+	$("#neighbours").html("<table border=1px><tr><th>Milk (Patoto Sour for One)</th><th>Milk (Family Size Lasagne)</th><th>Milk (Patoto Soup)</th></tr><tr><td><b>Step 3: Cooking</b>\n\n<u>Melt</u> the butter and <u>add</u> 1/3 cup <u>chopped</u> onions. When the onions are <u>cooked</u> <u>add</u> the bacon bits. Now <u>add</u> the potatoes back to the pot and <u>mash</u> the potato mixture. I use a potato masher or you can just use a fork. You still want it lumpy but the potatoes will help <u>thicken</u> the soup. <u>Pour</u> the milk and <u>mix</u> well. <u>Add</u> salt and pepper and <u>heat</u> until it is a slow <u>boil</u>. <u>Remove</u> from the stove and <u>add</u> the cheese and <u>stir</u> until melted. If you <u>add</u> the cheese too early it will go to the bottom and burn.</td><td><b>Step 2: Meat Sauce</b>\n\n<u>Preheat</u> oven to 180 degrees celsius. <u>Brown off</u> the mince in a large pan, depending on the fat content of the meat, you may or may not need a little oil. <u>Drain</u> the mince onto some paper towel to <u>remove</u> any oil and then <u>place</u> back in the pan. <u>Add</u> 4 slices of <u>chopped</u> prosciutto (or bacon/pancetta) and <u>fry</u> for a few minutes. <u>Add</u> beef stock, tomato sauce, nutmeg, bayleaf and oregano. <u>Simmer</u> for at least 30 minutes.</td><td><b>Step 2: Potato Prep + Seasonings</b>\nMake sure all potatoes are <u>peeled</u> and <u>cut</u> into chunks. In a saucepan over medium heat, <u>drop</u> in the tablespoon of butter, the red pepper flakes and Italian seasoning. Let the butter <u>melt</u> and <u>stir</u> the seasonings around until they start smelling nice. :)</td></tr></table>");
+
+$("#neighbours_text").html("<b>Nearest Neighbours</b>");
 }
   
 }
