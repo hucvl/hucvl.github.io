@@ -1,0 +1,9 @@
+@ARTICLE{attribute_hallucination,
+author={L. {Karacan} and Z. {Akata} and A. {Erdem} and E. {Erdem}},
+journal={ACM Transactions on Graphics},
+title={Manipulating Attributes of Natural Scenes via Hallucination},
+year={2019},
+volume={},
+number={},
+pages={1-1},
+month={},}
