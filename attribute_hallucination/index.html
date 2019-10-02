@@ -291,7 +291,7 @@
 
 
   <b>Citation</b>
-  <p>Levent Karacan, Zeynep Akata, Aykut Erdem, and Erkut Erdem. "Manipulating Attributes of Natural Scenes via Hallucination", in Arxiv 1808.07413.
+  <p>Levent Karacan, Zeynep Akata, Aykut Erdem, and Erkut Erdem. "Manipulating Attributes of Natural Scenes via Hallucination", ACM Transactions on Graphics, accepted for publication, 2019.
     <br>
     <a href="bibtex.txt">Bibtex</a>
 
@@ -307,7 +307,7 @@
   <p>
     In this study, we explore building a two-stage framework for enabling users to directly manipulate high-level attributes of a natural scene.
     The key to our approach is a deep generative network which can hallucinate images of a scene as if they were taken at a different season (e.g. during winter),
-    weather condition (e.g. in a cloudy day) or time of the day (e.g. at sunset).Once the scene is hallucinated with the given attributes,
+    weather condition (e.g. in a cloudy day) or time of the day (e.g. at sunset). Once the scene is hallucinated with the given attributes,
     the corresponding look is then transferred to the input image while preserving the semantic details intact, giving a photo-realistic manipulation result.
     As the proposed framework hallucinates what the scene will look like, it does not require any reference style image as commonly done in most of the appearance or style transfer approaches.
     Moreover, it allows to simultaneously manipulate a given scene according to a large set transient attributes to a large extent within a single model, eliminating the need to train multiple networks per each translation task.
@@ -341,10 +341,10 @@
 
   <p>
     We propose a new two-stage visual attribute manipulation framework for changing high-level attributes of a given outdoor image.
-    Very recently a new scene generation tool GauGAN <d-cite key="park2019semantic"></d-cite> was proposed in CVPR2019 to synthesize
-    realistic outdoor scenes from interactively edited doodles. Our image editing tool differ from the GauGAN in two aspects.
-    First, our image editing tool not only aims at scene generation from semantic layout like in GauGAN but also provides manipulating transient attributes of input outdoor scenes.
-    Second, our scene generation model enables users to play degrees of transient attributes as well as drawing new outdoor scene interactively.
+    Very recently, in CVPR2019, a similar scene generation tool named GauGAN <d-cite key="park2019semantic"></d-cite> was proposed to synthesize
+    realistic outdoor scenes from interactively edited doodles. Our image editing tool differs from GauGAN in the following two aspects.
+    First, our image editing tool not only aims at scene generation from semantic layout like in GauGAN but also it provides manipulating transient attributes of input outdoor scenes.
+    Second, our scene generation model enables users to play degrees of transient attributes as well as drawing a novel outdoor scene interactively.
   </p>
 
   <h2>System Overview</h2>
@@ -362,13 +362,13 @@
 
   </p>
 
-  <h2 id="model">Scene Generation Model(SGN)</h2>
+  <h2 id="model">Scene Generation Model (SGN)</h2>
   <figure>
     <img src="./images/TOG_architecture2.png">
     <figcaption>Scene Generation Network (SGN). Our proposed CGAN architecture for generating synthetic outdoor scenes consistent with given layout and transientattributes.</figcaption>
   </figure>
   <p>
-    We train a conditional Generative Adversarial Network(cGAN)  model named as SGN to hallucinate an outdoor scene
+    We train a conditional Generative Adversarial Network (cGAN)  model named as SGN to hallucinate an outdoor scene
     in different transient attributes conditioning semantic layouts <d-math>s</d-math> and transient attributes <d-math>a</d-math>.
     We follow a multi-scale strategy similar to that in Pix2pixHD <d-cite key="wang2018high"></d-cite>. Our scene generator network (SGN),
     however, takes the transient scene attributes and a noise vector as extra inputs in addition to the semantic layout.
@@ -499,7 +499,7 @@
 
   <h3 id="acknowledgements">Acknowledgements</h3>
   <p>
-    We would like to thank NVIDIA Corporation for the donation of GPUs used in this research.
+    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem. We would like to thank NVIDIA Corporation for the donation of GPUs used in this research. This work has been partially funded by the DFG-EXC-Nummer 2064/1-Projektnummer 390727645.
   </p>
 
  <!-- <h3 id="peer-reviews">Discussion and Review</h3>
