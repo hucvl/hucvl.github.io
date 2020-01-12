@@ -235,19 +235,35 @@ iframe, object, embed {
     "description": "A synthetic dataset for person re-identification and attribute recognition.",
     "authors": [
       {
-        "author": "Levent Karacan",
-        "authorURL": "https://web.cs.hacettepe.edu.tr/~karacan/",
-        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+        "author": "Onur Can Uner",
+        "affiliations": [{"name": "Bilkent University", "url": "https://www.bilkent.edu.tr"}]
+      },
+      {
+        "author": "Cem Aslan",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Burak Ercan",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Tayfun Ates",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Ufuk Celikcan",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~celikcan/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
       },
       {
         "author": "Aykut Erdem",
         "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
-        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
       },
       {
         "author": "Erkut Erdem",
         "authorURL": "https://web.cs.hacettepe.edu.tr/~erkut/",
-        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
       }
     ],
     "katex": {
@@ -275,36 +291,31 @@ iframe, object, embed {
 
 <d-article>
   <figure >
-    <img src="./images/teaser.jpg">
+    <img src="./images/diversity_f1.png">
     <figcaption>An arbitrarily chosen sample of 24 synthetic persons from our proposed Synthetic18K dataset.</figcaption>
   </figure>
 
   <div>
-  <a href="attribute_hallucination.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper.png" width=190></a>
+  <a href="###.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper.png" width=190></a>
   <br>
   
   <b>Paper</b>   
-  <p>Levent Karacan, Zeynep Akata, Aykut Erdem, and Erkut Erdem. "Manipulating Attributes of Natural Scenes via Hallucination", ACM Transactions on Graphics, accepted for publication, 2019.
+  <p>Onur Can Uner, Cem Aslan, Burak Ercan, Tayfun Ates, Ufuk Celikcan, Aykut Erdem, and Erkut Erdem. "Synthetic18K: Learning Better Representations for Person Re-ID and Attribute Recognition from 1.4 Million Synthetic Images", submitted.
     <br>
-    <a href="attribute_hallucination.pdf">Paper</a> | <a href="attribute_hallucination.pdf">Supplementary</a> | <a href="bibtex.txt">Bibtex</a>
+    <a href="###.pdf">Paper</a> | <a href="bibtex.txt">Bibtex</a>
   </p>
 
 
-  <b>Code and Dataset:</b> <a href='http://github.com/hucvl/attribute_hallucination'>PyTorch implementation</a></b>
+  <b>Dataset:</b> <a href='http://github.com/hucvl/attribute_hallucination'>PyTorch implementation</a></b>
+  <br>
+  <b>Pre-trained models:</b> <a href='###'>PyTorch models</a></b>
   <br>
   </div>
   <hr/>
 
   <h2 id="abstract">Abstract</h2>
   <p>
-    In this study, we explore building a two-stage framework for enabling users to directly manipulate high-level attributes of a natural scene.
-    The key to our approach is a deep generative network which can hallucinate images of a scene as if they were taken at a different season (e.g. during winter),
-    weather condition (e.g. in a cloudy day) or time of the day (e.g. at sunset). Once the scene is hallucinated with the given attributes,
-    the corresponding look is then transferred to the input image while preserving the semantic details intact, giving a photo-realistic manipulation result.
-    As the proposed framework hallucinates what the scene will look like, it does not require any reference style image as commonly done in most of the appearance or style transfer approaches.
-    Moreover, it allows to simultaneously manipulate a given scene according to a large set transient attributes to a large extent within a single model, eliminating the need to train multiple networks per each translation task.
-    Our comprehensive set of qualitative and quantitative results demonstrate the effectiveness of our approach against the competing methods.
-
+    Learning robust representations is critical for the success of person re-identification and attribute recognition systems. However, to achieve this, we must use a large dataset of diverse person images as well as annotations of identity labels and/or a set of different attributes. Apart from the obvious concerns about privacy issues, the manual annotation process is both time consuming and too costly. In this paper, we instead propose to use synthetic person images for addressing these difficulties. Specifically, we first introduce Synthetic18K, a large-scale dataset of over 1 million computer generated person images of 18K unique identities with relevant attributes. Moreover, we demonstrate that pretraining of simple deep architectures on Synthetic18K for person re-identification and attribute recognition and then fine-tuning on real data leads to significant improvements in prediction performances, giving results better than or comparable to state-of-the-art models.
   </p>
   <hr/>
 
