@@ -25,7 +25,7 @@
       <h3>Published</h3>
       ${e.publishedDate?`
         <p>${e.publishedMonth} ${e.publishedDay}, ${e.publishedYear}</p> `:`
-        <p><em>ACM Transactions on Graphics, November 2019, Article No: 7</em></p>`}
+        <p><em>ACM Transactions on Graphics, February 2020, Article No: 7</em></p>`}
     </div>
     <div>
       <h3>DOI</h3>
