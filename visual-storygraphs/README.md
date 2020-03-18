@@ -5,15 +5,15 @@ The photographs are collected as vacation photo collections from individual user
 
 There are totally 132K images collected from 323 users and 1.5K photo albums. The meta-data of photos such as geolocation, textual tags and timestamp are also available.
 
-| City Albums | Number of Users | Number of Photo Sets | Number of Photos |
-|-------------|:---------------:|:--------------------:|:----------------:|
-| Amsterdam   | 39              | 100                  | 9923             |
-| Istanbul    | 58              | 167                  | 13645            |
-| New York    | 54              | 428                  | 30443            |
-| Paris       | 39              | 178                  | 21819            |
-| Tokyo       | 71              | 514                  | 36787            |
-| Venice      | 62              | 179                  | 19729            |
-| **Total**   | **323**         | **1566**             | **132346**       |
+| City Albums | Number of Users | Number of Photo Sets | Number of Photos | Number of Unique Words
+|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|
+| Amsterdam   | 39              | 100                  | 9923             |1460|
+| Istanbul    | 58              | 167                  | 13645            |979|
+| New York    | 54              | 428                  | 30443            |18538|
+| Paris       | 39              | 178                  | 21819            |1521|
+| Tokyo       | 71              | 514                  | 36787            |4007|
+| Venice      | 62              | 179                  | 19729            |2032|
+| **Total**   | **323**         | **1566**             | **132346**       |**25118**|
 
 ![](population-densities.png)
 
