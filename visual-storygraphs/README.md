@@ -19,7 +19,7 @@ There are totally 132K images collected from 323 users and 1.5K photo albums. Th
 
 ## How To Download
 
-The csv files contain all the urls and meta-data of individual photos. The urls can be used to download photos from flickr.
+You can download the csv files containing the urls and meta-data of individual photos [here](./yfcmmf00m-cities.zip). The urls can be used to download photos from flickr.
 
 # Summarization Photo Set
 This dataset contains photo sets collected from Flickr.
@@ -38,4 +38,4 @@ There are 100 photos from 6 different cities namely Amsterdam, Istanbul, New Yor
 
 ## How To Download
 
-The json files contain all the urls and meta-data of individual photos. The urls can be used to download photos from flickr.
+You can download the json files containing the urls and meta-data of individual photos [here](./summary-set.zip). The urls can be used to download photos from Flickr.
