@@ -25,9 +25,17 @@ For each city, textual data extracted from the photos' meta-data - which are tag
 |:---:|:---:|
 |Amsterdam                    |  Istanbul |
 
+|![](wordcloud_newyork.png)|![](wordcloud_paris.png)|
+|:---:|:---:|
+|New York                    |  Paris |
+
+|![](wordcloud_tokyo.png)|![](wordcloud_venice.png)|
+|:---:|:---:|
+|Tokyo                    |  Venice |
+
 ## How To Download
 
-You can download the csv files containing the URL and meta-data of each photo, word vocabulary and corresponding tf-idf values [here](./yfcmmf00m-cities.zip). Each csv file contains URLs and meta-data of an individual user's photo collection from that specific city. The URLs can be used to download photos directly from Flickr.
+You can download the csv files containing the urls and meta-data of individual photos, word vocabulary and corresponding tf-idf values [here](./yfcmmf00m-cities.zip). Each csv file contains urls and meta-data of an individual user's photo collection from that specific city. The urls can be used to download photos from Flickr.
 
 # Summarization Photo Set
 This dataset contains photo sets collected from Flickr. Different from the YFCC100M-CITIES dataset, the photos are fetched directly from Flickr, on a ranged timescale and each city from a different individual user.
@@ -48,4 +56,4 @@ Ground truth human summaries are also provided as *.mat* files. Each album is an
 
 ## How To Download
 
-You can download the json files containing the image URLs and the related meta-data, as well the groundtruth summaries [here](./summary-set.zip). The URLs can be used to download photos from Flickr.
+You can download the json files containing the urls and meta-data of individual photos [here](./summary-set.zip). The urls can be used to download photos from Flickr.
