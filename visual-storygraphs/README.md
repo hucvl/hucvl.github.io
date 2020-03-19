@@ -20,9 +20,10 @@ There are totally 132K images collected from 323 users and 1.5K photo albums. Th
 For each city, textual data extracted from the photos' meta-data - which are tags and title - is also provided in terms of a word vocabulary and it's inverse-document frequencies. Additionally number of tags for each photo together with their term frequencies are also provided.
 
 ### Word Clouds of the Vocabularies from Amsterdam and Istanbul Cities
-Amsterdam                    |  Istanbul
-:---:|:---:
-![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)
+
+|![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)|
+|:---:|:---:|
+|Amsterdam                    |  Istanbul |
 
 ## How To Download
 
