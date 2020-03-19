@@ -21,13 +21,13 @@ For each city, textual data extracted from the photos' meta-data - which are tag
 
 ### Word Clouds of the Vocabularies from Cities of YFCC100M-CITIES Dataset
 
-|![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)||![](wordcloud_newyork.png)
+|![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)|![](wordcloud_newyork.png)|
 |:---:|:---:|:---:|
-|Amsterdam                    |  Istanbul | New York                    |
+|Amsterdam                    |  Istanbul | New York|
 
-|![](wordcloud_paris.png)|![](wordcloud_tokyo.png)|![](wordcloud_venice.png)|
+![](wordcloud_paris.png)|![](wordcloud_tokyo.png)|![](wordcloud_venice.png)|
 |:---:|:---:|:---:|
-|  Paris ||Tokyo                    |  Venice |
+|  Paris |Tokyo                    |  Venice |
 
 ## How To Download
 
