@@ -22,7 +22,7 @@ For each city, textual data extracted from the photos' meta-data - which are tag
 ### Word Clouds of the Vocabularies from Amsterdam and Istanbul Cities
 Amsterdam                    |  Istanbul
 :---:|:---:
-![](wordcloud_amsterdam_.png)|![](wordcloud_istanbul.png)
+![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)
 
 ## How To Download
 
