@@ -52,6 +52,18 @@ There are 100 photos from 6 different cities namely Amsterdam, Istanbul, New Yor
 | Venice      | 100              |
 | **Total**   | **600**          |
 
+|![](Summarization_Amsterdam.jpg)|![](Summarization_Istanbul.jpg)|
+|:---:|:---:|
+|Amsterdam                    |  Istanbul |
+
+|![](Summarization_Newyork.jpg)|![](Summarization_Paris.jpg)|
+|:---:|:---:|
+|New York                    |  Paris |
+
+|![](Summarization_Tokyo.jpg)|![](Summarization_Venice.jpg)|
+|:---:|:---:|
+|Tokyo                    |  Venice |
+
 Ground truth human summaries are also provided as *.mat* files. Each album is annotated with 20 different human generated summaries. For every album, photos are shown to the users and let them select 10 most representative images.
 
 ## How To Download
