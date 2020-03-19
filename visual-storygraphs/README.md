@@ -18,9 +18,11 @@ There are totally 132K images collected from 323 users and 1.5K photo albums. Th
 | **Total**   | **323**         | **1566**             | **132346**       |**25118**|
 
 For each city, textual data extracted from the photos' meta-data - which are tags and title - is also provided in terms of a word vocabulary and it's inverse-document frequencies. Additionally number of tags for each photo together with their term frequencies are also provided.
+
+### Word Clouds of the Vocabularies from Amsterdam and Istanbul Cities
 Amsterdam                    |  Istanbul
 :---:|:---:
-![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)
+![](wordcloud_amsterdam_.png)|![](wordcloud_istanbul.png)
 
 ## How To Download
 
@@ -40,6 +42,8 @@ There are 100 photos from 6 different cities namely Amsterdam, Istanbul, New Yor
 | Tokyo       | 100              |
 | Venice      | 100              |
 | **Total**   | **600**          |
+
+Ground truth human summaries are also provided as *.mat* files. Each album is annotated with 20 different human generated summaries. For every album, photos are shown to the users and let them select 10 most representative images.
 
 ## How To Download
 
