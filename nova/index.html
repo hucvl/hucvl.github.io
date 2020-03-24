@@ -1,0 +1,324 @@
+<!doctype html>
+
+<head>
+  <title>NOVA: Rendering Virtual Worlds with Humans for Computer Vision Tasks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="deneme.js"></script>
+  <script src="./dist/template.v2.js"></script>
+
+
+  <style>.subgrid {
+    grid-column: screen;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    grid-column-gap: inherit;
+    grid-row-gap: inherit;
+  }
+
+  d-figure.base-grid {
+    grid-column: screen;
+    background: hsl(0, 0%, 97%);
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  d-figure {
+    margin-bottom: 1em;
+    position: relative;
+  }
+
+  d-figure > figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  d-title h1{
+    font-size: 40px;
+  }
+
+  content.l-body-outset{
+
+    width: 300px;
+  }
+
+  .shaded-figure {
+    background-color: hsl(0, 0%, 97%);
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    padding: 30px 0;
+  }
+
+  .pointer {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 26px;
+    left: -48px;
+  }
+
+  .figure-element, .figure-line, .figure-path {
+    stroke: #666;
+    stroke-miterlimit: 10px;
+    stroke-width: 1.5px;
+  }
+
+  .figure-element {
+    fill: #fff;
+    fill-opacity: 0.8;
+  }
+
+  .figure-line {
+    fill: none;
+  }
+
+  .figure-path {
+    fill: #666;
+    stroke-width: 1px;
+  }
+
+  .figure-group {
+    fill: #f9f9f9;
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-opacity: 0.6;
+    stroke-miterlimit: 10px;
+  }
+
+  .figure-faded {
+    opacity: 0.35;
+  }
+
+  .figure-box {
+    rx: 6px;
+    ry: 6px;
+  }
+
+  .figure-dashed {
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-miterlimit: 10px;
+    stroke-dasharray: 5, 5;
+  }
+
+  .figure-text {
+    fill: #000;
+    opacity: 0.6;
+    font-size: 13px;
+  }
+
+  .figure-text-faded {
+    opacity: 0.35;
+  }
+
+  .figure-large-text {
+    font-size: 18px;
+  }
+
+  .subscript {
+    font-size: 8px;
+  }
+
+  .figure-film-generator {
+    /* stroke: #006064; */
+    /* fill: #80DEEA; */
+
+    stroke: hsl(203, 65%, 70%);
+    fill: hsl(203, 65%, 85%);
+  }
+
+  .figure-film-generator-shaded {
+    /* stroke: #006064; */
+    /* fill: #00838F; */
+
+    stroke: hsl(203, 15%, 85%);
+    fill: hsl(203, 15%, 95%);
+  }
+
+  .figure-filmed-network {
+    /* stroke: #BF360C; */
+    /* fill: #FFAB91; */
+
+    stroke: hsl(11, 65%, 70%);
+    fill: rgb(242, 203, 194);
+  }
+
+  .todo {
+    color: red;
+  }
+
+
+  .tooltip {
+    position: absolute;
+    max-width: 300px;
+    max-height: 300px;
+    pointer-events: none;
+    transition: opacity;
+  }
+
+  .collapsible {
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
+    margin: 0.2em;
+    margin-left: 0;
+    padding-left: 0;
+    transform: translateX(0px);
+    transition:
+            color 0.1s ease-out,
+            transform 0.25s ease;
+  }
+
+  .collapsible:hover {
+    border-bottom: 1px solid inset;
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateX(10px);
+    transition:
+            transform 0.25s ease;
+  }
+
+  d-article .content {
+    display: none;
+    overflow: hidden;
+    background-color: none;
+  }
+
+  .expand-collapse-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+  }
+
+
+  #clevr-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+  #style-transfer-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+
+iframe, object, embed {
+  width: 100%;
+  height:400px
+  display: block !important;
+}
+  </style>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <script src="https://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.js"></script>
+
+</head>
+
+<body onload="initDemo()">
+
+<d-front-matter>
+  <script type="text/json">{
+    "title": "NOVA: Rendering Virtual Worlds with Humans for Computer Vision Tasks",
+    "description": "A procedural rendering engine for person-centric computer vision tasks.”,
+    "authors": [
+      {
+        "author": “Abdulrahman Kerim,
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Cem Aslan",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Ufuk Celikcan",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~celikcan/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Aykut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Erkut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~erkut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      }
+    ],
+    "katex": {
+      "delimiters": [
+        {
+          "left": "$",
+          "right": "$",
+          "display": false
+        },
+        {
+          "left": "$$",
+          "right": "$$",
+          "display": true
+        }
+      ]
+    }
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <h1>NOVA: Rendering Virtual Worlds with Humans for Computer Vision Tasks</h1>
+  <p>A procedural rendering engine for person-centric computer vision tasks.</p>
+  <div class="l-page" id="vtoc"></div>
+</d-title>
+
+<d-article>
+  <figure >
+    <img src="./images/teaser.png">
+    <figcaption>A sample panorama displaying procedurally generated humans by the NOVA framework in a controllable, configurable environ- ment along with their annotations. The first half is photorealistic renderings transitioning between different times of day and the latter half is demonstrating some of the pixel-level annotations NOVA generates for use in various computer vision tasks: (from left to right) instance segmentation, semantic segmentation, optical flow, surface normals and the depth data.</figcaption>
+  </figure>
+
+  <div>
+  <a href="###.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper.png" width=190></a>
+  <br>
+  
+  <b>Paper</b>   
+  <p>Abdulrahman Kerim, Ufuk Celikcan, Aykut Erdem, and Erkut Erdem. "NOVA: Rendering Virtual Worlds with Humans for Computer Vision Tasks", submitted.
+    <br>
+    <a href="###.pdf">Paper</a> | <a href="bibtex.txt">Bibtex</a>
+  </p>
+
+
+  <b>Demo:</b> <a href='###'>WebGL link</a>
+  <br>
+  <b>VirtualPTB1 Dataset:</b> <a href=‘###’>Download link</a>
+  <br>
+  </div>
+  <hr/>
+
+  <h2 id="abstract">Abstract</h2>
+  <p>
+    Today the cutting edge of computer vision research greatly depends on the availability of large datasets, which are critical for both effectively training and testing new methods. Manually annotating visual data, however, is not only a labor-intensive process but also prone to errors. In this study, we present NOVA, a versatile framework to create realistic-looking 3D rendered worlds containing procedurally generated humans with rich pixel-level ground truth annotations. Our system is designed from ground up to automate data collection and labeling pipeline for a wide range of low and high-level computer vision tasks, particularly those that deal with humans. NOVA can simulate various environmental factors such as weather conditions or different times of day, and bring diverse set of human agents to life, each having a distinct body shape, gender and age. As a proof of concept, we utilized NOVA to create two different datasets. The first one, VirtualPTB1, is a benchmark dataset for person tracking. It consists of 108 sequences with different levels of difficulty. For this particular task, we provide bounding box information about the person being tracked, and moreover, annotate each sequence with 17 different attributes from six distinct categories, namely crowdedness, camera altitude, time of day, weather condition, occlusion and scale variation. We performed a thorough analysis of various state-of-the-art trackers and highlight the challenges they face. Our analysis demonstrated that state-of-the-art trackers are considerably challenged on the sequences including adverse conditions such as high crowdedness, high camera altitude, night time, and foggy weather. The second dataset is generated for training purposes. It contains 97 sequences with normal weather conditions.The dataset was deployed for six different training scenarios for two deep trackers, CFNet and DiMP. Training CFNet only on these synthetic sequences from scratch, allows the model to surpass the baseline. On the other hand, fine-tuning the baseline of DiMP using either the synthetic sequences alone or combined with real sequences, improves the baseline as well.
+  </p>
+
+</d-article>
+
+<d-appendix>
+
+  <h3 id="acknowledgements">Acknowledgements</h3>
+  <p>
+    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem, and by TUBITAK-1001 Program Award No. 217E029.
+  </p>
+
+</d-appendix>
+
+<script type="text/javascript" src="index.bundle.js"></script></body>
