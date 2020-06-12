@@ -1,0 +1,514 @@
+<!doctype html>
+
+<head>
+  <title>Manipulating Attributes of Natural Scenes via Hallucination</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="deneme.js"></script>
+  <script src="./dist/template.v2.js"></script>
+
+
+  <style>.subgrid {
+    grid-column: screen;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    grid-column-gap: inherit;
+    grid-row-gap: inherit;
+  }
+
+  d-figure.base-grid {
+    grid-column: screen;
+    background: hsl(0, 0%, 97%);
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  d-figure {
+    margin-bottom: 1em;
+    position: relative;
+  }
+
+  d-figure > figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  d-title h1{
+    font-size: 40px;
+  }
+
+  content.l-body-outset{
+
+    width: 300px;
+  }
+
+  .shaded-figure {
+    background-color: hsl(0, 0%, 97%);
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    padding: 30px 0;
+  }
+
+  .pointer {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 26px;
+    left: -48px;
+  }
+
+  .figure-element, .figure-line, .figure-path {
+    stroke: #666;
+    stroke-miterlimit: 10px;
+    stroke-width: 1.5px;
+  }
+
+  .figure-element {
+    fill: #fff;
+    fill-opacity: 0.8;
+  }
+
+  .figure-line {
+    fill: none;
+  }
+
+  .figure-path {
+    fill: #666;
+    stroke-width: 1px;
+  }
+
+  .figure-group {
+    fill: #f9f9f9;
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-opacity: 0.6;
+    stroke-miterlimit: 10px;
+  }
+
+  .figure-faded {
+    opacity: 0.35;
+  }
+
+  .figure-box {
+    rx: 6px;
+    ry: 6px;
+  }
+
+  .figure-dashed {
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-miterlimit: 10px;
+    stroke-dasharray: 5, 5;
+  }
+
+  .figure-text {
+    fill: #000;
+    opacity: 0.6;
+    font-size: 13px;
+  }
+
+  .figure-text-faded {
+    opacity: 0.35;
+  }
+
+  .figure-large-text {
+    font-size: 18px;
+  }
+
+  .subscript {
+    font-size: 8px;
+  }
+
+  .figure-film-generator {
+    /* stroke: #006064; */
+    /* fill: #80DEEA; */
+
+    stroke: hsl(203, 65%, 70%);
+    fill: hsl(203, 65%, 85%);
+  }
+
+  .figure-film-generator-shaded {
+    /* stroke: #006064; */
+    /* fill: #00838F; */
+
+    stroke: hsl(203, 15%, 85%);
+    fill: hsl(203, 15%, 95%);
+  }
+
+  .figure-filmed-network {
+    /* stroke: #BF360C; */
+    /* fill: #FFAB91; */
+
+    stroke: hsl(11, 65%, 70%);
+    fill: rgb(242, 203, 194);
+  }
+
+  .todo {
+    color: red;
+  }
+
+
+  .tooltip {
+    position: absolute;
+    max-width: 300px;
+    max-height: 300px;
+    pointer-events: none;
+    transition: opacity;
+  }
+
+  .collapsible {
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
+    margin: 0.2em;
+    margin-left: 0;
+    padding-left: 0;
+    transform: translateX(0px);
+    transition:
+            color 0.1s ease-out,
+            transform 0.25s ease;
+  }
+
+  .collapsible:hover {
+    border-bottom: 1px solid inset;
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateX(10px);
+    transition:
+            transform 0.25s ease;
+  }
+
+  d-article .content {
+    display: none;
+    overflow: hidden;
+    background-color: none;
+  }
+
+  .expand-collapse-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+  }
+
+
+  #clevr-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+  #style-transfer-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+
+iframe, object, embed {
+  width: 100%;
+  height:400px
+  display: block !important;
+}
+  </style>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <script src="https://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.js"></script>
+
+</head>
+
+<body onload="initDemo()">
+
+<d-front-matter>
+  <script type="text/json">{
+    "title": "Burst Photography for Learning to Enhance Extremely Dark Images",
+    "description": "A new image enhancement method for extremely low-light images.",
+    "authors": [
+      {
+        "author": "Ahmet Serdar Karadeniz",
+        "authorURL": "https://askaradeniz.github.io/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Erkut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~erkut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Aykut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
+      }
+    ],
+    "katex": {
+      "delimiters": [
+        {
+          "left": "$",
+          "right": "$",
+          "display": false
+        },
+        {
+          "left": "$$",
+          "right": "$$",
+          "display": true
+        }
+      ]
+    }
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <h1>Burst Photography for Learning to Enhance Extremely Dark Images</h1>
+  <p>A new image enhancement method for extremely low-light images.</p>
+  <div class="l-page" id="vtoc"></div>
+</d-title>
+
+<d-article>
+  <figure >
+    <img src="./images/teaser.png">
+    <figcaption>A sample result obtained with our proposed burst- based extremely low-light image enhancement method. The standard camera output and its scaled version are shown at the top left corner. For comparison, the zoomed-in details from the outputs produced by the existing approaches are given in the subfigures. The results of the single image enhancement models, denoted with (S), are shown on the right. The results of the multiple image enhancement methods are presented at the bottom, with (B) denoting the burst and (E) indicating the ensemble models. Our single image model recovers finer-scale details much better than its state-of-the-art counterparts. Moreover, our burst model gives perceptually the most satisfactory result, compared to all the other methods.</figcaption>
+  </figure>
+
+  <div>
+  <a href="#.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper.png" width=190></a>
+  <br>
+  
+  <b>Paper</b>   
+  <p>Ahmet Serdar Karadeniz, Erkut Erdem, and Aykut Erdem. "Burst Photography for Learning to Enhance Extremely Dark Images", submitted.
+    <br>
+    <a href="#.pdf">Paper</a> | <a href="bibtex.txt">Bibtex</a>
+  </p>
+
+
+  <b>Code and Dataset:</b> <a href='http://github.com/hucvl/dark-burst-photography'>PyTorch implementation</a></b>
+  <br>
+  </div>
+  <hr/>
+
+  <h2 id="abstract">Abstract</h2>
+  <p>
+    Capturing images under extremely low-light con- ditions poses significant challenges for the standard camera pipeline. 
+    Images become too dark and too noisy, which makes traditional enhancement techniques almost impossible to apply. 
+    Recently, learning-based approaches have shown very promising results for this task since they have substantially 
+    more expressive capabilities to allow for improved quality. Motivated by these studies, in this paper, we aim to 
+    leverage burst photography to boost the performance and obtain much sharper and more accurate RGB images from 
+    extremely dark raw images. The backbone of our proposed framework is a novel coarse-to-fine network architecture 
+    that generates high-quality outputs progres- sively. The coarse network predicts a low-resolution, denoised raw image, 
+    which is then fed to the fine network to recover fine- scale details and realistic textures. To further reduce 
+    the noise level and improve the color accuracy, we extend this network to a permutation invariant structure 
+    so that it takes a burst of low-light images as input and merges information from multiple images at the feature-level. 
+    Our experiments demonstrate that our approach leads to perceptually more pleasing results than the state-of-the-art 
+    methods by producing more detailed and considerably higher quality images.
+
+  </p>
+
+  <h2 id="introduction">Introduction</h2>
+  
+   <p>
+    The visual world we live in constantly changes its appearance depending on time and seasons.
+    For example, at sunset, the sun gets close to the horizon gives the sky a pleasant red tint,
+    with the advent of warm summer, the green tones on the grass leave its place in bright yellowish tones
+    and autumn brings a variety of shades of brown and yellow to the trees. Such visual changes in the nature continues
+    in various forms at almost any moment with the effect of time, weather and season.
+    Such high-level changes are referred to as <em>transient scene attributes</em> -- e.g. cloudy, foggy, night, sunset, winter, summer, to name a few <d-cite key="transient_attributes"></d-cite>.
+  </p>
+
+  <p>
+    Image generation is quite a challenging task since it needs tohave realistic looking outputs.
+    Visual attribute manipulation can beconsidered a bit harder as it aims at photorealism as well as results that are semantically consistent with the input image.
+    Unlike recent image synthesis methods <d-cite key="isola2016image,chen2017photographic,wang2018high,qi2018semi"></d-cite>,
+    which explore producing realistic-looking images from semantic layouts, automatically manipulating visual attributes
+    requires modifying the appearance of an input image while preserving object-specific semantic details intact.
+    Some recent style transfer methods achieve this goal to a certain extent but they require a reference style
+    image <d-cite key="luan2017deep,li2018closed"></d-cite>.
+  </p>
+
+  <p>
+    We propose a new two-stage visual attribute manipulation framework for changing high-level attributes of a given outdoor image.
+    Very recently, in CVPR2019, a similar scene generation tool named GauGAN <d-cite key="park2019semantic"></d-cite> was proposed to synthesize
+    realistic outdoor scenes from interactively edited doodles. Our image editing tool differs from GauGAN in the following two aspects.
+    First, our image editing tool not only aims at scene generation from semantic layout like in GauGAN but also it provides manipulating transient attributes of input outdoor scenes.
+    Second, our scene generation model enables users to play degrees of transient attributes as well as drawing a novel outdoor scene interactively.
+  </p>
+
+  <h2>System Overview</h2>
+
+  <figure>
+    <img src="./images/TOG_system_overview_v4.jpg">
+    <figcaption>Overview of the proposed attribute manipulation framework. Given an input image and its semantic layout, we first resize and center-crop the layout to <d-math>512 \times 512</d-math> pixels and feed it to our scene generation network.
+      After obtaining the scene synthesized according to the target transient attributes, we transfer the look of the hallucinated style back to the original input image.</figcaption>
+  </figure>
+  <p>
+    Our framework provides an easy and high-level editing system to manipulate transient attributes of outdoor scenes. The key component of our framework is a scene generation network that is conditioned on semantic layout and continuous-valued vector of transient attributes.
+    This network allows us to generate synthetic scenes consistent with the semantic layout of the input image and having the desired transient attributes. One can play with <d-math>40</d-math> different transient attributes by increasing or decreasing values of certain dimensions.
+    Note that, at this stage, the semantic layout of the input image should also be fed to the network, which can be easily automated by a scene parsing model.
+    Once an artificial scene with desired properties is generated, we then transfer the look of the hallucinated image to the original input image to achieve attribute manipulation in a photorealistic manner.
+
+  </p>
+
+  <h2 id="model">Scene Generation Model (SGN)</h2>
+  <figure>
+    <img src="./images/TOG_architecture2.png">
+    <figcaption>Scene Generation Network (SGN). Our proposed CGAN architecture for generating synthetic outdoor scenes consistent with given layout and transientattributes.</figcaption>
+  </figure>
+  <p>
+    We train a conditional Generative Adversarial Network (cGAN)  model named as SGN to hallucinate an outdoor scene
+    in different transient attributes conditioning semantic layouts <d-math>s</d-math> and transient attributes <d-math>a</d-math>.
+    We follow a multi-scale strategy similar to that in Pix2pixHD <d-cite key="wang2018high"></d-cite>. Our scene generator network (SGN),
+    however, takes the transient scene attributes and a noise vector as extra inputs in addition to the semantic layout.
+    While the noise vector provides stochasticity and controls diversity in the generated images, transient attributes let the users have control on the generation process.
+    Our full objective that combines multi-scale GAN loss and layout-invariant feature matching loss thus becomes:<br><br>
+
+ <d-math>\min_G \left( \left(\max_{D=\{D_1, D_2, D_3\}} \sum_{k=1,2,3}\mathcal{L}_{GAN}(G,D_k) \right) +\lambda \mathcal{L}_{percep}(G) \right)</d-math>
+  </p>
+
+
+  <h2 id="demo">Demo</h2>
+  <table align="center" >
+
+    <tr>
+      <td align="center" valign="middle"> <h3>Input</h3> </td>
+      <td align="center" valign="middle"> <h3>Output</h3></td>
+    </tr>
+    <tr>
+      <td> <button onclick="newImage()">Change Image</button>  </td>
+
+      <td> </td>
+    </tr>
+    <tr>
+      <td> <figure id="input"></figure> </td>
+
+      <td> <figure id="output"></figure> </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" align="center"> <select id="attributes" size="1" onchange="myFunction()">
+        <option value="sunset">Sunset</option>
+        <option value="winter">Winter</option>
+        <option value="clouds">Clouds</option>
+        <option value="lush">Lush</option>
+        <option value="fog">Fog</option>
+      </select>
+
+        <input type="range" min="0" max="39" value="0" class="slider" id="myRange" oninput="myFunction2()">
+      </td>
+
+    </tr>
+
+  </table>
+
+  <h2 id="results">Results</h2>
+  <h3>Attribute Manipulation</h3>
+  <figure>
+    <img src="./images/TOG_transient_attributes_style_FPST.jpg">
+<figcaption>Sample attribute manipulation results. Given an outdoor scene and its semantic layout,
+  our model produces realistic looking results for modifying various different transient attributes.
+  Moreover, it can perform multimodal editing as well, in which we modify a combination of attributes.</figcaption>
+  </figure>
+
+  <h3>Comparison</h3>
+
+  <figure>
+    <img src="./images/TOG_comparison2_draw2_fpst.jpg">
+    <figcaption>  Comparison with Laffont et al.<d-cite key="transient_attributes"></d-cite>. In each row, for a given input image (first column),
+      we respectively provide the results of [Laffont et al.2014]using their exemplar-based style transfer method (second column)
+      and FPST [Li et al.<d-cite key="li2018closed"></d-cite>] (third column) between retrieved images and input images, andthe results of our method (last column)
+      using FPST [Li et al. 2018] between generated image by proposed SGN model and input image.</figcaption>
+  </figure>
+
+
+
+
+  <h3>Attribute Transition</h3>
+
+  <figure>
+    <img src="./images/TOG_attribute_manifold4_fpst.jpg">
+    <figcaption>  Our method can produce photorealistic manipulation results for different degrees of transient attributes.</figcaption>
+  </figure>
+
+
+<h3>Videos</h3>
+
+    <!--<d-math>\mathbf{x}</d-math> and a conditioning representation
+    <d-math>\mathbf{z}</d-math>:
+    <d-footnote>
+      The same argument applies to convolutional networks, provided we ignore
+      the border effects due to zero-padding.
+    </d-footnote>-->
+
+<div style="position:relative;padding-top:56.25%;">
+  <iframe src="https://www.youtube.com/embed/qRFZvHRw4hM" frameborder="0" allowfullscreen
+    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+</div>
+
+
+   <!-- <d-cite key="perez2018film"></d-cite>-->
+
+<h3>Additional Results</h3>
+
+  <div style="width: 100%">
+    <button class="expand-collapse-button" content-type="literature">expand all</button>
+  </div>
+  <button class="collapsible" content-name="paintings" content-type="literature">Season Transfer to Paintings<span style="float: right;">+</span></button>
+  <p class="content" content-name="paintings" content-type="literature">
+  </p>
+  <figure class="content" content-name="paintings" content-type="literature">
+    <img src="./images/painting_seasons2_fpst.jpg">
+    <figcaption> Season transfer to paintings. Source images: Wheat Field with Cypresse by Vincent van Gogh (1889),
+      In the Auvergne by Jean-Francois Millet (1869) and Lourmarin by Paul-Camille Guigou (1868), respectively.</figcaption>
+  </figure>
+
+  <button class="collapsible" content-name="attribute-manipulation" content-type="literature">Attribute Manipulation<span style="float: right;">+</span></button>
+  <p class="content" content-name="attribute-manipulation" content-type="literature">
+  </p>
+  <figure class="content" content-name="attribute-manipulation" id="alrfas-diagram" content-type="literature">
+  <img src="./images/supp_attribute_manipulation1.jpg">
+  </figure>
+  <figure class="content" content-name="attribute-manipulation" id="alrfas-diagram" content-type="literature">
+    <img src="./images/supp_attribute_manipulation2.jpg">
+  </figure>
+
+
+
+
+
+
+
+
+
+  <hr/>
+
+</d-article>
+
+<d-appendix>
+
+  <h3 id="acknowledgements">Acknowledgements</h3>
+  <p>
+    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem. We would like to thank NVIDIA Corporation for the donation of GPUs used in this research. 
+  </p>
+
+ <!-- <h3 id="peer-reviews">Discussion and Review</h3>
+  <p>
+    <a href="#">Review 1 - Anonymous </a><br>
+   <a href="#">Review 2 - Anonymous </a><br>
+    <a href="#">Review 3 - Anonymous</a><br>
+  </p>-->
+
+  <!--<d-footnote-list></d-footnote-list>
+  <d-citation-list></d-citation-list>-->
+</d-appendix>
+
+<!-- bibliography will be inlined during Distill pipeline's pre-rendering-->
+<d-bibliography src="bibliography.bib"></d-bibliography>
+
+<script type="text/javascript" src="index.bundle.js"></script></body>
