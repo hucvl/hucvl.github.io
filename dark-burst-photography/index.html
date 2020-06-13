@@ -302,7 +302,7 @@ iframe, object, embed {
     more expressive capabilities to allow for improved quality. Motivated by these studies, in this paper, we aim to 
     leverage burst photography to boost the performance and obtain much sharper and more accurate RGB images from 
     extremely dark raw images. The backbone of our proposed framework is a novel coarse-to-fine network architecture 
-    that generates high-quality outputs progres- sively. The coarse network predicts a low-resolution, denoised raw image, 
+    that generates high-quality outputs progressively. The coarse network predicts a low-resolution, denoised raw image, 
     which is then fed to the fine network to recover fine- scale details and realistic textures. To further reduce 
     the noise level and improve the color accuracy, we extend this network to a permutation invariant structure 
     so that it takes a burst of low-light images as input and merges information from multiple images at the feature-level. 
@@ -313,40 +313,45 @@ iframe, object, embed {
 
   <h2 id="introduction">Introduction</h2>
   
-   <p>
-    Capturing images in low-light conditions is a challenging task – the main difficulty being that the level of the signal measured by the camera sensors is generally much lower than the noise in the measurements [1]. The fundamental factors causing the noise are the variations in the number of photons entering the camera lens and the sensor-based measurement errors occurred when reading the signal [2], [3]. In addition, noise present in a low-light image also affects various image characteristics such as fine-scale structures and color balance, further degrading the image quality.
+  <p>
+    Capturing images in low-light conditions is a challenging task -- the main difficulty being that the level of the signal
+    measured by the camera sensors is generally much lower than the noise in the measurements <d-cite key="Liba2019"></d-cite>. The fundamental factors
+    causing the noise are the variations in the number of photons entering the camera lens and the sensor-based measurement
+    errors occurred when reading the signal <d-cite key="Hasinoff2014, Brooks2019"></d-cite>. In addition, noise present in a low-light image also affects various
+    image characteristics such as fine-scale structures and color balance, further degrading the image quality.
   </p>
 
   <p>
-    In the context of enhancing extremely dark images, See-in-the-Dark (SID) [4] is the first learning-based attempt to replace the standard camera pipeline, training a convolutional neural network (CNN) model to produce an enhanced RGB image from a single raw low-light image. For this purpose, the authors collected a dataset of short-exposure, dark raw pho- tos and their corresponding long-exposure references. Their method is further improved by Maharjan et al. [5] and Zamir et al. [6] with some changes in the CNN architecture and the objective functions utilized in training. In a similar fashion, in our study, we develop a new multi-scale architecture for single image enhancement and use a different objective by combining contextual and pixel-wise losses. While the previous methods obtain an RGB image from a single dark raw image, we further explore whether the results can be improved by integrating multiple observations regarding the scene.
-  </p>
-
-  <p>
-    Bracketing is a well-known technique in photography that relies on rapidly taking several shots of the same scene. These shots usually differ from each other in terms of some camera settings, e.g. exposure, which capture characteristics of the scene differently, and thus they can be used for applications like constructing a high dynamic range (HDR) image. A technique similar to exposure bracketing is shooting each frame in the burst sequence with a constant exposure [4]. To our interest, when shot with a constant short exposure under low-light, these images represent different dark, noisy realizations of the same scene. Naturally, they provide us multiple observations about the scene when compared to a single dark image. While simply averaging these images reduces noise, results are not always satisfactory. For this reason, different techniques are introduced to merge the temporal pixels in the burst sequence [1], [4], [7]-[9]. Among these approaches, [7]–[9] use learning-based methods to process burst images. In these studies, burst images are fed to a CNN either by concatenating through channels or in a recurrent fashion. In our case, we propose a radically different approach and show that processing these burst images in a permutation invariant manner is a simple yet more effective approach. The order of burst images does not affect the output, and accordingly a more accurate output can be obtained. The multiple image enhancement models, which either employ burst imagery or integrate ensemble of enhanced images, give superior results than their single image counterparts, yet they still suffer from artifacts such as over-smoothing, and fail to recover fine-scale details in the image. Despite the remarkable progress of previous studies [28]–[30], [36], there is still large room for improvement, regarding various issues such as unwanted blur, noise and color inaccuracies in the end results – especially for the input images which are extremely dark.
-  </p>
-
-  <p>
-    In a nutshell, to alleviate these shortcomings, in this study, we propose a learning-based framework that takes a burst of extremely low-light raw images of a scene as input and generates an enhanced RGB image. In particular, we develop a coarse-to-fine network architecture which allows for simultaneous processing of a burst of dark raw images as input to obtain a high quality RGB image.
+    While the previous methods <d-cite key="Chen2018, Zamir2019a, Ma2020"></d-cite> obtain an RGB image from a single dark raw image, we further explore whether the results
+    can be improved by integrating multiple observations regarding the scene. Despite the remarkable progress of previous studies, 
+    there is still large room for improvement, regarding various issues such as unwanted blur, noise and color inaccuracies in the end 
+    results – especially for the input images which are extremely dark. In a nutshell, to alleviate these shortcomings, in this study,
+    we propose a learning-based framework that takes a burst of extremely low-light raw images of a scene as input and generates an enhanced
+    RGB image. In particular, we develop a coarse-to-fine network architecture which allows for simultaneous processing of a burst of dark
+    raw images as input to obtain a high quality RGB image.
   </p>
 
   <h2>System Overview</h2>
-
-  <figure>
-    <img src="./images/system_overview.jpg">
-    <figcaption>ddd</figcaption>
+  <figure >
+    <img src="./images/proposed_method.pdf">
+    <figcaption>Network architectures of the proposed single-frame coarse-to-fine model, and set-based burst model.</figcaption>
   </figure>
+
   <p>
-    ddd
+    To recover fine-grained details from dark images, we propose to employ a two-step coarse-to-fine training procedure.
+    Our coarse network outputs a denoised image in rawRGB space. We utilize the output of the coarse network not just for
+    guidance in assisting the fine network but also in approximating the noise by computing the difference between the upsampled
+    coarse prediction and the raw low-light input. The fine network takes the concatenation of the low-light raw input image, the
+    output from the coarse network and the noise approximation as inputs and processes them to generate the final RGB output.
   </p>
 
-  
+  <p>
+    We extend our coarse-to-fine model to a novel permutation invariant CNN architecture which takes multiple images of the scene as
+    input and predicts an enhanced image. In particular, first, low-resolution coarse outputs are obtained for each frame in the burst
+    sequence, using our coarse network. Then, our set-based network accepts a set of tensors as input, each instance corresponding to the
+    concatenation of one of raw burst images, its noise approximation and the upsampled version of the coarse prediction and produces final output.
+  </p>
 
-
-  
-
-
-
-   <!-- <d-cite key="perez2018film"></d-cite>-->
 
   <hr/>
 
