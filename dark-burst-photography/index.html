@@ -214,6 +214,7 @@
   }
 
 
+
 iframe, object, embed {
   width: 100%;
   height:400px
@@ -296,7 +297,7 @@ iframe, object, embed {
 
   <h2 id="abstract">Abstract</h2>
   <p>
-    Capturing images under extremely low-light con- ditions poses significant challenges for the standard camera pipeline. 
+    Capturing images under extremely low-light conditions poses significant challenges for the standard camera pipeline. 
     Images become too dark and too noisy, which makes traditional enhancement techniques almost impossible to apply. 
     Recently, learning-based approaches have shown very promising results for this task since they have substantially 
     more expressive capabilities to allow for improved quality. Motivated by these studies, in this paper, we aim to 
@@ -352,7 +353,83 @@ iframe, object, embed {
     concatenation of one of raw burst images, its noise approximation and the upsampled version of the coarse prediction and produces final output.
   </p>
 
+  <figure >
+    <img src="./images/motivation.png">
+    <figcaption>An example night photo captured with 0.1 sec exposure and its enhanced versions by the proposed coarse, fine and burst networks. As the cropped images demonstrate, the fine network enhances both the color and the details of the coarse result. The burst network produces even much sharper and perceptually more pleasing output.</figcaption>
+  </figure>
 
+  <h2>Results</h2>
+  <h3>Single Image Results</h3>
+
+  <div style="float: right;">
+      <select class="cmp_option">
+        <option>Traditional + Scaling</option>
+        <option>SID</option>
+        <option>Zamir et al.</option>
+        <option>Maharjan et al.</option>
+      </select>
+  </div>
+  <br>
+  <br>
+  <div class="compare_single">
+          
+          <div>
+                <p><small>Camera Info: Sony a7s II, ISO 12800 1/10s</small></p>
+                <div class="cocoen scale" style="width: 100%;">
+                  <img src="./images/cmp_single/10213_00_100_scale.jpg" />
+                  <img src="./images/cmp_single/10213_00_100_ours.jpg" />
+                </div>
+
+                <div class="cocoen sid" style="width: 100%;">
+                  <img src="./images/cmp_single/10213_00_100_sid.jpg" />
+                  <img src="./images/cmp_single/10213_00_100_ours.jpg" />
+                </div>
+
+                <div class="cocoen maharjan" style="width: 100%;">
+                  <img src="./images/cmp_single/10213_00_100_maharjan.jpg" />
+                  <img src="./images/cmp_single/10213_00_100_ours.jpg" />
+                </div>
+
+                <div class="cocoen zamir" style="width: 100%;">
+                  <img src="./images/cmp_single/10213_00_100_zamir.jpg" />
+                  <img src="./images/cmp_single/10213_00_100_ours.jpg" />
+                </div>
+        </div>
+        <br><br>
+        <div>
+              <p><small>iPhone 6s, ISO 400 1/20s</small></p>
+              <div class="cocoen scale" style="width: 100%;">
+                <img src="./images/cmp_single/iphone6s_scale.jpg" />
+                <img src="./images/cmp_single/iphone6s_ours.jpg" />
+              </div>
+
+              <div class="cocoen sid" style="width: 100%;">
+                <img src="./images/cmp_single/iphone6s_sid.jpg" />
+                <img src="./images/cmp_single/iphone6s_ours.jpg" />
+              </div>
+
+              <div class="cocoen maharjan" style="width: 100%;">
+                <img src="./images/cmp_single/iphone6s_maharjan.jpg" />
+                <img src="./images/cmp_single/iphone6s_ours.jpg" />
+              </div>
+
+              <div class="cocoen zamir" style="width: 100%;">
+                <img src="./images/cmp_single/iphone6s_zamir.jpg" />
+                <img src="./images/cmp_single/iphone6s_ours.jpg" />
+              </div>
+        </div>
+         
+        
+          
+
+        
+          
+
+
+  </div>
+
+  <h3>Burst Results</h3>
+  
   <hr/>
 
 </d-article>
@@ -378,4 +455,60 @@ iframe, object, embed {
 <!-- bibliography will be inlined during Distill pipeline's pre-rendering-->
 <d-bibliography src="bibliography.bib"></d-bibliography>
 
+
+
 <script type="text/javascript" src="index.bundle.js"></script></body>
+
+<link rel="stylesheet" href="css/cocoen.min.css" />
+<script type="text/javascript" src="./js/cocoen-jquery.js"></script>
+<script type="text/javascript" src="./js/cocoen.js"></script>
+
+
+<script   src="https://code.jquery.com/jquery-3.5.1.slim.js"   integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="   crossorigin="anonymous"></script>
+
+
+<script>
+
+  $(document).ready(function(){
+    $('.cocoen').cocoen();
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+      //	new Cocoen();
+      document.querySelectorAll('.cocoen').forEach(function(element){
+          new Cocoen(element);
+      });
+
+      $("div.cocoen.sid").hide()
+      $("div.cocoen.maharjan").hide()
+      $("div.cocoen.zamir").hide()
+
+	});
+  $(document).ready(function(){
+    $(".cmp_option").change(function(){
+      var prev = $(this).data('val');
+      var selectedStr = $(this).val()
+      switch(selectedStr) {
+          case "Traditional + Scale":
+            methodName = "scale"
+            break;
+          case "SID":
+            methodName = "sid"
+            break;
+          case "Maharjan et al.":
+            methodName = "maharjan"
+            break;
+          case "Zamir et al.":
+            methodName = "zamir"
+            break;
+          default:
+            methodName = "scale"
+            break;
+      } 
+ 
+      $('div.cocoen').hide()
+      var slider = $('div.cocoen.'+methodName)
+      slider.show()
+
+    });
+  });
+</script>
