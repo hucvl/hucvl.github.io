@@ -586,26 +586,24 @@ iframe, object, embed {
   // Update left part of the slider.
   // prev: previous method name, selectedStr: new method name, single: single or burst
   function updateSliderLeftImage(prev, selectedStr, single){
-      switch(selectedStr) {
-          case "Traditional + Scale":
-            methodName = "scale"
-            break;
-          case "SID":
-            methodName = "sid"
-            break;
-          case "Maharjan et al.":
-            methodName = "maharjan"
-            break;
-          case "Zamir et al.":
-            methodName = "zamir"
-            break;
-          case "Ma et al.":
-            methodName = "ma"
-            break;
-          default:
-            methodName = "scale"
-            break;
-      } 
+    
+      var methodName = "scale"
+      if(selectedStr.includes("Traditional + Scale")){
+          methodName = "scale"
+      }
+      else if(selectedStr.includes("SID")){
+          methodName = "sid"
+      }
+      else if(selectedStr.includes("Maharjan et al.")){
+          methodName = "maharjan"
+      }
+      else if(selectedStr.includes("Zamir et al.")){
+          methodName = "zamir"
+      }
+      else if(selectedStr.includes("Ma et al.")){
+          methodName = "ma"
+      }
+
 
       if(single == false){
         $('div.cocoen.multi').hide()
