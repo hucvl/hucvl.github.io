@@ -318,12 +318,12 @@ iframe, object, embed {
     Capturing images in low-light conditions is a challenging task -- the main difficulty being that the level of the signal
     measured by the camera sensors is generally much lower than the noise in the measurements <d-cite key="Liba2019"></d-cite>. The fundamental factors
     causing the noise are the variations in the number of photons entering the camera lens and the sensor-based measurement
-    errors occurred when reading the signal <d-cite key="Hasinoff2014, Brooks2019"></d-cite>. In addition, noise present in a low-light image also affects various
+    errors occurred when reading the signal <d-cite key="Hasinoff2014,Brooks2019"></d-cite>. In addition, noise present in a low-light image also affects various
     image characteristics such as fine-scale structures and color balance, further degrading the image quality.
   </p>
 
   <p>
-    While the previous methods <d-cite key="Chen2018, Zamir2019a, Ma2020"></d-cite> obtain an RGB image from a single dark raw image, we further explore whether the results
+    While the previous methods <d-cite key="Chen2018,Zamir2019a,Ma2020"></d-cite> obtain an RGB image from a single dark raw image, we further explore whether the results
     can be improved by integrating multiple observations regarding the scene. Despite the remarkable progress of previous studies, 
     there is still large room for improvement, regarding various issues such as unwanted blur, noise and color inaccuracies in the end 
     results – especially for the input images which are extremely dark. In a nutshell, to alleviate these shortcomings, in this study,
@@ -362,7 +362,7 @@ iframe, object, embed {
   <h3>Single Image Results</h3>
 
   <div style="float: right;">
-      <select class="cmp_option">
+      <select class="cmp_option_single">
         <option>Traditional + Scaling</option>
         <option>SID</option>
         <option>Zamir et al.</option>
@@ -374,23 +374,23 @@ iframe, object, embed {
   <div class="compare_single">
           
           <div>
-                <p><small>Camera Info: Sony a7s II, ISO 12800 1/10s</small></p>
-                <div class="cocoen scale" style="width: 100%;">
+                <p><small>Sony a7s II, ISO 12800 1/10s</small></p>
+                <div class="cocoen scale single" style="width: 100%;">
                   <img src="./images/cmp_single/10213_00_100_scale.jpg" />
                   <img src="./images/cmp_single/10213_00_100_ours.jpg" />
                 </div>
 
-                <div class="cocoen sid" style="width: 100%;">
+                <div class="cocoen sid single" style="width: 100%;">
                   <img src="./images/cmp_single/10213_00_100_sid.jpg" />
                   <img src="./images/cmp_single/10213_00_100_ours.jpg" />
                 </div>
 
-                <div class="cocoen maharjan" style="width: 100%;">
+                <div class="cocoen maharjan single" style="width: 100%;">
                   <img src="./images/cmp_single/10213_00_100_maharjan.jpg" />
                   <img src="./images/cmp_single/10213_00_100_ours.jpg" />
                 </div>
 
-                <div class="cocoen zamir" style="width: 100%;">
+                <div class="cocoen zamir single" style="width: 100%;">
                   <img src="./images/cmp_single/10213_00_100_zamir.jpg" />
                   <img src="./images/cmp_single/10213_00_100_ours.jpg" />
                 </div>
@@ -398,22 +398,22 @@ iframe, object, embed {
         <br><br>
         <div>
               <p><small>iPhone 6s, ISO 400 1/20s</small></p>
-              <div class="cocoen scale" style="width: 100%;">
+              <div class="cocoen scale single" style="width: 100%;">
                 <img src="./images/cmp_single/iphone6s_scale.jpg" />
                 <img src="./images/cmp_single/iphone6s_ours.jpg" />
               </div>
 
-              <div class="cocoen sid" style="width: 100%;">
+              <div class="cocoen sid single" style="width: 100%;">
                 <img src="./images/cmp_single/iphone6s_sid.jpg" />
                 <img src="./images/cmp_single/iphone6s_ours.jpg" />
               </div>
 
-              <div class="cocoen maharjan" style="width: 100%;">
+              <div class="cocoen maharjan single" style="width: 100%;">
                 <img src="./images/cmp_single/iphone6s_maharjan.jpg" />
                 <img src="./images/cmp_single/iphone6s_ours.jpg" />
               </div>
 
-              <div class="cocoen zamir" style="width: 100%;">
+              <div class="cocoen zamir single" style="width: 100%;">
                 <img src="./images/cmp_single/iphone6s_zamir.jpg" />
                 <img src="./images/cmp_single/iphone6s_ours.jpg" />
               </div>
@@ -429,7 +429,85 @@ iframe, object, embed {
   </div>
 
   <h3>Burst Results</h3>
-  
+
+  <div style="float: right;">
+      <select class="cmp_option_burst">
+        <option>Traditional + Scaling</option>
+        <option>SID</option>
+        <option>Zamir et al.</option>
+        <option>Maharjan et al.</option>
+        <option>Ma et al.</option>
+      </select>
+  </div>
+  <br>
+  <br>
+  <div class="compare_burst">
+          
+          <div>
+                <p><small>Sony a7s II, ISO 640 1/10s, 8 Frames</small></p>
+                <div class="cocoen scale multi" style="width: 100%;">
+                  <img src="./images/cmp_burst/10082_00_300_scale.jpg" />
+                  <img src="./images/cmp_burst/10082_00_300_ours.jpg" />
+                </div>
+
+                <div class="cocoen sid multi" style="width: 100%;">
+                  <img src="./images/cmp_burst/10082_00_300_sid.jpg" />
+                  <img src="./images/cmp_burst/10082_00_300_ours.jpg" />
+                </div>
+
+                <div class="cocoen maharjan multi" style="width: 100%;">
+                  <img src="./images/cmp_burst/10082_00_300_maharjan.jpg" />
+                  <img src="./images/cmp_burst/10082_00_300_ours.jpg" />
+                </div>
+
+                <div class="cocoen zamir multi" style="width: 100%;">
+                  <img src="./images/cmp_burst/10082_00_300_zamir.jpg" />
+                  <img src="./images/cmp_burst/10082_00_300_ours.jpg" />
+                </div>
+
+                <div class="cocoen ma multi" style="width: 100%;">
+                  <img src="./images/cmp_burst/10082_00_300_ma.jpg" />
+                  <img src="./images/cmp_burst/10082_00_300_ours.jpg" />
+                </div>
+        </div>
+        <br><br>
+        <div>
+              <p><small>Sony a7s II, ISO 1600 1/10s, 8 Frames</small></p>
+              <div class="cocoen scale multi" style="width: 100%;">
+                <img src="./images/cmp_burst/10074_00_300_scale.jpg" />
+                <img src="./images/cmp_burst/10074_00_300_ours.jpg" />
+              </div>
+
+              <div class="cocoen sid multi" style="width: 100%;">
+                <img src="./images/cmp_burst/10074_00_300_sid.jpg" />
+                <img src="./images/cmp_burst/10074_00_300_ours.jpg" />
+              </div>
+
+              <div class="cocoen maharjan multi" style="width: 100%;">
+                <img src="./images/cmp_burst/10074_00_300_maharjan.jpg" />
+                <img src="./images/cmp_burst/10074_00_300_ours.jpg" />
+              </div>
+
+              <div class="cocoen zamir multi" style="width: 100%;">
+                <img src="./images/cmp_burst/10074_00_300_zamir.jpg" />
+                <img src="./images/cmp_burst/10074_00_300_ours.jpg" />
+              </div>
+
+              <div class="cocoen ma multi" style="width: 100%;">
+                <img src="./images/cmp_burst/10074_00_300_ma.jpg" />
+                <img src="./images/cmp_burst/10074_00_300_ours.jpg" />
+              </div>
+        </div>
+         
+        
+          
+
+        
+          
+
+
+  </div>
+
   <hr/>
 
 </d-article>
@@ -470,10 +548,13 @@ iframe, object, embed {
 <script>
 
   $(document).ready(function(){
+    // Initialize cocoen.
     $('.cocoen').cocoen();
   });
+
   document.addEventListener('DOMContentLoaded', function(){
-      //	new Cocoen();
+
+      // Add slider elements.
       document.querySelectorAll('.cocoen').forEach(function(element){
           new Cocoen(element);
       });
@@ -481,12 +562,30 @@ iframe, object, embed {
       $("div.cocoen.sid").hide()
       $("div.cocoen.maharjan").hide()
       $("div.cocoen.zamir").hide()
+      $("div.cocoen.ma").hide()
 
-	});
+  });
+  
+  // Single image option changed.
   $(document).ready(function(){
-    $(".cmp_option").change(function(){
+    $(".cmp_option_single").change(function(){
       var prev = $(this).data('val');
       var selectedStr = $(this).val()
+      updateSliderLeftImage(prev, selectedStr, true)
+
+    });
+
+  // Burst image option changed.
+  $(".cmp_option_burst").change(function(){
+    var prev = $(this).data('val');
+    var selectedStr = $(this).val()
+    updateSliderLeftImage(prev, selectedStr, false)
+
+  });
+
+  // Update left part of the slider.
+  // prev: previous method name, selectedStr: new method name, single: single or burst
+  function updateSliderLeftImage(prev, selectedStr, single){
       switch(selectedStr) {
           case "Traditional + Scale":
             methodName = "scale"
@@ -500,15 +599,26 @@ iframe, object, embed {
           case "Zamir et al.":
             methodName = "zamir"
             break;
+          case "Ma et al.":
+            methodName = "ma"
+            break;
           default:
             methodName = "scale"
             break;
       } 
- 
-      $('div.cocoen').hide()
-      var slider = $('div.cocoen.'+methodName)
-      slider.show()
 
-    });
+      if(single == false){
+        $('div.cocoen.multi').hide()
+        var slider = $('div.cocoen.'+methodName+".multi")
+        slider.show()
+      }
+      else{
+        $('div.cocoen.single').hide()
+        var slider = $('div.cocoen.'+methodName+".single")
+        slider.show()
+      }
+      
+  }
+
   });
 </script>
