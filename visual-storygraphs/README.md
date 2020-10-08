@@ -65,3 +65,7 @@ Ground truth human summaries are also provided as *.mat* files. Each album is an
 ## How To Download
 
 You can download the json files containing the urls and meta-data of individual photos [here](./summary-set.zip). The urls can be used to download photos from Flickr.
+
+## Acknowledgements
+
+This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem and by The Scientific and Technological Research Council of Turkey (TUBITAK) Primary Subjects R&D Funding Program Award No. 116E685.
