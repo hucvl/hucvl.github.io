@@ -1,0 +1,10 @@
+@ARTICLE{GFSalNet,
+author={Aysun Kocak and Aykut Erdem and Erkut Erdem},
+journal={submitted},
+title={A Gated Fusion Network for Dynamic Saliency Prediction},
+year={2020},
+volume={},
+number={},
+pages={1-14},
+month={}
+}

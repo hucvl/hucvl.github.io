@@ -1,0 +1,313 @@
+<!doctype html>
+
+<head>
+  <title>A Gated Fusion Network for Dynamic Saliency Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="deneme.js"></script>
+  <script src="./dist/template.v2.js"></script>
+
+
+  <style>.subgrid {
+    grid-column: screen;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    grid-column-gap: inherit;
+    grid-row-gap: inherit;
+  }
+
+  d-figure.base-grid {
+    grid-column: screen;
+    background: hsl(0, 0%, 97%);
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  d-figure {
+    margin-bottom: 1em;
+    position: relative;
+  }
+
+  d-figure > figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  d-title h1{
+    font-size: 40px;
+  }
+
+  content.l-body-outset{
+
+    width: 300px;
+  }
+
+  .shaded-figure {
+    background-color: hsl(0, 0%, 97%);
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    padding: 30px 0;
+  }
+
+  .pointer {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 26px;
+    left: -48px;
+  }
+
+  .figure-element, .figure-line, .figure-path {
+    stroke: #666;
+    stroke-miterlimit: 10px;
+    stroke-width: 1.5px;
+  }
+
+  .figure-element {
+    fill: #fff;
+    fill-opacity: 0.8;
+  }
+
+  .figure-line {
+    fill: none;
+  }
+
+  .figure-path {
+    fill: #666;
+    stroke-width: 1px;
+  }
+
+  .figure-group {
+    fill: #f9f9f9;
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-opacity: 0.6;
+    stroke-miterlimit: 10px;
+  }
+
+  .figure-faded {
+    opacity: 0.35;
+  }
+
+  .figure-box {
+    rx: 6px;
+    ry: 6px;
+  }
+
+  .figure-dashed {
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-miterlimit: 10px;
+    stroke-dasharray: 5, 5;
+  }
+
+  .figure-text {
+    fill: #000;
+    opacity: 0.6;
+    font-size: 13px;
+  }
+
+  .figure-text-faded {
+    opacity: 0.35;
+  }
+
+  .figure-large-text {
+    font-size: 18px;
+  }
+
+  .subscript {
+    font-size: 8px;
+  }
+
+  .figure-film-generator {
+    /* stroke: #006064; */
+    /* fill: #80DEEA; */
+
+    stroke: hsl(203, 65%, 70%);
+    fill: hsl(203, 65%, 85%);
+  }
+
+  .figure-film-generator-shaded {
+    /* stroke: #006064; */
+    /* fill: #00838F; */
+
+    stroke: hsl(203, 15%, 85%);
+    fill: hsl(203, 15%, 95%);
+  }
+
+  .figure-filmed-network {
+    /* stroke: #BF360C; */
+    /* fill: #FFAB91; */
+
+    stroke: hsl(11, 65%, 70%);
+    fill: rgb(242, 203, 194);
+  }
+
+  .todo {
+    color: red;
+  }
+
+
+  .tooltip {
+    position: absolute;
+    max-width: 300px;
+    max-height: 300px;
+    pointer-events: none;
+    transition: opacity;
+  }
+
+  .collapsible {
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
+    margin: 0.2em;
+    margin-left: 0;
+    padding-left: 0;
+    transform: translateX(0px);
+    transition:
+            color 0.1s ease-out,
+            transform 0.25s ease;
+  }
+
+  .collapsible:hover {
+    border-bottom: 1px solid inset;
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateX(10px);
+    transition:
+            transform 0.25s ease;
+  }
+
+  d-article .content {
+    display: none;
+    overflow: hidden;
+    background-color: none;
+  }
+
+  .expand-collapse-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+  }
+
+
+  #clevr-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+  #style-transfer-plot-svg {
+    width:440px;
+    height:400px
+  }
+
+
+iframe, object, embed {
+  width: 100%;
+  height:400px
+  display: block !important;
+}
+  </style>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <script src="https://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.js"></script>
+
+</head>
+
+<body onload="initDemo()">
+
+<d-front-matter>
+  <script type="text/json">{
+    "title": "A Gated Fusion Network for Dynamic Saliency Prediction",
+    "description": "A two-stream spatio-temporal saliency network model with a gated integration mechanism.”,
+    "authors": [
+      {
+        "author": “Aysun Kocal”,
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.bilkent.edu.tr"}]
+      },
+      {
+        "author": "Aykut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Erkut Erdem",
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~erkut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      }
+    ],
+    "katex": {
+      "delimiters": [
+        {
+          "left": "$",
+          "right": "$",
+          "display": false
+        },
+        {
+          "left": "$$",
+          "right": "$$",
+          "display": true
+        }
+      ]
+    }
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <h1>A Gated Fusion Network for Dynamic Saliency Prediction</h1>
+  <p>A two-stream spatio-temporal saliency network model with a gated integration mechanism.</p>
+  <div class="l-page" id="vtoc"></div>
+</d-title>
+
+<d-article>
+  <figure >
+    <img src="./images/gfsalnet.png">
+    <figcaption>Our two-stream dynamic saliency model uses RGB frames for spatial stream and optical flow images for temporal stream. These streams are integrated with a dynamic fusion strategy that we referred to as gated fusion. Our architecture also employs multi-level information block to fuse multi-scale features and attention blocks for feature selection.</figcaption>
+  </figure>
+
+  <div>
+  <a href="###.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper.png" width=190></a>
+  <br>
+  
+  <b>Paper</b>   
+  <p>Aysun Kocak, Aykut Erdem, and Erkut Erdem. "A Gated Fusion Network for Dynamic Saliency Prediction", submitted.
+    <br>
+    <a href="###.pdf">Paper</a> | <a href="bibtex.txt">Bibtex</a>
+  </p>
+
+
+  <b>Pre-trained models:</b> <a href='###'>PyTorch models</a> (Coming soon..)
+  <br>
+  </div>
+  <hr/>
+
+  <h2 id="abstract">Abstract</h2>
+  <p>
+    Predicting saliency in videos is a challenging problem due to complex modeling of interactions between spatial and temporal information, especially when ever-changing, dynamic nature of videos is considered. Recently, researchers have proposed large-scale datasets and models that take advantage of deep learning as a way to understand what's important for video saliency. These approaches, however, learn to combine spatial and temporal features in a static manner and do not adapt themselves much to the changes in the video content. In this paper, we introduce Gated Fusion Network for dynamic saliency (GFSalNet), the first deep saliency model capable of making predictions in a dynamic way via gated fusion mechanism. Moreover, our model also exploits spatial and channel-wise attention within a multi-scale architecture that further allows for highly accurate predictions. \revise{We evaluate the proposed approach on a number of datasets, and our experimental analysis demonstrates that it outperforms or is highly competitive with the state of the art. Importantly, we show that it has a good generalization ability, and moreover, exploits temporal information more effectively via its adaptive gated fusion mechanism.
+  </p>
+
+</d-article>
+
+<d-appendix>
+
+  <h3 id="acknowledgements">Acknowledgements</h3>
+  <p>
+    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem.
+  </p>
+
+</d-appendix>
+
+<script type="text/javascript" src="index.bundle.js"></script></body>
