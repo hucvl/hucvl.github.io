@@ -1,3 +1,7 @@
+# Paper
+Bora Celikkale, Goksu Erdogan, Aykut Erdem and Erkut Erdem. "Generating Visual Story Graphs with Application to Photo Album Summarization", Signal Processing: Image Communication, to appear.
+[pdf](https://vision.cs.hacettepe.edu.tr/publication/fulltext/cc7c232056579adeae38e282cadf0c1a.pdf)
+
 # YFCC100M-CITIES Photo Set
 This dataset contains photo sets collected from publicly available [YFCC100M](http://projects.dfki.uni-kl.de/yfcc100m/) dataset. 
 
