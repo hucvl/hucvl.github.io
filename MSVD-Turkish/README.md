@@ -1,5 +1,5 @@
 # Paper
-Begum Citamak, Ozan Caglayan, Menekse Kuyu, Erkut Erdem, Aykut Erdem, Pranava Madhyastha, and Lucia Specia. "MSVD-Turkish: A Comprehensive Multimodal Dataset for Integrated Vision and Language Research in Turkish", submitted to Machine Translation Journal.
+Begum Citamak, Ozan Caglayan, Menekse Kuyu, Erkut Erdem, Aykut Erdem, Pranava Madhyastha, and Lucia Specia. "MSVD-Turkish: A Comprehensive Multimodal Dataset for Integrated Vision and Language Research in Turkish", submitted to Machine Translation.
 [pdf](MSVD_TR_NLE.pdf)
 
 # MSVD-Turkish Dataset
