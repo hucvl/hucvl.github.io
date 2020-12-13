@@ -10,7 +10,7 @@ The captions are initially obtained by automatically translating the English cap
 ![](caption_examples.jpg)
 
 ## Data
-▸ en_tr.lc.nopunc.tsv: Final synchronized tab-separated files for train, test, val. Removed caption pairs for which no TR translation was available because of noisy EN side. These files are the base textual representations on top of which any further segmentation should be applied.
+▸ [en_tr.lc.nopunc.tsv](en_tr.lc.nopunc.tsv.zip): Final synchronized tab-separated files for train, test, val. Removed caption pairs for which no TR translation was available because of noisy EN side. These files are the base textual representations on top of which any further segmentation should be applied.
 
 
 ### Acknowledgements 
