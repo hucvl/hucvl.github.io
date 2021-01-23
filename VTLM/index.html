@@ -230,22 +230,43 @@ iframe, object, embed {
 
 <d-front-matter>
   <script type="text/json">{
-    "title": "A Gated Fusion Network for Dynamic Saliency Prediction",
-    "description": "A two-stream spatio-temporal saliency network model with a gated integration mechanism.”,
+    "title": "Cross-lingual Visual Pre-training for Multimodal Machine Translation",
+    "description": "A novel cross-lingual visual pre- training approach that extends the TLM framework (Lample and Conneau, 2019) with regional features and performs masked language modelling and masked region classification on a three-way parallel corpus.”,
     "authors": [
       {
-        "author": “Aysun Kocal”,
-        "affiliations": [{"name": "Hacettepe University", "url": "https://www.bilkent.edu.tr"}]
+        "author": “Ozan Caglayan”,
+        "authorURL": "https://www.ozancaglayan.com",
+        "affiliations": [{"name": "Imperial College London", "url": "https://www.imperial.ac.uk"}]
       },
       {
-        "author": "Aykut Erdem",
-        "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+        "author": "Menekse Kuyu",
+        "authorURL": "https://vision.cs.hacettepe.edu.tr/people-detail.php?id=40",
         "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Mustafa Sercan Amac",
+        "authorURL": "https://vision.cs.hacettepe.edu.tr/people-detail.php?id=49",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },{
+        "author": “Pranava Madhyastha”,
+        "authorURL": "http://www.doc.ic.ac.uk/~pshantha/",
+        "affiliations": [{"name": "Imperial College London", "url": "https://www.imperial.ac.uk"}]
       },
       {
         "author": "Erkut Erdem",
         "authorURL": "https://web.cs.hacettepe.edu.tr/~erkut/",
         "affiliations": [{"name": "Hacettepe University", "url": "https://www.hacettepe.edu.tr"}]
+      },
+      {
+        "author": "Aykut Erdem",
+        "authorURL": "https://aykuterdem.github.io",
+        "affiliations": [{"name": "Koç University", "url": "https://www.ku.edu.tr"}]
+      },
+      ,
+      {
+        "author": "Lucia Specia",
+        "authorURL": "https://www.imperial.ac.uk/people/l.specia",
+        "affiliations": [{"name": "Imperial College London", "url": "https://www.imperial.ac.uk"}]
       }
     ],
     "katex": {
@@ -266,8 +287,8 @@ iframe, object, embed {
 </d-front-matter>
 
 <d-title>
-  <h1>A Gated Fusion Network for Dynamic Saliency Prediction</h1>
-  <p>A two-stream spatio-temporal saliency network model with a gated integration mechanism.</p>
+  <h1>Cross-lingual Visual Pre-training for Multimodal Machine Translation</h1>
+  <p>A novel cross-lingual visual pre- training approach that extends the TLM framework (Lample and Conneau, 2019) with regional features and performs masked language modelling and masked region classification on a three-way parallel corpus.</p>
   <div class="l-page" id="vtoc"></div>
 </d-title>
 
@@ -282,7 +303,7 @@ iframe, object, embed {
   <br>
   
   <b>Paper</b>   
-  <p>Aysun Kocak, Aykut Erdem, and Erkut Erdem. "A Gated Fusion Network for Dynamic Saliency Prediction", submitted.
+  <p>Ozan Caglayan, Menekse Kuyu, Mustafa Sercan Amac, Pranava Madhyastha, Erkut Erdem, Aykut Erdem and Lucia Specia. "Cross-lingual Visual Pre-training for Multimodal Machine Translation", Conference of the European Chapter of the Association for Computational Linguistics (EACL 2021), Short Papers, 2021.
     <br>
     <a href="###.pdf">Paper</a> | <a href="bibtex.txt">Bibtex</a>
   </p>
@@ -295,7 +316,7 @@ iframe, object, embed {
 
   <h2 id="abstract">Abstract</h2>
   <p>
-    Predicting saliency in videos is a challenging problem due to complex modeling of interactions between spatial and temporal information, especially when ever-changing, dynamic nature of videos is considered. Recently, researchers have proposed large-scale datasets and models that take advantage of deep learning as a way to understand what's important for video saliency. These approaches, however, learn to combine spatial and temporal features in a static manner and do not adapt themselves much to the changes in the video content. In this paper, we introduce Gated Fusion Network for dynamic saliency (GFSalNet), the first deep saliency model capable of making predictions in a dynamic way via gated fusion mechanism. Moreover, our model also exploits spatial and channel-wise attention within a multi-scale architecture that further allows for highly accurate predictions. \revise{We evaluate the proposed approach on a number of datasets, and our experimental analysis demonstrates that it outperforms or is highly competitive with the state of the art. Importantly, we show that it has a good generalization ability, and moreover, exploits temporal information more effectively via its adaptive gated fusion mechanism.
+  Pre-trained language models have been shown to substantially improve performance in many natural language tasks. Although the early focus of such models was single language pre-training, recent advances have resulted in cross-lingual and visual pre-training meth- ods. In this paper, we combine these two approaches to learn visually-grounded cross-lingual representations. Specifically, we extend the translation language modelling (Lample and Conneau, 2019) with masked region classification, and perform pre-training with three-way parallel vision & language corpora. We show that when fine-tuned for multimodal machine translation, these models obtain state-of-the-art performance. We also provide qualitative insights into the usefulness of the learned grounded representations.  .
   </p>
 
 </d-article>
@@ -304,7 +325,7 @@ iframe, object, embed {
 
   <h3 id="acknowledgements">Acknowledgements</h3>
   <p>
-    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem.
+    This work was supported in part by TUBA GEBIP fellowship awarded to Erkut Erdem, and the MMVC project funded by TUBITAK and the British Council via the Newton Fund Institutional Links grant programme (grant ID 219E054 and 352343575). Lucia Specia, Pranava Madhyastha and Ozan Caglayan also received support from MultiMT (H2020 ERC Starting Grant No. 678017).
   </p>
 
 </d-appendix>
