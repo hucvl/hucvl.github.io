@@ -1,11 +1,11 @@
-@inproceedings{caglayan-etal-2017-cross-lingual,
-    title = "Re-evaluating Automatic Metrics for Image Captioning",
+@inproceedings{caglayan-etal-2021-cross-lingual,
+    title = {{Cross-lingual Visual Pre-training for Multimodal Machine Translation}},
     author = "Caglayan, Ozan and
               Kuyu, Menekse and
               Amac, Mustafa Sercan and
               Madhyastha, Pranava and
               Erdem, Erkut and
-              Erdem, Aykut and 
+              Erdem, Aykut and
               Specia, Lucia",
     booktitle = "Proceedings of the 16th Conference of the {E}uropean Chapter of the Association for Computational Linguistics: Short Papers",
     month = apr,
