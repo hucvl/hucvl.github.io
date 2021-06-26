@@ -1,10 +1,10 @@
 ![](teaserV8.png)
 
 # Paper
-Bora Celikkale, Goksu Erdogan, Aykut Erdem and Erkut Erdem. "Generating Visual Story Graphs with Application to Photo Album Summarization", Signal Processing: Image Communication, to appear.
+Kemal CIZMECILER, Aykut Erdem and Erkut Erdem. "Leveraging Semantic Saliency Maps for Query-Specific Video Summarization ", Multimedia Tools and Applications, to appear.
 [pdf](https://vision.cs.hacettepe.edu.tr/publication/fulltext/cc7c232056579adeae38e282cadf0c1a.pdf)
 
-# YFCC100M-CITIES Photo Set
+# ARS DATASET
 This dataset contains photo sets collected from publicly available [YFCC100M](http://projects.dfki.uni-kl.de/yfcc100m/) dataset. 
 
 The photographs are collected as vacation photo collections from individual users visited 6 different cities namely Amsterdam, Istanbul, New York, Paris, Tokyo and Venice which are among the most visited cities around the world. Each set contains photos from a single user. Photos are scattered over the city covering as much locations as possible, as it can be seen on the figure where photos are tagged by their gps coordinates.
