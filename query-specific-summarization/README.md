@@ -25,34 +25,11 @@ For each video, .. provided.
 
 You can download the csv files containing the urls and meta-data of individual videos, [here](??). Each csv file contains urls and meta-data of an individual video. The urls can be used to download photos from Youtube.
 
-# Summarization Photo Set
-This dataset contains photo sets collected from Flickr. Different from the YFCC100M-CITIES dataset, the photos are fetched directly from Flickr, on a ranged timescale and each city from a different individual user.
 
-There are 100 photos from 6 different cities namely Amsterdam, Istanbul, New York, Paris, Tokyo and Venice which are among the most visited cities around the world. These sets contain photos different than YFCC100M-CITIES.
 
-| City Albums | Number of Photos |
-|-------------|:----------------:|
-| Amsterdam   | 100              |
-| Istanbul    | 100              |
-| New York    | 100              |
-| Paris       | 100              |
-| Tokyo       | 100              |
-| Venice      | 100              |
-| **Total**   | **600**          |
 
-|![](Summarization_Amsterdam.jpg)|![](Summarization_Istanbul.jpg)|
-|:---:|:---:|
-|Amsterdam                    |  Istanbul |
 
-|![](Summarization_Newyork.jpg)|![](Summarization_Paris.jpg)|
-|:---:|:---:|
-|New York                    |  Paris |
-
-|![](Summarization_Tokyo.jpg)|![](Summarization_Venice.jpg)|
-|:---:|:---:|
-|Tokyo                    |  Venice |
-
-Ground truth human summaries are also provided as *.mat* files. Each album is annotated with 20 different human generated summaries. For every album, photos are shown to the users and let them select 10 most representative images.
+Ground truth human summaries are also provided as *.??* files. Each album is annotated with 20 different human generated summaries. For every album, photos are shown to the users and let them select 10 most representative images.
 
 ## How To Download
 
