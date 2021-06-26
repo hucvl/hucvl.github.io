@@ -10,21 +10,16 @@ This dataset contains video sets collected from publicly available Youtube video
 we focus on crowd videos as they can be annotated with a rich set of attributes about the observed activities, actors and events. Here we use complex query terms such as ‘fight between fans’ and ‘running and swimming’. In total, we collected 10 videos, including music and movie clips with 720 × 1280 resolution. The duration of the videos changes
 between 2-12 minutes. More specifically, there is a video log about a triathlon race, which contains running, swimming and biking activities. There exist 3 music videos, mainly showing cheering fans in stadiums or streets. There are 3 movie clips, which respectively show a battlefield scene with a ceremony in a church, dancers in a car and in a club, and finally an orchestra band on a stage with full of dancing people in front of them. Lastly, there is a rock festival video, which contains singing, resting on a beach and playing activities.
 
-![](population-densities.png)
+There are totally ? images collected from 10 videos. 
 
-There are totally 132K images collected from 323 users and 1.5K photo albums. The meta-data of photos such as geolocation, textual tags and timestamp are also available.
-
-| City Albums | Number of Users | Number of Photo Sets | Number of Photos | Number of Unique Words
+| Video name | attribute contained | Number of Frames | Duration | Number of queries
 |-------------|:---------------:|:--------------------:|:----------------:|:----------------:|
-| Amsterdam   | 39              | 100                  | 9923             |1460|
-| Istanbul    | 58              | 167                  | 13645            |979|
-| New York    | 54              | 428                  | 30443            |18538|
-| Paris       | 39              | 178                  | 21819            |1521|
-| Tokyo       | 71              | 514                  | 36787            |4007|
-| Venice      | 62              | 179                  | 19729            |2032|
-| **Total**   | **323**         | **1566**             | **132346**       |**25118**|
+| Triathlon   | 45            | 10971                  | 12:12            |14|
+| LetItbe   | 45              | 9971                  | 11:11            |23|
 
-For each city, textual data extracted from the photos' meta-data - which are tags and title - is also provided in terms of a word vocabulary and it's inverse-document frequencies. Additionally number of tags for each photo together with their term frequencies are also provided.
+| **Total**   | **??**         | **??**             | **??**       |**??**|
+
+For each video, .. provided.
 
 ### Word Clouds of the Vocabularies from Cities of YFCC100M-CITIES Dataset
 
