@@ -25,16 +25,9 @@ For each video, .. provided.
 
 You can download the csv files containing the urls and meta-data of individual videos, [here](??). Each csv file contains urls and meta-data of an individual video. The urls can be used to download photos from Youtube.
 
+Ground truth human summaries are also provided as *.??* files. Each video contains ...
 
-
-
-
-Ground truth human summaries are also provided as *.??* files. Each album is annotated with 20 different human generated summaries. For every album, photos are shown to the users and let them select 10 most representative images.
-
-## How To Download
-
-You can download the json files containing the urls and meta-data of individual photos [here](./summary-set.zip). The urls can be used to download photos from Flickr.
 
 ## Acknowledgements
 
-This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem and by The Scientific and Technological Research Council of Turkey (TUBITAK) Primary Subjects R&D Funding Program Award No. 116E685.
+This work was supported ??.
