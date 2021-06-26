@@ -33,7 +33,7 @@ For each video, .. provided.
 
 ## How To Download
 
-You can download the csv files containing the urls and meta-data of individual photos, word vocabulary and corresponding tf-idf values [here](./yfcmmf00m-cities.zip). Each csv file contains urls and meta-data of an individual user's photo collection from that specific city. The urls can be used to download photos from Flickr.
+You can download the csv files containing the urls and meta-data of individual videos, [here](??). Each csv file contains urls and meta-data of an individual video. The urls can be used to download photos from Youtube.
 
 # Summarization Photo Set
 This dataset contains photo sets collected from Flickr. Different from the YFCC100M-CITIES dataset, the photos are fetched directly from Flickr, on a ranged timescale and each city from a different individual user.
