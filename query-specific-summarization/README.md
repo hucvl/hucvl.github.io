@@ -2,7 +2,7 @@
 
 # Paper
 Kemal CIZMECILER, Erkut Erdem and Aykut Erdem. "Leveraging Semantic Saliency Maps for Query-Specific Video Summarization ", Multimedia Tools and Applications, to appear.
-[pdf](https://vision.cs.hacettepe.edu.tr/publication/fulltext/cc7c232056579adeae38e282cadf0c1a.pdf)
+[pdf](https://vision.cs.hacettepe.edu.tr/publication/fulltext/?.pdf)
 
 # ARS DATASET
 This dataset contains video sets collected from publicly available Youtube videos. 
