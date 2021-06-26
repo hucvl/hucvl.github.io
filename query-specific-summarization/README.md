@@ -21,16 +21,6 @@ There are totally ? images collected from 10 videos.
 
 For each video, .. provided.
 
-### Word Clouds of the Vocabularies from Cities of YFCC100M-CITIES Dataset
-
-|![](wordcloud_amsterdam.png)|![](wordcloud_istanbul.png)|![](wordcloud_newyork.png)|
-|:---:|:---:|:---:|
-|Amsterdam                    |  Istanbul | New York|
-
-![](wordcloud_paris.png)|![](wordcloud_tokyo.png)|![](wordcloud_venice.png)|
-|:---:|:---:|:---:|
-|  Paris |Tokyo                    |  Venice |
-
 ## How To Download
 
 You can download the csv files containing the urls and meta-data of individual videos, [here](??). Each csv file contains urls and meta-data of an individual video. The urls can be used to download photos from Youtube.
