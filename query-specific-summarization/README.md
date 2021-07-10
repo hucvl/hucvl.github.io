@@ -22,6 +22,8 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 | KNAANMusicVideo   | 22             | 6424                  | 04:16            |11|
 | TarkanMusicClip   | 17             | 6876                  | 04:35            |13|
 | ThePianist   | 18             | 10831                  | 06:01            |16|
+| RockFestival   | 16             | 10734                  | 05:57            |18|
+| ComeTogether   | 14             | 6819                  | 03:48            |14|
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
 
