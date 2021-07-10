@@ -43,6 +43,10 @@ User annotations of individual shots are here???
 Ground truth human summaries are also provided as *.txt* files. Each video contains here??
 
 
+![image](https://user-images.githubusercontent.com/2372136/125175892-f5069680-e1d7-11eb-9c65-e3b4802027d5.png)
+
+
+
 ## Acknowledgements
 
 This work was supported in part by GEBIP 2018 Award of the Turkish Academy of Sciences to E. Erdem, BAGEP 2021 Award of the Science Academy to A. Erdem.
