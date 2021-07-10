@@ -21,6 +21,7 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 | WavinFlag   | 21             | 6736                  | 03:44            |7|
 | KNAANMusicVideo   | 22             | 6424                  | 04:16            |11|
 | TarkanMusicClip   | 17             | 6876                  | 04:35            |13|
+| ThePianist   | 18             | 10831                  | 06:01            |16|
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
 
