@@ -31,7 +31,11 @@ For each video, .. provided.
 
 ## How To Download
 
-You can download the video files identified by video IDs [here](??). 
+You can download the video files identified by video IDs [here](??).
+
+https://user-images.githubusercontent.com/2372136/125165383-54948000-e19f-11eb-8c91-5a2b7bdcbd9f.mp4
+
+ 
 
 User annotations of individual shots are here???
 
