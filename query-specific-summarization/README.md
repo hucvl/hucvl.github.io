@@ -33,11 +33,9 @@ For each video, .. provided.
 
 You can download the video files identified by video IDs [here](??).
 
+Attributes.mat
 
 
-
-
- 
 
 User annotations of individual shots are here???
 
@@ -49,69 +47,7 @@ Example comparison from RAD dataset
 
 
 
-	vid1	vid2	vid3	vid4	vid5	vid6	vid7	vid8	vid9	vid10
-stage	4	0	3	0	0	0	0	0	2	0
-kneel	5	3	0	0	1	0	0	0	1	0
-photograph	4	0	0	0	0	0	0	0	0	0
-swimmer	4	0	0	0	0	0	0	0	0	0
-sit	1	6	1	0	1	0	2	6	4	2
-platform	1	0	0	0	0	0	0	1	0	1
-beach	1	0	0	0	0	2	0	0	8	0
-photographer	1	0	0	0	0	0	0	0	0	0
-concert	0	2	0	0	0	0	0	0	2	0
-church	0	5	0	0	0	0	0	0	0	0
-battlefield	0	1	0	0	0	0	0	3	0	0
-audience	0	6	0	0	0	0	1	0	0	3
-performer	0	3	2	0	0	0	0	0	1	2
-police	0	2	0	5	0	0	0	3	0	0
-choir	0	2	0	0	0	1	1	0	0	0
-soldier	0	4	0	0	0	0	0	0	0	0
-walk	0	5	1	0	3	1	3	1	0	3
-dancer	0	0	5	0	0	2	2	0	0	2
-star	0	0	4	0	2	1	0	0	0	2
-cheer	0	0	3	3	0	0	0	0	1	1
-wave	0	0	0	4	1	0	1	0	3	0
-street	0	0	0	1	1	2	2	0	1	2
-fight	0	0	0	4	0	0	0	4	0	0
-protest	0	0	0	4	0	0	0	0	0	0
-dance	0	0	0	0	2	1	1	0	3	1
-run	0	0	0	0	1	1	1	0	0	0
-runner	0	0	0	0	0	3	0	1	0	0
-stadium	0	0	0	0	0	0	1	0	0	0
-performance	0	3	0	0	0	0	1	0	3	3
-subway	0	0	0	0	0	1	2	5	0	0
-war	0	1	0	0	0	0	0	3	0	0
-queue	0	0	0	0	0	0	0	2	0	0
-stand	0	0	0	0	0	0	0	0	4	1
-ceremony	4	0	0	0	1	0	0	0	0	0
-student	1	0	0	0	0	1	0	0	0	0
-model	1	0	0	0	0	0	0	0	0	0
-watch performance	1	0	0	0	0	0	0	0	0	0
-rink	2	0	0	1	0	0	0	0	0	1
-chorus	0	1	0	0	0	3	0	0	0	0
-temple	0	1	0	0	0	0	0	0	0	0
-skater	0	1	0	0	0	0	1	0	0	0
-band_performance	0	0	1	0	0	0	4	0	1	0
-shopping	0	0	2	0	0	0	0	0	0	0
-swim	0	0	1	0	0	0	0	0	0	0
-escalator	0	0	1	0	0	0	0	0	0	0
-applaud	0	0	0	1	0	1	0	0	1	0
-buy_ticket	0	0	0	1	0	0	0	0	0	1
-check-in/out	0	0	0	1	0	0	0	0	0	0
-checkinout	0	0	0	1	0	0	0	0	0	0
-pilgrimage	0	0	0	0	1	0	1	0	0	0
-outdoor	0	0	0	0	0	1	0	0	0	0
-parade	0	0	0	0	0	1	0	0	0	0
-teacher	0	0	0	0	0	0	1	0	0	0
-newly-wed couple	0	0	0	0	0	0	1	0	0	0
-dining	0	0	0	0	0	0	0	2	0	0
-picnic	0	0	0	0	0	0	0	1	0	0
-marathon	0	0	0	0	0	0	0	0	1	0
-carnival	0	0	0	0	0	0	0	0	0	1
-stock_exchange	0	0	0	0	0	0	0	0	0	1
-graduation	0	0	0	0	0	0	0	0	0	1
-![image](https://user-images.githubusercontent.com/2372136/125176492-7cee9f80-e1dc-11eb-9e8e-7c5a4d6a16e6.png)
-
+	60 attribute is ready and will be a figure.
 
 
 
