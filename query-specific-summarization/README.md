@@ -34,7 +34,8 @@ For each video, .. provided.
 You can download the video files identified by video IDs [here](??).
 
 
-[MakaleIcinGerekliDosyalar.txt](https://github.com/hucvl/hucvl.github.io/files/6795380/MakaleIcinGerekliDosyalar.txt)
+
+
 
  
 
@@ -42,8 +43,9 @@ User annotations of individual shots are here???
 
 Ground truth human summaries are also provided as *.txt* files. Each video contains here??
 
+Example comparison from RAD dataset
+![RAD_example](https://user-images.githubusercontent.com/2372136/125175985-a1487d00-e1d8-11eb-9252-5bec3c8073be.png)
 
-![image](https://user-images.githubusercontent.com/2372136/125175892-f5069680-e1d7-11eb-9c65-e3b4802027d5.png)
 
 
 
