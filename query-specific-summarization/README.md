@@ -34,6 +34,7 @@ For each video, .. provided.
 You can download the video files identified by video IDs [here](??).
 
 
+[MakaleIcinGerekliDosyalar.txt](https://github.com/hucvl/hucvl.github.io/files/6795380/MakaleIcinGerekliDosyalar.txt)
 
  
 
