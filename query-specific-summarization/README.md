@@ -15,7 +15,7 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 | Video name | attribute contained | Number of Frames | Duration | Number of queries
 |-------------|:---------------:|:--------------------:|:----------------:|:----------------:|
 | Triathlon   | 19            | 10971                  | 12:12            |15|
-| LetItBe   | 20              | 9971                  | 03:54            |23|
+| LetItBe   | 20              | 5623                  | 03:54            |23|
 | HoldMeTight   | 13              | 3393                  | 01:53            |12|
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
