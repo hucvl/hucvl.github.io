@@ -19,6 +19,8 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 | HoldMeTight   | 13              | 3393                  | 01:53            |12|
 | FansFighting   | 17             | 14832                  | 08:14            |13|
 | WavinFlag   | 21             | 6736                  | 03:44            |7|
+| KNAANMusicVideo   | 22             | 6424                  | 04:16            |11|
+| TarkanMusicClip   | 17             | 6876                  | 04:35            |13|
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
 
