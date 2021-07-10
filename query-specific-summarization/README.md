@@ -31,9 +31,11 @@ For each video, .. provided.
 
 ## How To Download
 
-You can download the csv files containing the urls and meta-data of individual videos, [here](??). Each csv file contains urls and meta-data of an individual video. The urls can be used to download photos from Youtube.
+You can download the video files identified by video IDs [here](??). 
 
-Ground truth human summaries are also provided as *.??* files. Each video contains ...
+User annotations of individual shots are here???
+
+Ground truth human summaries are also provided as *.txt* files. Each video contains here??
 
 
 ## Acknowledgements
