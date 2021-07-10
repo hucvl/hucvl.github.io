@@ -30,4 +30,4 @@ Ground truth human summaries are also provided as *.??* files. Each video contai
 
 ## Acknowledgements
 
-This work was supported ??.
+This work was supported in part by GEBIP 2018 Award of the Turkish Academy of Sciences to E. Erdem, BAGEP 2021 Award of the Science Academy to A. Erdem.
