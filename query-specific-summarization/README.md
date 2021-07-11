@@ -18,8 +18,8 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 |2| LetItBe   | 20              | 5623                  | 03:54            |23|  75| ShNnEDb4wFA|
 |3| HoldMeTight   | 13              | 3393                  | 01:53            |12| 37| JdzSuH-azJs|
 |4| FansFighting   | 17             | 14832                  | 08:14            |13|  48| hjowpb2maAM|
-|5| WavinFlag   | 21             | 6424                  | 03:44            |7|  45| WTJSt4wP2ME|
-|6| KNAANMusicVideo   | 22             | 6736                  | 04:16            |11|  70|  TR2o9GY8u60|
+|5| WavinFlag   | 21             | 6736                  | 03:44            |7|  45| WTJSt4wP2ME|
+|6| KNAANMusicVideo   | 22             | 6400                  | 04:16            |11|  70|  TR2o9GY8u60|
 |7| TarkanMusicClip   | 17             | 6876                  | 04:35            |13| 81| EBwjmeDoE6A |
 |8| ThePianist   | 18             | 10831                  | 06:01            |16|  59| DENCBZF0wd8 |
 |9| RockFestival   | 16             | 10734                  | 05:57            |18|  42| hRgcDHO2eII|
