@@ -52,6 +52,9 @@ Example comparison from RAD dataset can be seen as
 
 
 	60 attribute is ready and will be a figure.
+	
+	[60attributes_in_queries.xlsx](https://github.com/hucvl/hucvl.github.io/files/6797561/60attributes_in_queries.xlsx)
+
 
 
 
