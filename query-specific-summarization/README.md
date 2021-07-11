@@ -12,18 +12,18 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 
 
 
-| Video name | attribute contained | Number of Frames | Duration | Number of queries | Shots Contained 
-|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|:----------------:|
-| Triathlon   | 19            | 10971                  | 12:12            |15|  82|
-| LetItBe   | 20              | 5623                  | 03:54            |23|  75|
-| HoldMeTight   | 13              | 3393                  | 01:53            |12| 37|
-| FansFighting   | 17             | 14832                  | 08:14            |13|  48|
-| WavinFlag   | 21             | 6736                  | 03:44            |7|  45|
-| KNAANMusicVideo   | 22             | 6424                  | 04:16            |11|  70|
-| TarkanMusicClip   | 17             | 6876                  | 04:35            |13| 81|
-| ThePianist   | 18             | 10831                  | 06:01            |16|  59|
-| RockFestival   | 16             | 10734                  | 05:57            |18|  42|
-| ComeTogether   | 14             | 6819                  | 03:48            |14|  38|
+| Video ID| Video name | attribute contained | Number of Frames | Duration | Number of queries | Shots Contained 
+|-------------|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|:----------------:|
+|1| Triathlon   | 19            | 10971                  | 12:12            |15|  82|
+|2| LetItBe   | 20              | 5623                  | 03:54            |23|  75|
+|3| HoldMeTight   | 13              | 3393                  | 01:53            |12| 37|
+|4| FansFighting   | 17             | 14832                  | 08:14            |13|  48|
+|5| WavinFlag   | 21             | 6736                  | 03:44            |7|  45|
+|6| KNAANMusicVideo   | 22             | 6424                  | 04:16            |11|  70|
+|7| TarkanMusicClip   | 17             | 6876                  | 04:35            |13| 81|
+|8| ThePianist   | 18             | 10831                  | 06:01            |16|  59|
+|9| RockFestival   | 16             | 10734                  | 05:57            |18|  42|
+|10| ComeTogether   | 14             | 6819                  | 03:48            |14|  38|
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
 
