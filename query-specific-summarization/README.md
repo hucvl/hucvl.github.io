@@ -53,7 +53,7 @@ Video List Used in the Paper from RAD Dataset
 ![RAD_selected_videos](https://user-images.githubusercontent.com/2372136/125244116-9a645c00-e2f7-11eb-9753-73a5a6cf17c6.png)
 
 | Sequence Title | Query | Duration  | Number of Frames | Shot Count 
-|-------------|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|:----------------:|
+|-------------|-------------|:---------------:|:----------------:|:----------------:|
 | 5slean   | leam            | 01:04                  | 1536            |64|   
 | basketball fights   | 20              | 5623                  | 03:54            |23|  75| 
 | bts dance girl group   | 13              | 3393                  | 01:53            |12| 37| 
