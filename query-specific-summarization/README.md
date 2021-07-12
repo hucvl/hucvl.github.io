@@ -50,7 +50,7 @@ Example comparison from RAD dataset can be seen as
 
 Video List Used in the Paper from RAD Dataset
 
-![RAD_selected_videos](https://user-images.githubusercontent.com/2372136/125244116-9a645c00-e2f7-11eb-9753-73a5a6cf17c6.png)
+
 
 | Sequence Title | Query | Duration  | Number of Frames | Shot Count 
 |-------------|-------------|:---------------:|:----------------:|:----------------:|
