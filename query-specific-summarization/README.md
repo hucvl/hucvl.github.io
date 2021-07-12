@@ -54,15 +54,15 @@ Video List Used in the Paper from RAD Dataset
 
 | Sequence Title | Query | Duration  | Number of Frames | Shot Count 
 |-------------|-------------|:---------------:|:----------------:|:----------------:|
-| 5slean   | leam            | 01:04                  | 1536            |64|   
-| basketball fights   | 20              | 5623                  | 03:54            |23|  75| 
-| bts dance girl group   | 13              | 3393                  | 01:53            |12| 37| 
-| bts dance cover   | 17             | 14832                  | 08:14            |13|  48| 
-| bus crash   | 21             | 6400                  |  04:16           |7|  45|  
+| 5slean   | lean            | 01:04                  | 1536            |64|   
+| basketball fights   | fight              | 5623                  | 03:54            |23|  75| 
+| bts dance girl group   | dance              | 3393                  | 01:53            |12| 37| 
+| bts dance cover   |dance             | 14832                  | 08:14            |13|  48| 
+| bus crash   | crash            | 6400                  |  04:16           |7|  45|  
 | bus driver beats up girl   | 22            | 6736                  |  03:44           |11|  70| 
-| chase bryant   | 17             | 6876                  | 04:35            |13| 81| 
-| chase pig commercial   | 18             | 10831                  | 06:01            |16|  59|
-| chase utley slide   | 16             | 10734                  | 05:57            |18|  42| 
+| chase bryant   | chase             | 6876                  | 04:35            |13| 81| 
+| chase pig commercial   | chase             | 10831                  | 06:01            |16|  59|
+| chase utley slide   | chase             | 10734                  | 05:57            |18|  42| 
 | cooking channel   | 14             | 6819                  | 03:48            |14|  38| 
 | cooking videos   | 14             | 6819                  | 03:48            |14|  38| 
 | cooking with dogs   | 14             | 6819                  | 03:48            |14|  38| 
