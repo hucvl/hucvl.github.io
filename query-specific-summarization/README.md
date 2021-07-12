@@ -55,19 +55,19 @@ Video List Used in the Paper from RAD Dataset
 | Sequence Title | Query | Duration  | Number of Frames | Shot Count 
 |-------------|-------------|:---------------:|:----------------:|:----------------:|
 | 5slean   | lean            | 01:04                  | 1536            |64|   
-| basketball fights   | fight              | 03:03                  | 4368            |23|
-| bts dance girl group   | dance              | 02:51                  | 01:53            |12| 
-| bts dance cover   |dance             | 02:48                  | 08:14            |13|  
-| bus crash   | crash            | 02:00                  |  04:16           |7|  
-| bus driver beats up girl   | beat            | 01:34                  |  03:44           |11|  
-| chase bryant   | chase             | 03:14                  | 04:35            |13|  
-| chase pig commercial   | chase             | 01:46                  | 06:01            |16|  
-| chase utley slide   | chase             | 01:05                  | 05:57            |18|  
-| cooking channel   | cook             | 02:13                  | 03:48            |14|  
-| cooking videos   | cook             | 02:48                  | 03:48            |14|  
-| cooking with dogs   | cook             | 03:00                  | 03:48            |14|  
-| cooking with kylie   | cook             | 02:12                  | 03:48            |14|  
-| dance practice dope   | dance             | 02:01                  | 03:48            |14|  
+| basketball fights   | fight              | 03:03                  | 4368            |182|
+| bts dance girl group   | dance              | 02:51                  | 4104           |171| 
+| bts dance cover   |dance             | 02:48                  | 4032            |168|  
+| bus crash   | crash            | 02:00                  |  2880           |120|  
+| bus driver beats up girl   | beat            | 01:34                  | 2256          |94|  
+| chase bryant   | chase             | 03:14                  | 4656            |194|  
+| chase pig commercial   | chase             | 01:46                  | 2544            |106|  
+| chase utley slide   | chase             | 02:05                  | 1560            |65|  
+| cooking channel   | cook             | 02:13                  | 3192           |133|  
+| cooking videos   | cook             | 02:48                  |4032            |168|  
+| cooking with dogs   | cook             | 03:00                  | 4320            |180|  
+| cooking with kylie   | cook             | 02:12                  | 3168           |132|  
+| dance practice dope   | dance             | 02:01                  | 2904            |121|  
 
 
 
