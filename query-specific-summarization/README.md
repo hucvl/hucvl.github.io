@@ -33,13 +33,9 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 
 You can download the video files identified by video IDs [here](??).
 
-Attributes.mat
+Attribute list and annotations are provided as as mat file, and ground truth human summaries also provided as *.txt* files. 
+[user_summaries_annotations.zip](https://github.com/hucvl/hucvl.github.io/files/6799153/user_summaries_annotations.zip)
 
-
-
-User annotations of individual shots are here???
-
-Ground truth human summaries are also provided as *.txt* files. Each video contains here??
 
 Example comparison from ARS dataset can be seen as 
 
