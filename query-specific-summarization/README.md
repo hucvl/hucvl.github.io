@@ -27,7 +27,7 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 
 | **Total**   | **??**         | **??**             | **??**       |**??**|
 
-For each video, .. provided.
+
 
 ## How To Download
 
