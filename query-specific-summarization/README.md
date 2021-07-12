@@ -43,7 +43,8 @@ Queries in videos are here [attributes_in_queries.zip](https://github.com/hucvl/
 
 Example comparison from ARS dataset can be seen as 
 
-![ARS_example](https://user-images.githubusercontent.com/2372136/125176190-35671400-e1da-11eb-9243-128a4fe4a4b5.png)
+![ARS_example2](https://user-images.githubusercontent.com/2372136/125298681-0b743580-e331-11eb-817b-dddf706f297a.png)
+
 
 Example comparison from RAD dataset can be seen as
 
