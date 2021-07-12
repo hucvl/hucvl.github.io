@@ -36,6 +36,9 @@ You can download the video files identified by video IDs [here](??).
 Attribute list and annotations are provided as as mat file, and ground truth human summaries also provided as *.txt* files. 
 [user_summaries_annotations.zip](https://github.com/hucvl/hucvl.github.io/files/6799153/user_summaries_annotations.zip)
 
+Queries in videos are here [attributes_in_queries.zip](https://github.com/hucvl/hucvl.github.io/files/6799183/attributes_in_queries.zip)
+
+
 
 Example comparison from ARS dataset can be seen as 
 
@@ -47,9 +50,7 @@ Example comparison from RAD dataset can be seen as
 
 
 
-	60 attribute is ready and will be a figure.
 	
-	[60attributes_in_queries.xlsx](https://github.com/hucvl/hucvl.github.io/files/6797561/60attributes_in_queries.xlsx)
 
 
 
