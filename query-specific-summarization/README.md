@@ -52,22 +52,22 @@ Video List Used in the Paper from RAD Dataset
 
 ![RAD_selected_videos](https://user-images.githubusercontent.com/2372136/125244116-9a645c00-e2f7-11eb-9753-73a5a6cf17c6.png)
 
-| Video ID| Video name | Attribute Count | Number of Frames | Duration | Number of Queries | Shot Count | Youtube Link 
-|-------------|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|1| 5slean   | 19            | 10971                  | 12:12            |15|  82| k17Kg1owKSw|
-|2| basketball fights   | 20              | 5623                  | 03:54            |23|  75| ShNnEDb4wFA|
-|3| bts dance girl group   | 13              | 3393                  | 01:53            |12| 37| JdzSuH-azJs|
-|4| bts dance cover   | 17             | 14832                  | 08:14            |13|  48| hjowpb2maAM|
-|5| bus crash   | 21             | 6400                  |  04:16           |7|  45|  TR2o9GY8u60|
-|6| bus driver beats up girl   | 22            | 6736                  |  03:44           |11|  70|  WTJSt4wP2ME|
-|7| chase bryant   | 17             | 6876                  | 04:35            |13| 81| EBwjmeDoE6A |
-|8| chase pig commercial   | 18             | 10831                  | 06:01            |16|  59| DENCBZF0wd8 |
-|9| chase utley slide   | 16             | 10734                  | 05:57            |18|  42| hRgcDHO2eII|
-|10| cooking channel   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
-|11| cooking videos   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
-|12| cooking with dogs   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
-|13| cooking with kylie   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
-|14| dance practice dope   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
+| Video ID| Video name | Attribute Count | Number of Frames | Duration | Number of Queries | Shot Count 
+|-------------|-------------|:---------------:|:--------------------:|:----------------:|:----------------:|:----------------:|
+|1| 5slean   | 19            | 10971                  | 12:12            |15|  82| 
+|2| basketball fights   | 20              | 5623                  | 03:54            |23|  75| 
+|3| bts dance girl group   | 13              | 3393                  | 01:53            |12| 37| 
+|4| bts dance cover   | 17             | 14832                  | 08:14            |13|  48| 
+|5| bus crash   | 21             | 6400                  |  04:16           |7|  45|  
+|6| bus driver beats up girl   | 22            | 6736                  |  03:44           |11|  70| 
+|7| chase bryant   | 17             | 6876                  | 04:35            |13| 81| 
+|8| chase pig commercial   | 18             | 10831                  | 06:01            |16|  59|
+|9| chase utley slide   | 16             | 10734                  | 05:57            |18|  42| 
+|10| cooking channel   | 14             | 6819                  | 03:48            |14|  38| 
+|11| cooking videos   | 14             | 6819                  | 03:48            |14|  38| 
+|12| cooking with dogs   | 14             | 6819                  | 03:48            |14|  38| 
+|13| cooking with kylie   | 14             | 6819                  | 03:48            |14|  38| 
+|14| dance practice dope   | 14             | 6819                  | 03:48            |14|  38| 
 
 
 
