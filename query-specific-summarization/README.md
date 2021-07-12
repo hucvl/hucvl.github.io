@@ -59,15 +59,15 @@ Video List Used in the Paper from RAD Dataset
 | bts dance girl group   | dance              | 3393                  | 01:53            |12| 37| 
 | bts dance cover   |dance             | 14832                  | 08:14            |13|  48| 
 | bus crash   | crash            | 6400                  |  04:16           |7|  45|  
-| bus driver beats up girl   | 22            | 6736                  |  03:44           |11|  70| 
+| bus driver beats up girl   | beat            | 6736                  |  03:44           |11|  70| 
 | chase bryant   | chase             | 6876                  | 04:35            |13| 81| 
 | chase pig commercial   | chase             | 10831                  | 06:01            |16|  59|
 | chase utley slide   | chase             | 10734                  | 05:57            |18|  42| 
-| cooking channel   | 14             | 6819                  | 03:48            |14|  38| 
-| cooking videos   | 14             | 6819                  | 03:48            |14|  38| 
-| cooking with dogs   | 14             | 6819                  | 03:48            |14|  38| 
-| cooking with kylie   | 14             | 6819                  | 03:48            |14|  38| 
-| dance practice dope   | 14             | 6819                  | 03:48            |14|  38| 
+| cooking channel   | cook             | 6819                  | 03:48            |14|  38| 
+| cooking videos   | cook             | 6819                  | 03:48            |14|  38| 
+| cooking with dogs   | cook             | 6819                  | 03:48            |14|  38| 
+| cooking with kylie   | cook             | 6819                  | 03:48            |14|  38| 
+| dance practice dope   | cook             | 6819                  | 03:48            |14|  38| 
 
 
 
