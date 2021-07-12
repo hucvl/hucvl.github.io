@@ -24,7 +24,7 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 |8| ThePianist   | 18             | 10831                  | 06:01            |16|  59| DENCBZF0wd8 |
 |9| RockFestival   | 16             | 10734                  | 05:57            |18|  42| hRgcDHO2eII|
 |10| ComeTogether   | 14             | 6819                  | 03:48            |14|  38| wH6eiCJ9SDs |
-||  **Total**   | 60(unique)            | 91339                  | 54:36            |142|  577|  |
+||  **Total**   | **60(unique)**           | **91339**                  | **54:36**            |**142**|  **577**|  |
 
 
 
