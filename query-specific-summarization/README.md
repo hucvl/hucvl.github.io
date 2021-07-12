@@ -63,7 +63,7 @@ Video List Used in the Paper from RAD Dataset
 | bus driver beats up girl   | beat            | 01:34                  | 2256          |94|  
 | chase bryant   | chase             | 03:14                  | 4656            |194|  
 | chase pig commercial   | chase             | 01:46                  | 2544            |106|  
-| chase utley slide   | chase             | 02:05                  | 1560            |65|  
+| chase utley slide   | chase             | 01:05                  | 1560            |65|  
 | cooking channel   | cook             | 02:13                  | 3192           |133|  
 | cooking videos   | cook             | 02:48                  |4032            |168|  
 | cooking with dogs   | cook             | 03:00                  | 4320            |180|  
