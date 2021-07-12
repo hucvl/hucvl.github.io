@@ -48,7 +48,8 @@ Example comparison from ARS dataset can be seen as
 
 Example comparison from RAD dataset can be seen as
 
-![RAD_example2](https://user-images.githubusercontent.com/2372136/125298933-4b3b1d00-e331-11eb-8e7d-f3c06192fa18.png)
+![RAD_example2](https://user-images.githubusercontent.com/2372136/125299081-76257100-e331-11eb-868f-3f6a0873a5aa.png)
+
 
 
 Video List Used in the Paper from RAD Dataset
