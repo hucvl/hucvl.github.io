@@ -34,7 +34,8 @@ between 2-12 minutes. More specifically, there is a video log about a triathlon 
 
 
 Attribute list and annotations are provided as as mat file, and ground truth human summaries also provided as *.txt* files. 
-[user_summaries_annotations.zip](https://github.com/hucvl/hucvl.github.io/files/6799919/user_summaries_annotations.zip)
+[usersummaries_annotations.zip](https://github.com/hucvl/hucvl.github.io/files/6831007/usersummaries_annotations.zip)
+
 
 
 Queries in videos are here [attributes_in_queries.zip](https://github.com/hucvl/hucvl.github.io/files/6799183/attributes_in_queries.zip)
