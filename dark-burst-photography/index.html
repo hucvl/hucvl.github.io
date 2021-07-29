@@ -499,14 +499,53 @@ iframe, object, embed {
               </div>
         </div>
          
-        
-          
 
-        
-          
 
 
   </div>
+
+  <h3>Video Results</h3>
+
+  <div style="float: right;">
+      <select class="cmp_option_video">
+        <option>Ours</option>
+        <option>Chen et al.</option>
+      </select>
+  </div>
+  <br>
+  <br>
+  
+  <div class="compare_video">
+    <div class="video ours" style="width: 100%;">
+      <video width="100%" controls>
+        <source src="./video/ours/M0001.avi" type="video/avi">
+      </video>
+    </div>
+
+    <div class="video chen" style="width: 100%;">
+      <video width="100%" controls>
+        <source src="./video/chen/M0001.avi" type="video/avi">
+
+      </video>
+    </div>
+  </div>
+
+  <div class="compare_video">
+    <div class="video ours" style="width: 100%;">
+      <video width="100%" controls>
+        <source src="./video/ours/M0019.avi" type="video/avi">
+      </video>
+    </div>
+
+    <div class="video chen" style="width: 100%;">
+      <video width="100%" controls>
+        <source src="./video/chen/M0019.avi" type="video/avi">
+
+      </video>
+    </div>
+  </div>
+    
+
 
   <hr/>
 
@@ -563,6 +602,7 @@ iframe, object, embed {
       $("div.cocoen.maharjan").hide()
       $("div.cocoen.zamir").hide()
       $("div.cocoen.ma").hide()
+      $("div.video.chen").hide()
 
   });
   
@@ -575,13 +615,21 @@ iframe, object, embed {
 
     });
 
-  // Burst image option changed.
-  $(".cmp_option_burst").change(function(){
-    var prev = $(this).data('val');
-    var selectedStr = $(this).val()
-    updateSliderLeftImage(prev, selectedStr, false)
+    // Burst image option changed.
+    $(".cmp_option_burst").change(function(){
+      var prev = $(this).data('val');
+      var selectedStr = $(this).val()
+      updateSliderLeftImage(prev, selectedStr, false)
 
-  });
+    });
+
+    // Video option changed.
+    $(document).ready(function(){
+    $(".cmp_option_video").change(function(){
+      var prev = $(this).data('val');
+      var selectedStr = $(this).val()
+      updateVideo(prev, selectedStr)
+    });
 
   // Update left part of the slider.
   // prev: previous method name, selectedStr: new method name, single: single or burst
@@ -617,6 +665,25 @@ iframe, object, embed {
       }
       
   }
+  });
+
+  function updateVideo(prev, selectedStr){
+    
+      var methodName = "ours"
+      if(selectedStr.includes("Ours")){
+          methodName = "ours"
+      }
+      else if(selectedStr.includes("Chen et al.")){
+          methodName = "chen"
+      }
+
+      $('div.video').hide()
+      var vid = $('div.video.'+methodName)
+      vid.show()
+    
+  }
+
 
   });
+
 </script>
