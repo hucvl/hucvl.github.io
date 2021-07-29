@@ -246,8 +246,8 @@ iframe, object, embed {
       },
       {
         "author": "Aykut Erdem",
-        "authorURL": "https://aykuterdem.github.io",
-        "affiliations": [{"name": "Koç University", "url": "https://www.ku.edu.tr"}]
+        "authorURL": "https://web.cs.hacettepe.edu.tr/~aykut/",
+        "affiliations": [{"name": "Hacettepe University", "url": "https://hacettepe.edu.tr"}]
       }
     ],
     "katex": {
@@ -372,9 +372,9 @@ iframe, object, embed {
   <div style="float: right;">
       <select class="cmp_option_single">
         <option>Traditional + Scaling vs. Ours (single)</option>
-        <option>SID (2018) vs. Ours (single)</option>
-        <option>Zamir et al. (2019) vs. Ours (single)</option>
-        <option>Maharjan et al. (2019) vs. Ours (single)</option>
+        <option>SID vs. Ours (single)</option>
+        <option>Zamir et al. vs. Ours (single)</option>
+        <option>Maharjan et al. vs. Ours (single)</option>
       </select>
   </div>
   <br>
@@ -441,10 +441,10 @@ iframe, object, embed {
   <div style="float: right;">
       <select class="cmp_option_burst">
         <option>Traditional + Scaling vs. Ours (burst)</option>
-        <option>SID (2018) vs. Ours (burst)</option>
-        <option>Zamir et al. (2019) vs. Ours (burst)</option>
-        <option>Maharjan et al. (2019) vs. Ours (burst)</option>
-        <option>Ma et al. (2020) vs. Ours (burst)</option>
+        <option>SID vs. Ours (burst)</option>
+        <option>Zamir et al. vs. Ours (burst)</option>
+        <option>Maharjan et al. vs. Ours (burst)</option>
+        <option>Ma et al. vs. Ours (burst)</option>
       </select>
   </div>
   <br>
@@ -563,7 +563,7 @@ iframe, object, embed {
 
   <h3 id="acknowledgements">Acknowledgements</h3>
   <p>
-    This work was supported in part by GEBIP 2018 Award of the Turkish Academy of Sciences to E. Erdem, BAGEP 2021 Award of the Science Academy to A. Erdem. We would like to thank KUIS AI Center for letting us use their High Performance Computing Cluster and NVIDIA Corporation for the donation of GPUs used in this research. 
+    This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem. We would like to thank NVIDIA Corporation for the donation of GPUs used in this research. 
   </p>
 
  <!-- <h3 id="peer-reviews">Discussion and Review</h3>
@@ -639,41 +639,50 @@ iframe, object, embed {
       updateVideo(prev, selectedStr)
     });
 
+
+  });
+
+
+
+  });
+
+</script>
+
+<script>
   // Update left part of the slider.
   // prev: previous method name, selectedStr: new method name, single: single or burst
   function updateSliderLeftImage(prev, selectedStr, single){
     
-      var methodName = "scale"
-      if(selectedStr.includes("Traditional + Scale")){
-          methodName = "scale"
-      }
-      else if(selectedStr.includes("SID (2018)")){
-          methodName = "sid"
-      }
-      else if(selectedStr.includes("Maharjan et al. (2019)")){
-          methodName = "maharjan"
-      }
-      else if(selectedStr.includes("Zamir et al. (2019)")){
-          methodName = "zamir"
-      }
-      else if(selectedStr.includes("Ma et al. (2020)")){
-          methodName = "ma"
-      }
+    var methodName = "scale"
+    if(selectedStr.includes("Traditional + Scale")){
+        methodName = "scale"
+    }
+    else if(selectedStr.includes("SID")){
+        methodName = "sid"
+    }
+    else if(selectedStr.includes("Maharjan et al.")){
+        methodName = "maharjan"
+    }
+    else if(selectedStr.includes("Zamir et al.")){
+        methodName = "zamir"
+    }
+    else if(selectedStr.includes("Ma et al.")){
+        methodName = "ma"
+    }
 
 
-      if(single == false){
-        $('div.cocoen.multi').hide()
-        var slider = $('div.cocoen.'+methodName+".multi")
-        slider.show()
-      }
-      else{
-        $('div.cocoen.single').hide()
-        var slider = $('div.cocoen.'+methodName+".single")
-        slider.show()
-      }
-      
-  }
-  });
+    if(single == false){
+      $('div.cocoen.multi').hide()
+      var slider = $('div.cocoen.'+methodName+".multi")
+      slider.show()
+    }
+    else{
+      $('div.cocoen.single').hide()
+      var slider = $('div.cocoen.'+methodName+".single")
+      slider.show()
+    }
+    
+}
 
   function updateVideo(prev, selectedStr){
     
@@ -690,8 +699,4 @@ iframe, object, embed {
       vid.show()
     
   }
-
-
-  });
-
 </script>
