@@ -358,6 +358,14 @@ iframe, object, embed {
     <figcaption>An example night photo captured with 0.1 sec exposure and its enhanced versions by the proposed coarse, fine and burst networks. As the cropped images demonstrate, the fine network enhances both the color and the details of the coarse result. The burst network produces even much sharper and perceptually more pleasing output.</figcaption>
   </figure>
 
+  <p>
+    To obtain robustness to small motions, we apply max fusion between the features of burst frames after the second convolution block.
+    As the features are downsampled, their alignment becomes much easier and the network benefits from the fusion of the higher-level features.
+    To deal with large motions in the scene, however, we can utilize the outputs of our coarse network to estimate optical flows between consecutive frames.
+    In our experiments, we employ the method in <d-cite key="teed2020raft"></d-cite> to obtain the optical flows, which are then used to compensate motion by selectively performing fusion 
+    at the input level only over the regions with little or no motion. We also compare our model with the Seeing Motion in the Dark (SMID) method of Chen et al. on the DRV dataset <d-cite key="chen2019seeing"></d-cite>.
+  </p>
+
   <h2>Results</h2>
   <h3>Single Image Results</h3>
 
