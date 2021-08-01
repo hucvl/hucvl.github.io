@@ -1,6 +1,6 @@
 # Paper
-Begum Citamak, Ozan Caglayan, Menekse Kuyu, Erkut Erdem, Aykut Erdem, Pranava Madhyastha, and Lucia Specia. "MSVD-Turkish: A Comprehensive Multimodal Dataset for Integrated Vision and Language Research in Turkish", submitted to Machine Translation.
-[pdf](MSVD_TR_NLE.pdf)
+Begum Citamak, Ozan Caglayan, Menekse Kuyu, Erkut Erdem, Aykut Erdem, Pranava Madhyastha, and Lucia Specia. "MSVD-Turkish: A Comprehensive Multimodal Dataset for Integrated Vision and Language Research in Turkish", Machine Translation, in press.
+[pdf](https://link.springer.com/content/pdf/10.1007/s10590-021-09276-y.pdf)
 
 # MSVD-Turkish Dataset
 This repo contains the first large scale video captioning dataset for Turkish languages, obtained by carefully translating the English descriptions of the videos in the [MSVD (Microsoft Research Video Description Corpus)](https://www.cs.utexas.edu/users/ml/clamp/videoDescription/) dataset into Turkish.
