@@ -2,9 +2,7 @@
 author={Ahmet Serdar Karadeniz and Erkut Erdem and Aykut Erdem},
 journal={IEEE Transactions on Image Processing},
 title={Burst Photography for Learning to Enhance Extremely Dark Images},
-year={2020},
-volume={},
-number={},
-pages={1-14},
-month={}
+year={2021},
+volume={30},
+pages={9372-9385}
 }
