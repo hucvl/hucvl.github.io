@@ -1,7 +1,7 @@
 ![](teaserV8.png)
 
 # Paper
-Kemal CIZMECILER, Erkut Erdem and Aykut Erdem. "Leveraging Semantic Saliency Maps for Query-Specific Video Summarization ", submitted to Multimedia Tools and Applications.
+Kemal CIZMECILER, Erkut Erdem and Aykut Erdem. "Leveraging Semantic Saliency Maps for Query-Specific Video Summarization ", has been accepted for publication in Multimedia Tools and Applications.
 [pdf](https://vision.cs.hacettepe.edu.tr/publication/fulltext/?.pdf)
 
 # ARS DATASET
