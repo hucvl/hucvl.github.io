@@ -14,4 +14,5 @@ The captions are initially obtained by automatically translating the English cap
 
 
 ### Acknowledgements 
-This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem, and the MMVC project funded by TUBITAK and the British Council via the Newton Fund Institutional Links grant programme (grant ID 219E054 and 352343575). Lu- cia Specia, Pranava Madhyastha and Ozan Caglayan also received support from MultiMT (H2020 ERC Starting Grant No. 678017).
+This work was supported in part by TUBA GEBIP fellowship awarded to E. Erdem, and the MMVC project funded by TUBITAK and the British Council via the Newton Fund Institutional Links grant programme (grant ID 219E054 and 352343575). Lucia Specia, Pranava Madhyastha and Ozan Caglayan also received support from MultiMT (H2020 ERC Starting Grant No. 678017). This collaboration involves multiple parties from the Multi3Generation COST Action CA18231.
+
